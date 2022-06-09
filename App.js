@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import  Login  from './src/screens/login.js';
+import Home from './src/screens/home.js'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>CRAM</Text>  
-      <StatusBar style="auto" />
+    <View>
+      <Login/>
     </View>
-    
+
+
   );
 }
 
@@ -22,9 +24,9 @@ const styles = StyleSheet.create({
   img: {
     position: 'static',
     flex: 0.5,
-    height: 10, 
-    width : 10,
+    height: 10,
+    width: 10,
 
   },
-  
+
 });
