@@ -3,10 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import  Login  from './src/screens/login.js';
 import Home from './src/screens/home.js'
 
+
 export default function App() {
   return (
     <View>
-      <Login/>
+      <Home/>
     </View>
 
 
