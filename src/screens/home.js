@@ -1,24 +1,12 @@
 import React from 'react'
-import { Image, View, Text } from 'react-native'
-import UselessTextInput from '../components/input.js'
-import { Button} from 'app/buttoninicio.js';
-
+import { Image, View, Text, Form , Input} from 'react-native'
+import tw from 'tailwind-react-native-classnames'
 
 export default function Home () {
-    return(
-        <View>
-            <image source={require('./icon.png')}/>;
-            <View>
-                <Text>Hola</Text>
-            </View>
-            <View>
-                <UselessTextInput> </UselessTextInput>
-            </View>
-            
-            </View>
-    );
+return( 
+<View>
 
+</View>
+);
 
 }
-
-

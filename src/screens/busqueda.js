@@ -1,4 +1,4 @@
-<input placeholder="Buscar" onChangeText={text=>tinstallReactHook.searchFilterFunctoString(text)}/>
+<TextInput placeholder="Buscar" onChangeText={text=>tinstallReactHook.searchFilterFunctoString(text)}/>
 
 searchFilterFunction=text=>{
     this.setState({
