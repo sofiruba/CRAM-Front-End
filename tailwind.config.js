@@ -5,6 +5,8 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
   corePlugins: require('tailwind-rn/unsupported-core-plugins'),
 }
