@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import {TailwindProvider} from 'tailwind-rn';
-import  Login  from './src/screens/login.js';
-import Home from './src/screens/home.js'
-import utilities from './tailwind.json';
+import { StyleSheet} from 'react-native';
+import LoginScreen from './src/screens/login.js';
+import HomeScreen from './src/screens/home.js'
+import ProfileScreen from './src/screens/profile.js'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TailwindConfig from './tailwind.config';
 
-
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-
-      <TailwindProvider utilities={utilities}>
-            <View style={styles.pag}>
-      <Login></Login>
-      </View>
-	</TailwindProvider>
-
-   
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />    
+      </Stack.Navigator>
+    </NavigationContainer>
 
 
   );
