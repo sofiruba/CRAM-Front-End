@@ -41,7 +41,7 @@ export default function LoginForm() {
               </View>
             </View>
           </View>
-         // <Button onPress={handleSubmit} title="Submit" /> 
+          <Button onPress={handleSubmit} title="Submit" /> 
         </View>
         
       )}

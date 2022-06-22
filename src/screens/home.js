@@ -1,22 +1,15 @@
 import React from 'react'
-import { Image, View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-native'
+import {  View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
-import Card from '../components/card'
-const [lugar, buscarLugar] = UseState('aa')
+import {Card} from '../components/card'
+
 export default function HomeScreen({ navigation }) {
     return (
         
         <View style={styles.pag}>
             <Text>HomeScreen</Text>
-            <Button title="Ir a perfil" onPress={() => navigation.push('Profile')} />
-            <View>
-                
-                <TouchableOpacity onPress={()=> navigation.navigate("details")}>
-                <Text>{lugar}</Text>
-                </TouchableOpacity>
 
-            </View>
-
+            <Button title="Ir a Login" onPress={() => navigation.push('Login')} />
         </View>
     );
  

@@ -1,22 +1,20 @@
-import { StyleSheet} from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native';
 import LoginScreen from './src/screens/login.js';
 import HomeScreen from './src/screens/home.js'
-import ProfileScreen from './src/screens/profile.js'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TailwindConfig from './tailwind.config';
+import { TailwindConfig } from './tailwind.config';
 
 const Stack = createNativeStackNavigator();
-export default function App() {
+export default function App({ navigation }) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />    
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-
-
   );
 }
 
