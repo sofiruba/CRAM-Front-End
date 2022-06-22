@@ -1,20 +1,9 @@
 import React from 'react'
 import {View, Button, StyleSheet}  from 'react-native'
-const Button=()=>{
+export default function BotonLogin ({navigation}) {
     return(
-
-        <View style={StyleSheet.screenContainer}>
-        <Button title="Inicio"/>
+        <View >
+        <Button title="Ingresar"  color= "#D8A625" onPress={()=> navigation.navigate('Home')} />
         </View>
     );
 };
-
-const styles=StyleSheet.create({
-    screenContainer:{
-        flex:1,
-        justifyContent:"center",
-        padding:16
-    }
-});
-
-export default app;
