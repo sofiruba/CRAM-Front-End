@@ -11,10 +11,8 @@ export default function LoginScreen({navigation}) {
       <View style={styles.pag}>
         <View style={styles.container}>
           <Image style={styles.img} source={require('../assets/icon.png')}></Image>
-          <LoginForm></LoginForm>
-          <View style={styles.margin}>
-            <Button onPress={ () => { navigation.navigate('Home')}} title="Submit" /> 
-          </View>
+          <LoginForm style={styles.margin}></LoginForm>
+
         </View>
       </View>
     </TailwindProvider>
