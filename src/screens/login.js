@@ -13,7 +13,7 @@ export default function LoginScreen({navigation}) {
           <Image style={styles.img} source={require('../assets/icon.png')}></Image>
           <LoginForm style={styles.margin}></LoginForm>
           <View style={styles.margin} >
-            <BotonLogin/>
+            <Boton props={{title:"Login"}}/>
           </View>
           <View>
             <Text style={styles.texto} onPress={()=> navigation.navigate('Home')}>¿No tienes cuenta? Registrate</Text>

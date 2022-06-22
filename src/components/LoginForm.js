@@ -4,7 +4,7 @@ import Axios from "axios";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 import { useTailwind } from 'tailwind-rn';
 import { Usuario } from '../assets/usuario.png'
-
+import Boton from "./boton";
 
 export default function LoginForm() {
   const tailwind = useTailwind();
@@ -27,8 +27,9 @@ export default function LoginForm() {
                     secureTextEntry={true}
                     style={[tailwind("appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"), styles.formstyle]}>
                   </TextInput>
-                </View>
+                </View> 
               </View>
+              <Boton props={{title:"Ingresar", onpress:() => navigation.navigate('Home'),}} > </Boton>
             </View>
   )
 }

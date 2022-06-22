@@ -12,7 +12,7 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.pag}>
          
             <Buscador/>
-            <Button title="Ir a Login" onPress={() => navigation.push('Login')} />
+            <Button props={{title:"Ir a Login" ,onpress:() => navigation.push('Login')}} />
         </View>
     );
  
