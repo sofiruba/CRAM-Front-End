@@ -1,21 +1,37 @@
-import React from 'react'
-import {  View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
-import {Card} from '../components/card'
+import Card from '../components/card'
 import Buscador from '../components/buscador'
 import Appz from '../components/navbar'
 
-export default function HomeScreen({ navigation }) {
-    
+
+export default function HomeScreen() {
+
+    const [lugares, setLugares] = useState([])
+
+    useEffect(() => {
+        getLugares()
+    }, [])
+
+    const getLugares = () => {
+        axios.get('http://localhost:3000/Lugares')
+            .then(res => {
+                setLugares(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+
     return (
-        
         <View style={styles.pag}>
-         
-            <Buscador/>
-            <Button props={{title:"Ir a Login" ,onpress:() => navigation.push('Login')}} />
+            <Buscador />
+            {lugares.map((item) => {
+                <Card props={item} ></Card>
+            })}
         </View>
     );
- 
+
 }
 
 const styles = StyleSheet.create({

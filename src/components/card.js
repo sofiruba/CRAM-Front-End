@@ -1,19 +1,21 @@
 import React from "react"
-import { View, StyleSheet} from "react-native-web"
+import { View, Text, StyleSheet } from "react-native-web"
 
 
-export default function Card() {
+export default Card = (props) => {
     return (
         <View style={styles.container}>
-            
+            {props.map((t) => {
+                <Text> {t} </Text>
+            })}
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         width: '10px',
-        height:'10px',
-        backgroundColor:'green',
+        height: '10px',
+        backgroundColor: 'green',
     },
 })
