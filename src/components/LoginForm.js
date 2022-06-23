@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 import { useTailwind } from 'tailwind-rn';
+import axios from 'axios'
 
 
 
+export default function LoginForm({ navigation }) {
+  
 const login = async (usern, pass) => {
-  const user = { username: usern, password: pass }
-  return axios.post('http://localhost:3000/auth/login', user)
+  const usuario = { username: usern, password: pass }
+  const axiosLogin=axios.create({
+    baseURL:'http://localhost:3000'
+  })
+  return axiosLogin.post('/auth/login', usuario)
     .then(res => {
-      if (res.status < 300) { // fijarse cual es el codigo
-        navigation.navigate('Home')
+      if (res.status = 201) { 
+        navigation.navigate('Home', {usuario})
       }
       else {
         alert('Volver a ingresar') // hay q ver manera de hacer diferentes dependiendo el problema
@@ -19,8 +25,6 @@ const login = async (usern, pass) => {
       console.error('error', error)
     })
 }
-
-export default function LoginForm({ navigation }) {
   const tailwind = useTailwind();
   const [user, setUser] = useState({})
   return (
@@ -46,7 +50,7 @@ export default function LoginForm({ navigation }) {
           </TextInput>
         </View>
       </View>
-      <Button title="Ingresar" onPress={login(user.username, user.password)} > </Button>
+      <Button title="Ingresar" onClick={login(user.username, user.password)} > </Button>
     </View>
   )
 }

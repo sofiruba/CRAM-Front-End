@@ -16,7 +16,10 @@ export default function HomeScreen() {
     }, [])
 
     const getLugares = () => {
-        axios.get('http://localhost:3000/Lugares')
+        const axiosBuscar = axios.create({
+            baseURL: 'http://localhost:3000'
+        })
+        axios.get('/Lugares')
             .then(res => {
                 setLugares(res.data)
             })
@@ -39,5 +42,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#F6D250',
         height: '100%',
         width: '100%',
-    },
+      },
 })
