@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pag: {
-    backgroundColor: '#F6D250',
+    backgroundColor: '#F5D2F6',
     height: '100%',
     width: '100%',
   },

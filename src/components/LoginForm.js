@@ -33,7 +33,7 @@ const login = async (usern, pass) => {
         <View style={tailwind("rounded-md shadow-sm -space-y-px")}>
           <Image style={styles.imageStyle} source={require('../assets/usuario.png')} />
           <TextInput
-            placeholder="Nombre de Usuario"
+            placeholder="Usuario"
             onChangeText={(text) => setUser({ ...user, username: text })}
             style={[tailwind("appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"), styles.formstyle]}
           />
@@ -50,7 +50,9 @@ const login = async (usern, pass) => {
           </TextInput>
         </View>
       </View>
-      <Button title="Ingresar" onClick={login(user.username, user.password)} > </Button>
+      <View style={styles.boton}>
+      <Button title="Ingresar" color="#DE95DB"  onClick={login(user.username, user.password)} > </Button>
+    </View>
     </View>
   )
 }
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginBottom: '0px',
     marginTop: '0px',
-    flex: 1
+    flex: 1,
   },
   margin: {
     margin: '2%',
@@ -68,16 +70,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10,
   },
 
   imageStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
     resizeMode: 'stretch',
     alignItems: 'center',
   },
+  boton: {
+    marginTop: "20px",
+    width: "100%"
+  }
 
 });

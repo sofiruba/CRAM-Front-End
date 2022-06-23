@@ -1,3 +1,5 @@
+import React from 'react'
+import {TextInput} from 'react-native'
 <TextInput placeholder="Buscar" onChangeText={text => tinstallReactHook.searchFilterFunctoString(text)} />
 
 searchFilterFunction = text => {

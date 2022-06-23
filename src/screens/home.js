@@ -4,7 +4,7 @@ import { View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-n
 import tw from 'tailwind-react-native-classnames'
 import Card from '../components/card'
 import Buscador from '../components/buscador'
-import Appz from '../components/navbar'
+import DrawerNav from '../../navigation/drawer'
 
 
 export default function HomeScreen() {
@@ -27,11 +27,13 @@ export default function HomeScreen() {
     }
 
     return (
-        <View style={styles.pag}>
-            <Buscador />
-            {lugares.map((item) => {
-                <Card props={item} ></Card>
-            })}
+        <View style={styles.pag}> 
+        
+            <Buscador/>
+            {//lugares.map((item) => {
+               // <Card props={item} ></Card>
+            //})
+        }
         </View>
     );
 
@@ -39,8 +41,8 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
     pag: {
-        backgroundColor: '#F6D250',
+        backgroundColor: '#F5D2F6',
         height: '100%',
         width: '100%',
-      },
+    },
 })
