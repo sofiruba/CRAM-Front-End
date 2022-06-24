@@ -31,7 +31,6 @@ const login = async (usern, pass) => {
     <View style={styles.container}>
       <View style={tailwind("mt-8 space-y-6")}>
         <View style={tailwind("rounded-md shadow-sm -space-y-px")}>
-          <Image style={styles.imageStyle} source={require('../assets/usuario.png')} />
           <TextInput
             placeholder="Usuario"
             onChangeText={(text) => setUser({ ...user, username: text })}

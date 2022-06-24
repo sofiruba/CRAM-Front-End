@@ -10,22 +10,19 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default function Card(props) {
     const tailwind = useTailwind();
     return (
-         props.map((r) => { 
         <View > 
    
-          <View style={[styles.container, tailwind("flex items-center")]}>
+   <View style={[styles.container, tailwind("flex items-center")]}>
           <Icon name={'heart'} style={styles.corazon}/>
-     
-            <View>
-          <Text style={styles.titulo}> {r.titulo}   </Text>
-          <Text style={styles.descripcion}> {r.descripcion} </Text>
+          <Text style={styles.titulo}> {props.titulo}   </Text>
+            <View style={{marginTop: '3px'}}>
+          <Text style={styles.descripcion}> {props.descripcion}  </Text>
           </View>
            <Text>
-             <Image  style={styles.image} source={r.imagen}/>
+             <Image  style={styles.image} source={props.imagen}/>
              </Text>
           </View>
         </View>
-    })
          
 
     );
@@ -45,8 +42,8 @@ const styles = StyleSheet.create({
     marginRight: "auto",
   },
   image: {
-    width: "50%",
-    height: "50%",
+    width: "100px",
+    height: "70px",
     position: "absolute",
 right: "20px",
 bottom: "15px",
@@ -55,7 +52,7 @@ bottom: "15px",
     fontSize: "25px",
     fontWeight: "bold",
     marginLeft: "10px",
-    textAlignVertical: "left",
+    
     
   },
   corazon: {
@@ -68,6 +65,6 @@ bottom: "15px",
   descripcion: {
     fontSize: "15px",
     color: "grey",
-    marginLeft: "10px",
+    marginLeft: "13px",
   }
 });

@@ -5,11 +5,23 @@ import tw from 'tailwind-react-native-classnames'
 import Card from '../components/card'
 import Buscador from '../components/buscador'
 import DrawerNav from '../../navigation/drawer'
+import CardF from '../components/cardf'
 
 
 export default function HomeScreen() {
 
     const [lugares, setLugares] = useState([])
+    const item = [{
+        titulo : "Ocaña",
+        descripcion : "Lugar de playa",
+        imagen: "https://www.viajes-turisticos.com/wp-content/uploads/2019/01/viajes-turisticos-los-cabos-de-las-flores-y-los-cabos-de-las-flores-1.jpg"
+    },
+    {
+    titulo: "Cancun",
+    descripcion: "hoteles",
+    imagen: "https://www.viajes-turisticos.com/wp-content/uploads/2019/01/viajes-turisticos-los-cabos-de-las-flores-y-los-cabos-de-las-flores-1.jpg"}   
+
+]
 
     useEffect(() => {
         getLugares()
@@ -28,12 +40,13 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.pag}> 
-        
             <Buscador/>
-            {//lugares.map((item) => {
-               // <Card props={item} ></Card>
-            //})
-        }
+            <CardF></CardF>
+            {//props.map((item) => {<Card props={item}/>})
+            }
+              
+            
+        
         </View>
     );
 
