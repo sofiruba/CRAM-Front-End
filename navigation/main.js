@@ -7,11 +7,11 @@ import RegisterScreen from '../src/screens/register';
 const Stack = createNativeStackNavigator();
 export default function Main (){
     return (
-        <NavigationContainer>
+        <NavigationContainer  >
         <Stack.Navigator>
-          <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Register" component={RegisterScreen} />
+          
+          <Stack.Screen name="Home" component={HomeScreen}  options={{headerShown: false}}/>
+       
         </Stack.Navigator>
       </NavigationContainer>
     )

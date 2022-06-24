@@ -10,9 +10,9 @@ export default function LoginForm({ navigation }) {
   const login = async (usern, pass) => {
     const usuario = { username: usern, password: pass }
     const axiosLogin = axios.create({
-      baseURL: 'http://localhost:3000'
+      baseURL: 'http://localhost:3000/'
     })
-    return axiosLogin.post('/auth/login', usuario)
+    return axiosLogin.post('auth/login', usuario)
       .then(res => {
         if (res.status = 201) {
           navigation.navigate('Home', { usuario })
@@ -50,7 +50,7 @@ export default function LoginForm({ navigation }) {
         </View>
       </View>
       <View style={styles.boton}>
-        <Button title="Ingresar" color="#DE95DB" onClick={login(user.username, user.password)} > </Button>
+        <Button title="Ingresar" color="#DE95DB" onPress={login(user.username, user.password)} > </Button>
       </View>
     </View>
   )

@@ -19,7 +19,7 @@
     "@syncfusion/ej2-react-grids": "^20.1.61",
     "@tailwindcss/forms": "^0.5.2",
     "axios": "^0.27.2",
-    "expo": "^45.0.5",
+    "expo": "^45.0.6",
     "expo-status-bar": "~1.3.0",
     "flowbite": "^1.4.7",
     "formik": "^2.2.9",
@@ -33,11 +33,13 @@
     "react-native-web": "0.17.7",
     "tailwind-react-native-classnames": "^1.5.1",
     "tailwind-rn": "^4.2.0",
-    "webpack-dev-server": "~3.11.0"
+    "webpack-dev-server": "~3.11.0",
+    "react-native-reanimated": "~2.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "concurrently": "^7.2.2",
+    "metro-react-native-babel-preset": "^0.71.1",
     "postcss": "^8.4.14",
     "tailwindcss": "^1.9.6"
   },
