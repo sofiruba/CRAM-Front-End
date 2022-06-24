@@ -6,25 +6,25 @@ import axios from 'axios'
 
 
 export default function LoginForm({ navigation }) {
-  
-const login = async (usern, pass) => {
-  const usuario = { username: usern, password: pass }
-  const axiosLogin=axios.create({
-    baseURL:'http://localhost:3000'
-  })
-  return axiosLogin.post('/auth/login', usuario)
-    .then(res => {
-      if (res.status = 201) { 
-        navigation.navigate('Home', {usuario})
-      }
-      else {
-        alert('Volver a ingresar') // hay q ver manera de hacer diferentes dependiendo el problema
-      }
+
+  const login = async (usern, pass) => {
+    const usuario = { username: usern, password: pass }
+    const axiosLogin = axios.create({
+      baseURL: 'http://localhost:3000'
     })
-    .catch(error => {
-      console.error('error', error)
-    })
-}
+    return axiosLogin.post('/auth/login', usuario)
+      .then(res => {
+        if (res.status = 201) {
+          navigation.navigate('Home', { usuario })
+        }
+        else {
+          alert('Volver a ingresar') // hay q ver manera de hacer diferentes dependiendo el problema
+        }
+      })
+      .catch(error => {
+        console.error('error', error)
+      })
+  }
   const tailwind = useTailwind();
   const [user, setUser] = useState({})
   return (
@@ -50,8 +50,8 @@ const login = async (usern, pass) => {
         </View>
       </View>
       <View style={styles.boton}>
-      <Button title="Ingresar" color="#DE95DB"  onClick={login(user.username, user.password)} > </Button>
-    </View>
+        <Button title="Ingresar" color="#DE95DB" onClick={login(user.username, user.password)} > </Button>
+      </View>
     </View>
   )
 }

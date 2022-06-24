@@ -11,42 +11,43 @@ import CardF from '../components/cardf'
 export default function HomeScreen() {
 
     const [lugares, setLugares] = useState([])
-    const item = [{
-        titulo : "Ocaña",
-        descripcion : "Lugar de playa",
+    
+    setLugares([{
+        titulo: "Ocaña",
+        descripcion: "Lugar de playa",
         imagen: "https://www.viajes-turisticos.com/wp-content/uploads/2019/01/viajes-turisticos-los-cabos-de-las-flores-y-los-cabos-de-las-flores-1.jpg"
     },
     {
-    titulo: "Cancun",
-    descripcion: "hoteles",
-    imagen: "https://www.viajes-turisticos.com/wp-content/uploads/2019/01/viajes-turisticos-los-cabos-de-las-flores-y-los-cabos-de-las-flores-1.jpg"}   
-
-]
+        titulo: "Cancun",
+        descripcion: "hoteles",
+        imagen: "https://www.viajes-turisticos.com/wp-content/uploads/2019/01/viajes-turisticos-los-cabos-de-las-flores-y-los-cabos-de-las-flores-1.jpg"
+    }])
 
     useEffect(() => {
         getLugares()
     }, [])
 
-    const getLugares = () => {
+    /* const getLugares = () => {
         const axiosBuscar = axios.create({
             baseURL: 'http://localhost:3000'
         })
-        axios.get('/Lugares')
+        axiosBuscar.get('/Lugares')
             .then(res => {
                 setLugares(res.data)
             })
             .catch(err => console.log(err))
     }
-
+*/
     return (
-        <View style={styles.pag}> 
-            <Buscador/>
-            <CardF></CardF>
-            {//props.map((item) => {<Card props={item}/>})
+        <View style={styles.pag}>
+            <Buscador />
+
+            {
+                props.map((item) => {
+                    <Card props={item} />
+                })
             }
-              
-            
-        
+
         </View>
     );
 

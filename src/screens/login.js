@@ -12,12 +12,16 @@ export default function LoginScreen({ navigation }) {
         <View style={styles.container}>
           <Image style={styles.img} source={require('../assets/icon.png')}></Image>
           <LoginForm style={styles.margin}></LoginForm>
+          <View>
+            <Text onPress={navigation.navigate('Register')}>No tienes cuenta todavia?</Text>
+          </View>
         </View>
       </View>
     </TailwindProvider>
 
   )
 }
+//ver estilo d register 
 
 const styles = StyleSheet.create({
   img: {
