@@ -24,7 +24,7 @@ export default function HomeScreen() {
         })
         return axiosBuscar.get('/Lugares') 
             .then(res => {
-                setLugares(res.data)
+                setLugares([res.data]) // returnea un array para hacer el map, si no funciona hacerlo separado por titulo, foto, etc?
             })
             .catch(err => console.log(err))
     }
