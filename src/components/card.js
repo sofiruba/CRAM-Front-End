@@ -13,9 +13,9 @@ export default function Card(props) {
     <View >
       <View style={[styles.container, tailwind("flex items-center")]}>
         <Icon name={'heart'} style={styles.corazon} />
-        <Text style={styles.titulo}> {props.titulo}   </Text>
+        <Text style={styles.titulo}> {props.nombre}   </Text>
         <View style={{ marginTop: '3px' }}>
-          <Text style={styles.descripcion}> {props.descripcion}  </Text>
+          <Text style={styles.descripcion}> {props.description}  </Text>
         </View>
         <Text>
           <Image style={styles.image} source={props.imagen} />

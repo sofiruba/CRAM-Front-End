@@ -11,13 +11,13 @@ import CardF from '../components/cardf'
 export default function HomeScreen() {
 
     const [lugares, setLugares] = useState([])
-    
+
 
     useEffect(() => {
         getLugares()
     }, [])
 
-    const getLugares = () => {
+    /*const getLugares = () => {
         const axiosBuscar = axios.create({
             baseURL: 'http://localhost:3000'
             
@@ -28,13 +28,30 @@ export default function HomeScreen() {
             })
             .catch(err => console.log(err))
     }
-
+*/
+    setlugares([{
+        "IdLugar": "aaa123",
+        "nombre": "Las Violetas",
+        "description": "Confiteria"
+      },
+      {
+        "IdLugar": "abc456",
+        "nombre": "Ocaña",
+        "description": "Bar"
+      },
+      {
+        "IdLugar": "bcd",
+        "nombre": "Starbucks",
+        "description": "Cafeteria" // falta imagen
+      }])
     return (
         <View style={styles.pag}>
 
             <Buscador />
 
             {
+
+
                 lugares.map((item) => {
                     <Card props={item} />
                 })
