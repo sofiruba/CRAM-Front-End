@@ -1,17 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native';
-import LoginScreen from './src/screens/login.js';
-import HomeScreen from './src/screens/home.js';
 import Main from './navigation/main.js';
-import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './src/screens/home.js';
 import { TailwindConfig } from './tailwind.config';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Drawer = createDrawerNavigator();
 export default function App() {
   return (
-  <HomeScreen/> 
+    <HomeScreen></HomeScreen>
   )
 }
 const styles = StyleSheet.create({
