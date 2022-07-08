@@ -4,7 +4,7 @@ import { TailwindProvider } from 'tailwind-rn';
 import utilities from '../../tailwind.json';
 import LoginForm from '../components/LoginForm';
 
-export default function LoginScreen({ navigation }) {
+export default function LoginScreen() {
 
   return (
     <TailwindProvider utilities={utilities}>
@@ -18,7 +18,7 @@ export default function LoginScreen({ navigation }) {
 
   )
 }
-//ver estilo d register 
+
 
 const styles = StyleSheet.create({
   img: {
