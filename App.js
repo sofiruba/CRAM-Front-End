@@ -1,26 +1,14 @@
 import React from 'react'
 import 'react-native-gesture-handler'
-import { View, Text, StyleSheet } from 'react-native';
 import Main from './navigation/main.js';
 import HomeScreen from './src/screens/home.js';
 import { TailwindConfig } from './tailwind.config';
 import LoginScreen from './src/screens/login.js';
+import CardF from './src/components/cardf.js';
+
 
 export default function App() {
   return (
-    <LoginScreen/>
+   <CardF/>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  pag: {
-    backgroundColor: '#F6D250',
-    height: '100%',
-    width: '100%',
-  },
-
-});

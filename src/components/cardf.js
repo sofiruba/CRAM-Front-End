@@ -1,6 +1,6 @@
 import React from "react"
 import { View, Text, StyleSheet, Image } from "react-native"
-
+import Card from "./card";
 import { useTailwind } from 'tailwind-rn';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,7 +12,7 @@ export default function CardF() {
     <View>
       <View style={[styles.container, tailwind("flex items-center")]}>
         <Icon name={'heart'} style={styles.corazon} />
-        <Text style={styles.titulo}> Le Pain Quotidien   </Text>
+        <Text style={Card.card}> Le Pain Quotidien   </Text>
         <View style={{ marginTop: '3px' }}>
            <Text style={styles.descripcion}> Cafeteria  </Text>
         </View>
@@ -29,8 +29,8 @@ export default function CardF() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "363px",
-    height: "152px",
+    width: 363,
+    height: 152,
     backgroundColor: "#F8F7F7",
     boxShadow: "7px 7px 5px rgba(0, 0, 0, 0.1)",
     borderRadius: "15px",
