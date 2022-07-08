@@ -6,7 +6,7 @@ import { TailwindConfig } from './tailwind.config';
 
 export default function App() {
   return (
-    <HomeScreen></HomeScreen>
+    <Main></Main>
   )
 }
 const styles = StyleSheet.create({
@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-
   },
   pag: {
     backgroundColor: '#F6D250',
