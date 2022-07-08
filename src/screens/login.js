@@ -22,9 +22,9 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   img: {
-    height: '90%',
-    width: '90%',
-    marginBottom: '15%',
+    height: 100,
+    width: 90,
+    marginBottom: 15,
   },
   container: {
     justifyContent: 'center',
@@ -33,24 +33,24 @@ const styles = StyleSheet.create({
   },
   pag: {
     backgroundColor: '#F5D2F6',
-    height: '100%',
-    width: '100%',
+    height: 100,
+    width: 100,
   },
   margin: {
-    marginTop: '5px',
-    margin: '10%',
-    marginBottom: '5%',
+    marginTop: 5,
+    margin: 10,
+    marginBottom: 5,
   },
 
   texto: {
     color: '#D99734',
-    marginTop: '10px',
+    marginTop: 10,
     textDecorationLine: 'underline',
     fontStyle: 'bold'
   },
   r: {
-    marginTop: '5px',
-    marginBottom: '5%',
+    marginTop: 5,
+    marginBottom: 5,
     position: 'relative',
   },
 });
