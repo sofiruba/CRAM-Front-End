@@ -4,10 +4,11 @@ import { View, Text, StyleSheet } from 'react-native';
 import Main from './navigation/main.js';
 import HomeScreen from './src/screens/home.js';
 import { TailwindConfig } from './tailwind.config';
+import LoginScreen from './src/screens/login.js';
 
 export default function App() {
   return (
-    <Main></Main>
+    <LoginScreen/>
   )
 }
 const styles = StyleSheet.create({
