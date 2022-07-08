@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-native'
-import tw from 'tailwind-react-native-classnames'
+import tw from 'twrnc'
 import Card from '../components/card'
 import Buscador from '../components/buscador'
 import DrawerNav from '../../navigation/drawer'
