@@ -2,19 +2,26 @@ import React from "react"
 import { View, Text, StyleSheet, Image } from "react-native"
 import Card from "./card";
 import { useTailwind } from 'tailwind-rn';
-
+import { useFonts } from 'expo-font';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default function CardF() {
   const tailwind = useTailwind();
+  // elegir fonts
+  const [loaded] = useFonts({
+    Montserrat: require('./assets/fonts/Montserrat.ttf'), 
+  });
+  if (!loaded) {
+    return null;
+  }
   return (
     <View>
       <View style={[styles.container, tailwind("flex items-center")]}>
         <Icon name={'heart'} style={styles.corazon} />
         <Text style={Card.card}> Le Pain Quotidien   </Text>
         <View style={{ marginTop: '3px' }}>
-           <Text style={styles.descripcion}> Cafeteria  </Text>
+          <Text style={[styles.descripcion, {fontFamily: 'Montserrat'}]}> Cafeteria  </Text>
         </View>
         <Text>
           <Image style={styles.image} source={{ uri: "http://a.mktgcdn.com/p/-55WSHHf7rFgzRzrSakV5dsI5Xd80qnW2Di3ZcwY5Kw/1280x720.jpg" }} />

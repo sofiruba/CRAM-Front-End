@@ -50,7 +50,7 @@ export default function LoginForm({ navigation }) {
         </View>
       </View>
       <View style={styles.boton}>
-        <Button title="Ingresar" color="#DE95DB" onPress={login(user.username, user.password)} > </Button>
+        <Button title="Ingresar" color="#DE95DB" onPress={() => login(user.username, user.password)} > </Button>
       </View>
     </View>
   )
