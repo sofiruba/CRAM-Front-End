@@ -12,9 +12,6 @@ export default function LoginScreen({ navigation }) {
         <View style={styles.container}>
           <Image style={styles.img} source={require('../assets/icon.png')}></Image>
           <LoginForm style={styles.margin}></LoginForm>
-          <View>
-            <Text onPress={navigation.navigate('Register')}>No tienes cuenta todavia?</Text>
-          </View>
         </View>
       </View>
     </TailwindProvider>
@@ -25,12 +22,14 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   img: {
-    height: '200px',
-    width: '500px',
+    height: '90%',
+    width: '90%',
+    marginBottom: '15%',
   },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 10,
   },
   pag: {
     backgroundColor: '#F5D2F6',
@@ -38,12 +37,20 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   margin: {
-    marginTop: '15px',
+    marginTop: '5px',
+    margin: '10%',
+    marginBottom: '5%',
   },
+
   texto: {
     color: '#D99734',
     marginTop: '10px',
     textDecorationLine: 'underline',
     fontStyle: 'bold'
-  }
+  },
+  r: {
+    marginTop: '5px',
+    marginBottom: '5%',
+    position: 'relative',
+  },
 });
