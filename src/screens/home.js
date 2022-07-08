@@ -26,7 +26,7 @@ const lugares = [{
     "foto": "https://devotoshopping.neexcdn.com.ar/wp-content/uploads/2017/03/Starbucks-Logo.png"
 }]
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
 
     /*  const [lugares, setLugares] = useState([{
           "IdLugar": "aaa123",
@@ -65,6 +65,8 @@ export default function HomeScreen() {
         <View style={styles.pag}>
 
             <Buscador />
+            <Text onPress={()=> navigation.navigate('Seguidos')}>Seguidos |</Text>
+            <Text onPress={()=> navigation.navigate('ParaTi')}> Para Ti </Text> 
             <DrawerNav></DrawerNav>
             {
                 lugares.map((l) => {
@@ -76,6 +78,7 @@ export default function HomeScreen() {
 
         </View>
     );
+     // poner en texto de navegación está elegido debe estar en bold
 
 }
 
