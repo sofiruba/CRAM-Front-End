@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 import { useTailwind } from 'tailwind-rn';
 import axios from 'axios'

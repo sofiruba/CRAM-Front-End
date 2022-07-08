@@ -1,9 +1,8 @@
 import React from "react"
 import { View, Text, StyleSheet, Image } from "react-native"
-import { tailwind } from "react-native-tailwindcss";
+
 import { useTailwind } from 'tailwind-rn';
-import TailwindProvider from "tailwind-rn";
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 

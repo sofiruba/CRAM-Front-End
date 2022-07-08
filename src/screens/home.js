@@ -4,7 +4,7 @@ import { View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-n
 
 import Buscador from '../components/buscador'
 import DrawerNav from '../../navigation/drawer'
-import CardF from '../components/cardf'
+
 import Card from '../components/card'
 
 
@@ -12,17 +12,20 @@ export default function HomeScreen() {
     const lugares = [{
         "IdLugar": "aaa123",
         "nombre": "Las Violetas",
-        "description": "Confiteria"
+        "description": "Confiteria",
+        "foto": "https://media-cdn.tripadvisor.com/media/photo-s/13/94/44/44/the-salon.jpg"
       },
       {
         "IdLugar": "abc456",
         "nombre": "Ocaña",
-        "description": "Bar"
+        "description": "Bar",
+        "foto": "https://images.adsttc.com/media/images/5097/e769/28ba/0d49/f800/040d/large_jpg/Oca%C3%B1a-Barcelona-0042.jpg?1414171405"
       },
       {
         "IdLugar": "bcd",
         "nombre": "Starbucks",
-        "description": "Cafeteria" // falta imagen
+        "description": "Cafeteria", // falta imagen
+        "foto": "https://devotoshopping.neexcdn.com.ar/wp-content/uploads/2017/03/Starbucks-Logo.png"
       }]
 
   /*  const [lugares, setLugares] = useState([{
