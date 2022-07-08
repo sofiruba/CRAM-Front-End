@@ -1,4 +1,5 @@
 import React from 'react'
+import 'react-native-gesture-handler'
 import { View, Text, StyleSheet } from 'react-native';
 import Main from './navigation/main.js';
 import HomeScreen from './src/screens/home.js';
