@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Image, StyleSheet, View, Text } from 'react-native'
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from '../../tailwind.json';
@@ -6,12 +6,32 @@ import LoginForm from '../components/LoginForm';
 
 export default function LoginScreen() {
 
+  const [user, setUser] = useState({})
+  const login = async (usern, pass) => {
+    const usuario = { username: usern, password: pass }
+    const axiosLogin = axios.create({
+      baseURL: 'http://localhost:3000/'
+    })
+    return axiosLogin.post('auth/login', usuario)
+      .then(res => {
+        if (res.status = 201) {
+          navigation.navigate('Home', { usuario })
+        }
+        else {
+          alert('Volver a ingresar') // hay q ver manera de hacer diferentes dependiendo el problema
+        }
+      })
+      .catch(error => {
+        console.error('error', error)
+      })
+  }
+
   return (
     <TailwindProvider utilities={utilities}>
       <View style={styles.pag}>
         <View style={styles.container}>
           <Image style={styles.img} source={require('../assets/icon.png')}></Image>
-          <LoginForm style={styles.margin}></LoginForm>
+          <LoginForm style={styles.margin} props={{setUser, user, login}}></LoginForm>
         </View>
       </View>
     </TailwindProvider>

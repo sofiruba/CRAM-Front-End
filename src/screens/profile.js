@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, View, Text, Button, Input } from 'react-native'
-import tw from 'twrnc'
+import tw from 'tailwind-react-native-classnames'
 
 export default function Profile({navigation}) {
     return (

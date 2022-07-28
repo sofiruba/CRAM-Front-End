@@ -7,7 +7,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default function Card(props) {
-  const tailwind = useTailwind();
+  const tailwind = useTailwind()
+  const [loaded] = useFonts({
+    Montserrat: require('./assets/fonts/Montserrat.ttf'), 
+  });
+  if (!loaded) {
+    return null;
+  }
   return (
     <View >
       <View style={[styles.container, tailwind("flex items-center")]}>
