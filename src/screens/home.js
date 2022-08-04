@@ -1,32 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { View, Text, Button, Input, StyleSheet, TouchableOpacity } from 'react-native'
-
+import { View, Text, StyleSheet } from 'react-native'
 import Buscador from '../components/buscador'
-import DrawerNav from '../../navigation/drawer'
-
 import Card from '../components/card'
 
-const lugares = [{
-    "IdLugar": "aaa123",
-    "nombre": "Las Violetas",
-    "description": "Confiteria",
-    "foto": "https://media-cdn.tripadvisor.com/media/photo-s/13/94/44/44/the-salon.jpg"
-},
-{
-    "IdLugar": "abc456",
-    "nombre": "Ocaña",
-    "description": "Bar",
-    "foto": "https://images.adsttc.com/media/images/5097/e769/28ba/0d49/f800/040d/large_jpg/Oca%C3%B1a-Barcelona-0042.jpg?1414171405"
-},
-{
-    "IdLugar": "bcd",
-    "nombre": "Starbucks",
-    "description": "Cafeteria", // falta imagen
-    "foto": "https://devotoshopping.neexcdn.com.ar/wp-content/uploads/2017/03/Starbucks-Logo.png"
-}]
+export default function HomeScreen({ navigation }) {
 
-export default function HomeScreen({navigation}) {
+    const lugares = [{
+        "IdLugar": "aaa123",
+        "nombre": "Las Violetas",
+        "description": "Confiteria",
+        "foto": {uri: '../assets/icon.png'}
+    },
+    {
+        "IdLugar": "abc456",
+        "nombre": "Ocaña",
+        "description": "Bar",
+        "foto": {uri:'../assets/icon.png'}
+    },
+    {
+        "IdLugar": "bcd",
+        "nombre": "Starbucks",
+        "description": "Cafeteria", 
+        "foto": {uri:'../assets/icon.png'}
+    }]
+
 
     /*  const [lugares, setLugares] = useState([{
           "IdLugar": "aaa123",
@@ -60,25 +58,22 @@ export default function HomeScreen({navigation}) {
               })
               .catch(err => console.log(err))
       } */
-    console.log(lugares)
+
     return (
         <View style={styles.pag}>
-
-            <Buscador />
-            <Text onPress={()=> navigation.navigate('Seguidos')}>Seguidos |</Text>
-            <Text onPress={()=> navigation.navigate('ParaTi')}> Para Ti </Text> 
-            <DrawerNav></DrawerNav>
+            <Buscador></Buscador>
+            <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
+            <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
             {
                 lugares.map((l) => {
                     return (
-                    <Card props={l} />
+                        <Card key={l.IdLugar} props={l}></Card>
                     )
                 })
             }
 
         </View>
     );
-     // poner en texto de navegación está elegido debe estar en bold
 
 }
 

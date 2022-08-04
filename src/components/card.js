@@ -1,30 +1,34 @@
 import React from "react"
-import { View, Text, StyleSheet, Image } from "react-native"
+import { View, Text, StyleSheet, Image, Button } from "react-native"
 
 import { useTailwind } from 'tailwind-rn';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from "@react-navigation/native";
 
-
-export default function Card(props) {
+export default function Card({props}) {
   const tailwind = useTailwind()
-  const [loaded] = useFonts({
+  const navigation = useNavigation(); 
+  /*const [loaded] = useFonts({
     Montserrat: require('./assets/fonts/Montserrat.ttf'), 
   });
   if (!loaded) {
     return null;
-  }
+  }*/
   return (
     <View >
-      <View style={[styles.container, tailwind("flex items-center")]}>
-        <Icon name={'heart'} style={styles.corazon} />
-        <Text style={styles.titulo}> {props.nombre}   </Text>
-        <View style={{ marginTop: '3px' }}>
-          <Text style={styles.descripcion}> {props.description}  </Text>
+      <View >
+        <Icon name={'heart'}  />
+        <Text > {props.nombre}   </Text>
+        <View >
+          <Text > {props.description}  </Text>
         </View>
-        <Text>
-          <Image style={styles.image} source={props.imagen} />
-        </Text>
+        <View>
+          <Image source={props.imagen} /> 
+        </View>
+        <View>
+          <Button onPress={()=> navigation.navigate("Profile")} title=" Ver detalle"/>
+        </View>
       </View>
     </View>
 

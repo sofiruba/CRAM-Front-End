@@ -1,15 +1,11 @@
 import React from 'react'
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
-import { useTailwind } from 'tailwind-rn';
-
 
 export default function Buscador() {
-    const tailwind = useTailwind();
     return (
-        <View style={[styles.container, tailwind("rounded-full shadow-sm -space-y-px")]}>
+        <View >
             <TextInput placeholder="        Buscar..."
-                style={[tailwind("appearance-none rounded-full relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 lg:text-lg"), styles.busca]}>
-            </TextInput>
+            />
         </View>
     )
 }
