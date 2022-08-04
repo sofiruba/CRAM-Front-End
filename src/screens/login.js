@@ -47,31 +47,15 @@ const styles = StyleSheet.create({
   img: {
     height: 100,
     width: 250,
-    marginBottom: 15,
+    marginTop: '40%',
   },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10,
-  },
-  margin: {
-    marginTop:  5,
-    margin: 10,
-    marginBottom: 5,
+    margin: '4%',
   },
   pag:{backgroundColor:"#F5D2F6",
   height: '100%',
   width: '100%', 
 },
-  texto: {
-    color: '#D99734',
-    marginTop: 10,
-    textDecorationLine: 'underline',
-    fontStyle: 'bold'
-  },
-  r: {
-    marginTop: 5,
-    marginBottom: 5,
-    position: 'relative',
-  },
 });

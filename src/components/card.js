@@ -24,7 +24,7 @@ export default function Card({props}) {
           <Text > {props.description}  </Text>
         </View>
         <View>
-          <Image source={props.imagen} /> 
+          <Image style={styles.image} source={props.imagen} /> 
         </View>
         <View>
           <Button onPress={()=> navigation.navigate("Profile")} title=" Ver detalle"/>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     marginRight: "auto",
   },
   image: {
-    width: 100,
+    width: '100%',
     height: 70,
     position: "absolute",
     right: 20,

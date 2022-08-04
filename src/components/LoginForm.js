@@ -6,17 +6,17 @@ import { useNavigation } from '@react-navigation/native';
 export default function LoginForm() {
   const navigation = useNavigation(); 
   return (
-    <View >
-      <View >
-        <View >
+    <View style={styles.container}>
+      <View>
+        <View>
           <TextInput style={styles.input}
             placeholder="Usuario"
             onChangeText={(text) => props.setUser({ ...user, username: text })}
           />
         </View>
       </View>
-      <View >
-        <View >
+      <View>
+        <View>
 
           <TextInput style={styles.input}
             placeholder="Contraseña"
@@ -25,8 +25,8 @@ export default function LoginForm() {
           />
         </View>
       </View>
-      <View >
-        <Button title="Ingresar" color="#DE95DB" onPress={()=> navigation.navigate("Home")} /> 
+      <View style={styles.boton}>
+        <Button style={styles.boton} title="Ingresar" color="#DE95DB" onPress={()=> navigation.navigate("Home")} /> 
       </View>
     </View>
   )
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '11%',
   },
 
   imageStyle: {
@@ -52,14 +53,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   boton: {
-    marginTop: 20,
-    width: 100
+    marginTop: 10,
+    height:'100%',
+    width: '100%',
   },
 
   input:{
     backgroundColor: 'white',
     borderRadius: 10,
-    marginTop: 10,
+    marginTop: '5%',
     
   }
 

@@ -6,7 +6,7 @@ export default function Profile() {
     const navigation = useNavigation(); 
     return (
         <View>
-            <View >
+            <View>
             <Text > Le Pain Quotidien   </Text>
                 <Icon name={'heart'} style={styles.corazon} />
                 <View >
