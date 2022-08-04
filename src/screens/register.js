@@ -74,12 +74,12 @@ export default function RegisterScreen({ navigation }) {
 const styles = StyleSheet.create({
     formstyle: {
         backgroundColor: 'white',
-        marginBottom: '0px',
-        marginTop: '0px',
+        marginBottom: 0,
+        marginTop: 0,
         flex: 1,
     },
     margin: {
-        margin: '2%',
+        margin: 2,
     },
     container: {
         flex: 1,
@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     boton: {
-        marginTop: "20px",
-        width: "100%"
+        marginTop: 20,
+        width: 100,
     }
 
 });

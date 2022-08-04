@@ -41,7 +41,7 @@ export default function HomeScreen({ navigation }) {
           "nombre": "Starbucks",
           "description": "Cafeteria" // falta imagen
         }])
-  
+  <<
   
        useEffect(() => {
           getLugares()

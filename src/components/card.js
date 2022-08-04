@@ -39,40 +39,39 @@ export default function Card({props}) {
 
 const styles = StyleSheet.create({
   container: {
-    width: "363px",
-    height: "152px",
+    width: 363,
+    height: 152,
     backgroundColor: "#F8F7F7",
-    boxShadow: "7px 7px 5px rgba(0, 0, 0, 0.1)",
-    borderRadius: "15px",
-    marginTop: "40px",
-    marginHorizontal: "10px",
+    borderRadius: 15,
+    marginTop: 40,
+    marginHorizontal: 10,
     marginLeft: "auto",
     marginRight: "auto",
   },
   image: {
-    width: "100px",
-    height: "70px",
+    width: 100,
+    height: 70,
     position: "absolute",
-    right: "20px",
-    bottom: "15px",
+    right: 20,
+    bottom: 15,
   },
   titulo: {
-    fontSize: "25px",
+    fontSize: 25,
     fontWeight: "bold",
-    marginLeft: "10px",
+    marginLeft: 10,
 
 
   },
   corazon: {
     color: "red",
     textAlign: "right",
-    fontSize: '30px',
-    marginTop: '15px',
-    marginRight: '15px',
+    fontSize: 30,
+    marginTop: 15,
+    marginRight: 15,
   },
   descripcion: {
-    fontSize: "15px",
+    fontSize: 15,
     color: "grey",
-    marginLeft: "13px",
+    marginLeft: 13,
   }
 });
