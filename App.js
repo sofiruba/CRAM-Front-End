@@ -7,7 +7,7 @@ import { TailwindConfig } from './tailwind.config';
 
 
 
-export default function App({navigation}) {
+export default function App() {
   return (
     <Main ></Main>
   )

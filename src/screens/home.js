@@ -3,6 +3,7 @@ import axios from 'axios'
 import { View, Text, StyleSheet } from 'react-native'
 import Buscador from '../components/buscador'
 import Card from '../components/card'
+import ListadoHome from '../components/ListadoHome'
 
 export default function HomeScreen({ navigation }) {
 
@@ -64,13 +65,7 @@ export default function HomeScreen({ navigation }) {
             <Buscador></Buscador>
             <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
             <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
-            {
-                lugares.map((l) => {
-                    return (
-                        <Card key={l.IdLugar} props={l}></Card>
-                    )
-                })
-            }
+            <ListadoHome props={lugares}></ListadoHome>
 
         </View>
     );
