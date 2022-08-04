@@ -1,3 +1,4 @@
+import { authtoken } from '@expo/ngrok';
 import React, {useState} from 'react'
 import { Image, StyleSheet, View } from 'react-native'
 import { TailwindProvider } from 'tailwind-rn';
@@ -45,7 +46,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   img: {
     height: 100,
-    width: 90,
+    width: 250,
     marginBottom: 15,
   },
   container: {
@@ -53,17 +54,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 10,
   },
-  pag: {
-    backgroundColor: '#F5D2F6',
-    height: 100,
-    width: 100,
-  },
   margin: {
-    marginTop: 5,
+    marginTop:  5,
     margin: 10,
     marginBottom: 5,
   },
-
+  pag:{backgroundColor:"#F5D2F6",
+  height: '100%',
+  width: '100%', 
+},
   texto: {
     color: '#D99734',
     marginTop: 10,

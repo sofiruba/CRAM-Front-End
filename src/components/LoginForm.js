@@ -9,7 +9,7 @@ export default function LoginForm() {
     <View >
       <View >
         <View >
-          <TextInput
+          <TextInput style={styles.input}
             placeholder="Usuario"
             onChangeText={(text) => props.setUser({ ...user, username: text })}
           />
@@ -18,7 +18,7 @@ export default function LoginForm() {
       <View >
         <View >
 
-          <TextInput
+          <TextInput style={styles.input}
             placeholder="Contraseña"
             secureTextEntry={true}
             onChangeText={(text) => props.setUser({ ...props.user, password: text })}
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   margin: {
-    margin: 2,
+    margin: 1,
   },
   container: {
     flex: 1,
@@ -54,6 +54,13 @@ const styles = StyleSheet.create({
   boton: {
     marginTop: 20,
     width: 100
+  },
+
+  input:{
+    backgroundColor: 'white',
+    borderRadius: 10,
+    marginTop: 10,
+    
   }
 
 });

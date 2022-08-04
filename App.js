@@ -9,6 +9,7 @@ import { TailwindConfig } from './tailwind.config';
 
 export default function App({navigation}) {
   return (
-    <Main></Main>
+    <Main ></Main>
   )
 }
+ 
