@@ -65,7 +65,7 @@ export default function HomeScreen({ navigation }) {
             <Buscador></Buscador>
             <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
             <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
-            <ListadoHome props={lugares}></ListadoHome>
+            <ListadoHome lugares={lugares}></ListadoHome>
 
         </View>
     );
