@@ -6,9 +6,9 @@ import { useTailwind } from 'tailwind-rn';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from "@react-navigation/native";
 
-export default function Card({props}) {
+export default function Card({ props }) {
   const tailwind = useTailwind()
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
   /*const [loaded] = useFonts({
     Montserrat: require('./assets/fonts/Montserrat.ttf'), 
   });
@@ -17,17 +17,17 @@ export default function Card({props}) {
   }*/
   return (
     <View >
-      <View >
-        <Icon name={'heart'}  />
+      <View>
+        <Icon name={'heart'} />
         <Text > {props.nombre}   </Text>
         <View >
           <Text > {props.description}  </Text>
         </View>
         <View>
-          <Image style={styles.image} source={props.imagen} /> 
+          <Image style={styles.image} source={props.imagen} />
         </View>
-        <View>
-          <Button color="#DE95DB" onPress={()=> navigation.navigate("Profile")} title=" Ver detalle"/>
+        <View style={styles.boton}>
+          <Button color="#DE95DB" onPress={() => navigation.navigate("Profile")} title=" Ver detalle" />
         </View>
       </View>
     </View>
@@ -59,8 +59,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     marginLeft: 10,
-
-
   },
   corazon: {
     color: "red",
@@ -73,5 +71,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "grey",
     marginLeft: 13,
+  },
+  boton: {
+    width: '50%',
+    height: '100%',
   }
 });

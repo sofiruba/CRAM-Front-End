@@ -1,9 +1,9 @@
 import Card from "./card"
-import { View } from "react-native"
+import { View, StyleSheet } from "react-native"
 export default function ListadoHome({ lugares}){
 
     return (
-        <View>
+        <View style={styles.card}>
         {
             lugares.map((l) => {
                 return (
@@ -15,3 +15,11 @@ export default function ListadoHome({ lugares}){
 
     )
 }
+
+const styles = StyleSheet.create({
+    card: {
+        height: '100%',
+        width: '95%',
+
+    },
+})
