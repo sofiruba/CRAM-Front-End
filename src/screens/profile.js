@@ -2,26 +2,40 @@ import React from 'react'
 import { View, Text, Button, StyleSheet, Image } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default function Profile() {
-    const navigation = useNavigation(); 
+    const navigation = useNavigation();
     return (
-        <View>
-            <View>
-            <Text > Le Pain Quotidien   </Text>
-                <Icon name={'heart'} style={styles.corazon} />
+        <View style={styles.pag}>
+            <View >
+                <Text style={styles.title}> Le Pain Quotidien   </Text>
                 <View >
-                    <Text > Cafeteria  </Text>
+                    <Icon name={'heart'} style={styles.corazon} />
+                    <Text style={styles.subtitle}>Cafeteria</Text>
                 </View>
-                <Text>
-                    <Image  source={{ uri: "http://a.mktgcdn.com/p/-55WSHHf7rFgzRzrSakV5dsI5Xd80qnW2Di3ZcwY5Kw/1280x720.jpg" }} />
-                </Text>
+                <View>
+                    <Image source={require('../assets/Restaurante-ejemplo.jpg')} />
+                </View>
             </View>
-            <Button title="Ir a home" onPress={() => navigation.goBack()} />
+            <Button title="Ir a home" color="#DE95DB" onPress={() => navigation.goBack()} />
         </View>
     );
 
 }
 
 const styles = StyleSheet.create({
-    title:{}, 
+    title: {
+        fontSize: 50,
+        textAlign: 'center',
+        fontWeight: 'semibold',
+    },
+    pag: {
+        backgroundColor: "#F5D2F6",
+        height: '100%',
+        width: '100%',
+    },
+    subtitle:{
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
 })
