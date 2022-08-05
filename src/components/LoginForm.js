@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-
+// al escribir en form hay error debido a los props
 export default function LoginForm() {
   const navigation = useNavigation();
   return (

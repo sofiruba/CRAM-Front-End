@@ -62,8 +62,9 @@ export default function HomeScreen({ navigation }) {
 
     return (
         <View style={styles.pag}>
-            <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
-            <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
+            <Buscador />
+            <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos |</Text>
+            <Text> Para Ti </Text>
             <ListadoHome lugares={lugares}></ListadoHome>
 
         </View>
