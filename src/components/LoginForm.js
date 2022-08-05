@@ -4,16 +4,14 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function LoginForm() {
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View>
-        <View>
-          <TextInput style={styles.input}
-            placeholder="Usuario"
-            onChangeText={(text) => props.setUser({ ...user, username: text })}
-          />
-        </View>
+        <TextInput style={styles.input}
+          placeholder="Usuario"
+          onChangeText={(text) => props.setUser({ ...user, username: text })}
+        />
       </View>
       <View>
         <View>
@@ -26,7 +24,7 @@ export default function LoginForm() {
         </View>
       </View>
       <View style={styles.boton}>
-        <Button style={styles.boton} title="Ingresar" color="#DE95DB" onPress={()=> navigation.navigate("Home")} /> 
+        <Button style={styles.boton} title="Ingresar" color="#DE95DB" onPress={() => navigation.navigate("Home")} />
       </View>
     </View>
   )
@@ -38,14 +36,12 @@ const styles = StyleSheet.create({
     marginTop: 0,
     flex: 1,
   },
-  margin: {
-    margin: 1,
-  },
+
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: '11%',
+    marginTop: '5%',
   },
 
   imageStyle: {
@@ -54,15 +50,17 @@ const styles = StyleSheet.create({
   },
   boton: {
     marginTop: 10,
-    height:'100%',
-    width: '100%',
+    height: '100%',
+    width: '150%',
   },
 
-  input:{
+  input: {
     backgroundColor: 'white',
     borderRadius: 10,
-    marginTop: '5%',
-    
+    marginTop: '10%',
+    width: 165,
+    height: 40,
+
   },
 
 });

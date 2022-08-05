@@ -1,5 +1,4 @@
-import { authtoken } from '@expo/ngrok';
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Image, StyleSheet, View } from 'react-native'
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from '../../tailwind.json';
@@ -28,7 +27,7 @@ export default function LoginScreen() {
       })
   }
 */
-//meli estilos
+  //meli estilos
   return (
     <TailwindProvider utilities={utilities}>
       <View style={styles.pag}>
@@ -45,17 +44,21 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   img: {
-    height: 100,
-    width: 250,
+    height: 150,
+    width: 375,
     marginTop: '40%',
   },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '4%',
+    margin: '8%',
+    marginTop: '50%',
   },
-  pag:{backgroundColor:"#F5D2F6",
-  height: '100%',
-  width: '100%', 
-},
+  pag: {
+    backgroundColor: "#F5D2F6",
+    height: '100%',
+    width: '100%',
+
+
+  },
 });

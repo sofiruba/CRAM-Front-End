@@ -5,6 +5,7 @@ import { useTailwind } from 'tailwind-rn';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from "@react-navigation/native";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 export default function Card({ props }) {
   const tailwind = useTailwind()
@@ -16,19 +17,17 @@ export default function Card({ props }) {
     return null;
   }*/
   return (
-    <View >
+    <View style={styles.container}>
+      <Icon name={'heart'} />
+      <Text > {props.nombre}   </Text>
+      <View >
+        <Text > {props.description}  </Text>
+      </View>
       <View>
-        <Icon name={'heart'} />
-        <Text > {props.nombre}   </Text>
-        <View >
-          <Text > {props.description}  </Text>
-        </View>
-        <View>
-          <Image style={styles.image} source={props.imagen} />
-        </View>
-        <View style={styles.boton}>
-          <Button color="#DE95DB" onPress={() => navigation.navigate("Profile")} title=" Ver detalle" />
-        </View>
+        <Image style={styles.image} source={props.imagen} />
+      </View>
+      <View style={styles.boton}>
+        <TouchableHighlight color="#DE95DB" onPress={() => navigation.navigate("Profile")} title=" Ver detalle" />
       </View>
     </View>
 

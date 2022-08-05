@@ -19,7 +19,6 @@ export default function Profile() {
                         <Text style={styles.elements}>Descuentos disponibles</Text>
                         <Text style={styles.elements}>Agregar a lista</Text>
                     </View>
-                    <Image style={styles.tinyimg} source={require('../assets/Mapa-Ejemplo.PNG')} />
                 </View>
                 <View>
                     <Button title="Ir a home" color="#DE95DB" onPress={() => navigation.goBack()} />
