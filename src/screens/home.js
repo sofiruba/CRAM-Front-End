@@ -2,61 +2,32 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet } from 'react-native'
 import ListadoHome from '../components/ListadoHome'
+import { useNavigation } from '@react-navigation/native'
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
+    const navigation = useNavigation();
+    const [lugares, setLugares] = useState([])
+    const headers = {
+        "Content-Type": "application/json",
 
-    const lugares = [{
-        "IdLugar": "aaa123",
-        "nombre": "Las Violetas",
-        "description": "Confiteria",
-        "foto": { uri: '../assets/icon.png' }
-    },
-    {
-        "IdLugar": "abc456",
-        "nombre": "Ocaña",
-        "description": "Bar",
-        "foto": { uri: '../assets/icon.png' }
-    },
-    {
-        "IdLugar": "bcd",
-        "nombre": "Starbucks",
-        "description": "Cafeteria",
-        "foto": { uri: '../assets/icon.png' }
-    }]
+    };
+    const getLugares = () => {
+        return axios.get('http://localhost:3000/lugares', {headers})
+            .then(res => {
+                const l = res.data
+                setLugares(l)
+                console.log("LLegué");
+            })
+            .catch((err) => console.log(err))
+    }
 
 
-    /*  const [lugares, setLugares] = useState([{
-          "IdLugar": "aaa123",
-          "nombre": "Las Violetas",
-          "description": "Confiteria"
-        },
-        {
-          "IdLugar": "abc456",
-          "nombre": "Ocaña",
-          "description": "Bar"
-        },
-        {
-          "IdLugar": "bcd",
-          "nombre": "Starbucks",
-          "description": "Cafeteria" // falta imagen
-        }])
-  <<
-  
-       useEffect(() => {
-          getLugares()
-      }, [])
-  
-     const getLugares = () => {
-          const axiosBuscar = axios.create({
-              baseURL: 'http://localhost:3000'
-              
-          })
-          return axiosBuscar.get('/Lugares') 
-              .then(res => {
-                  setLugares([res.data]) // returnea un array para hacer el map, si no funciona hacerlo separado por titulo, foto, etc?
-              })
-              .catch(err => console.log(err))
-      } */
+    useEffect(() => {
+
+        getLugares()
+    }, [])
+
+    console.log(lugares)
 
     return (
         <View style={styles.pag}>
