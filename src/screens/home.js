@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet } from 'react-native'
-import Buscador from '../components/buscador'
-import Card from '../components/card'
 import ListadoHome from '../components/ListadoHome'
 
 export default function HomeScreen({ navigation }) {
@@ -11,19 +9,19 @@ export default function HomeScreen({ navigation }) {
         "IdLugar": "aaa123",
         "nombre": "Las Violetas",
         "description": "Confiteria",
-        "foto": {uri: '../assets/icon.png'}
+        "foto": { uri: '../assets/icon.png' }
     },
     {
         "IdLugar": "abc456",
         "nombre": "Ocaña",
         "description": "Bar",
-        "foto": {uri:'../assets/icon.png'}
+        "foto": { uri: '../assets/icon.png' }
     },
     {
         "IdLugar": "bcd",
         "nombre": "Starbucks",
-        "description": "Cafeteria", 
-        "foto": {uri:'../assets/icon.png'}
+        "description": "Cafeteria",
+        "foto": { uri: '../assets/icon.png' }
     }]
 
 
@@ -62,9 +60,10 @@ export default function HomeScreen({ navigation }) {
 
     return (
         <View style={styles.pag}>
-            <Buscador />
-            <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos |</Text>
-            <Text> Para Ti </Text>
+            <View style={styles.row}>
+                <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
+                <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
+            </View>
             <ListadoHome lugares={lugares}></ListadoHome>
 
         </View>
@@ -77,5 +76,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5D2F6',
         height: '100%',
         width: '100%',
+    },
+    row: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: 'center',
+        marginTop: '5%',
     },
 })
