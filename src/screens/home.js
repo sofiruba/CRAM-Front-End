@@ -2,70 +2,38 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet } from 'react-native'
 import ListadoHome from '../components/ListadoHome'
+import { useNavigation } from '@react-navigation/native'
+
+export default function HomeScreen() {
+    const navigation = useNavigation();
+    const [lugares, setLugares] = useState([])
+    const headers = {
+        "Content-Type": "application/json",
+
+    };
+    const getLugares = () => {
+        return axios.get('http://localhost:3000/lugares', {headers})
+            .then(res => {
+                const l = res.data
+                setLugares(l)
+                console.log("LLegué");
+            })
+            .catch((err) => console.log(err))
+    }
 
 
-//* Fuentes: Arvo , slabo27 px y para el seguidos y para ti Shippori Antique B1
+    useEffect(() => {
 
+        getLugares()
+    }, [])
 
-export default function HomeScreen({ navigation }) {
-
-    const lugares = [{
-        "IdLugar": "aaa123",
-        "nombre": "Las Violetas",
-        "description": "Confiteria",
-        "foto": { uri: '../assets/icon.png' }
-    },
-    {
-        "IdLugar": "abc456",
-        "nombre": "Ocaña",
-        "description": "Bar",
-        "foto": { uri: '../assets/icon.png' }
-    },
-    {
-        "IdLugar": "bcd",
-        "nombre": "Starbucks",
-        "description": "Cafeteria",
-        "foto": { uri: '../assets/icon.png' }
-    }]
-
-
-    /*  const [lugares, setLugares] = useState([{
-          "IdLugar": "aaa123",
-          "nombre": "Las Violetas",
-          "description": "Confiteria"
-        },
-        {
-          "IdLugar": "abc456",
-          "nombre": "Ocaña",
-          "description": "Bar"
-        },
-        {
-          "IdLugar": "bcd",
-          "nombre": "Starbucks",
-          "description": "Cafeteria" // falta imagen
-        }])
-  <<
-  
-       useEffect(() => {
-          getLugares()
-      }, [])
-  
-     const getLugares = () => {
-          const axiosBuscar = axios.create({
-              baseURL: 'http://localhost:3000'
-              
-          })
-          return axiosBuscar.get('/Lugares') 
-              .then(res => {
-                  setLugares([res.data]) // returnea un array para hacer el map, si no funciona hacerlo separado por titulo, foto, etc?
-              })
-              .catch(err => console.log(err))
-      } */
+    console.log(lugares)
 
     return (
         <View style={styles.pag}>
             <View style={styles.row}>
                 <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
+                <Text> |</Text>
                 <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
             </View>
             <ListadoHome lugares={lugares}></ListadoHome>
@@ -85,6 +53,9 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
-        marginTop: '5%',
+        marginTop: '10%',
+    },
+    espacio: {
+        marginLeft: '2%',
     },
 })

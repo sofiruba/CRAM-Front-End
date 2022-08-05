@@ -1,20 +1,20 @@
 import React from 'react'
 import { View, Text, Button, StyleSheet, Image } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
-
-
-//* Para Le Pain Quotidien fuente POPPINS,para Confiteria y Descuentos disponibles HEEBO , para agregar lista LIBRE FRANKLIN y para mas informacion ARIMO
+import Icon from 'react-native-vector-icons/FontAwesome';
 export default function Profile() {
     const navigation = useNavigation();
     return (
         <View style={styles.pag}>
-
             <View>
-                <Image style={styles.img}source={require('../assets/Restaurante-ejemplo.jpg')} />
-                <Text style={styles.title}> Le Pain Quotidien   </Text>
+                <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+                <View style={styles.row}>
+                    <Text style={styles.title}> Le Pain Quotidien </Text>
+                    <Icon name={'comment'} style={styles.comment} />
+                </View>
                 <View >
                     <Text style={styles.subtitle}>Confiteria</Text>
-                    <Text style={styles.parrafo}>mas informacion ..............................................</Text>
+                    <Text style={styles.parrafo}></Text>
                 </View>
                 <View>
                     <View style={styles.column}>
@@ -36,19 +36,21 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
     img: {
-        height: '50%',
-        width: '100%',
+        height: 300,
+        width: 300,
         marginTop: '10%',
         justifyContent: 'center',
+        resizeMode: 'contain',
+        position: 'relative'
     },
-    tinyimg:{
+    tinyimg: {
         height: '100%',
         width: '100%',
         justifyContent: 'left',
     },
     title: {
-        fontSize: 50,
-        textAlign: 'center',
+        fontSize: 20,
+        textAlign: 'justify',
         fontWeight: 'bold',
     },
     pag: {
@@ -56,6 +58,10 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         padding: '10%',
+        flex: 1,
+        flexDirection: 'column',
+        position: 'relative',
+
     },
     subtitle: {
         fontWeight: '600',
@@ -70,7 +76,7 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
     },
     elements: {
-        marginRight:'1%',
+        marginRight: '1%',
         fontSize: 20,
         fontWeight: 'bold',
 
@@ -81,5 +87,13 @@ const styles = StyleSheet.create({
         marginTop: '5%',
         marginBottom: '8%',
     },
-    
+    comment:
+    {
+        color: "black",
+        textAlign: "right",
+        fontSize: 20,
+        marginLeft: '60%',
+        marginTop: '20%',
+    },
+
 })
