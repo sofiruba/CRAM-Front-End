@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native"
 export default function ListadoHome({ lugares}){
 
     return (
-        <View style={styles.card}>
+        <View style={styles.container}>
         {
             lugares.map((l) => {
                 return (
@@ -17,9 +17,11 @@ export default function ListadoHome({ lugares}){
 }
 
 const styles = StyleSheet.create({
-    card: {
+    container: {
         height: '100%',
-        width: '95%',
-
+        width: '100%',
+        backgroundColor: "#FFFFFF",
+        borderRadius: 60,
+        marginTop: '50%',
     },
 })

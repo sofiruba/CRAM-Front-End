@@ -8,14 +8,14 @@ export default function Profile() {
         <View style={styles.pag}>
 
             <View>
-                <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+                <Image style={styles.img}source={require('../assets/Restaurante-ejemplo.jpg')} />
                 <Text style={styles.title}> Le Pain Quotidien   </Text>
                 <View >
-                    <Text style={styles.subtitle}>Sobre el lugar</Text>
-                    <Text style={styles.parrafo}>mas informacion</Text>
+                    <Text style={styles.subtitle}>Confiteria</Text>
+                    <Text style={styles.parrafo}>mas informacion ..............................................</Text>
                 </View>
-                <View style={styles.column}>
-                    <View style={styles.row}>
+                <View>
+                    <View style={styles.column}>
                         <Text style={styles.elements}>Descuentos disponibles</Text>
                         <Text style={styles.elements}>Agregar a lista</Text>
                     </View>
@@ -34,8 +34,8 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
     img: {
-        height: '90%',
-        width: '90%',
+        height: '50%',
+        width: '100%',
         marginTop: '10%',
         justifyContent: 'center',
     },
@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
         padding: '10%',
     },
     subtitle: {
-        fontWeight: 'semibold',
+        fontWeight: '600',
         fontSize: 20,
     },
     parrafo: {
-        fontWeight: 400,
-        fontSize: 15,
+        fontWeight: '400',
+        fontSize: 13,
     },
     row: {
         flexDirection: "row",
@@ -69,11 +69,15 @@ const styles = StyleSheet.create({
     },
     elements: {
         marginRight:'1%',
-        fontSize: 15,
+        fontSize: 20,
         fontWeight: 'bold',
+
     },
     column: {
         flexDirection: "column",
         flexWrap: "wrap",
+        marginTop: '5%',
+        marginBottom: '8%',
     },
+    
 })

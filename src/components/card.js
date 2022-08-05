@@ -18,16 +18,21 @@ export default function Card({ props }) {
   }*/
   return (
     <View style={styles.container}>
-      <Icon name={'heart'} />
-      <Text > {props.nombre}   </Text>
-      <View >
-        <Text > {props.description}  </Text>
+      <View style={styles.row}>
+        <View style={{width: '65%',}}>
+        <Text style={styles.titulo}> {props.nombre}   </Text>
+        </View>
+        <View style={{width: '25%',}}>
+        <Icon name={'heart'} style={styles.heart}/>
+        </View>
       </View>
       <View>
+
         <Image style={styles.image} source={props.imagen} />
       </View>
       <View style={styles.boton}>
-        <TouchableHighlight color="#DE95DB" onPress={() => navigation.navigate("Profile")} title=" Ver detalle" />
+        <Button color={"#DE95DB"} onPress={() => navigation.navigate("Profile")} title=" Ver detalle" />
+
       </View>
     </View>
 
@@ -38,14 +43,16 @@ export default function Card({ props }) {
 
 const styles = StyleSheet.create({
   container: {
-    width: 363,
-    height: 152,
+    width: '70%',
+    height: '13%',
     backgroundColor: "#F8F7F7",
-    borderRadius: 15,
+    borderRadius: 13,
     marginTop: 40,
     marginHorizontal: 10,
     marginLeft: "auto",
     marginRight: "auto",
+    borderColor: '#F8F7F7',
+    borderWidth: 1,
   },
   image: {
     width: '100%',
@@ -55,24 +62,27 @@ const styles = StyleSheet.create({
     bottom: 15,
   },
   titulo: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: "bold",
-    marginLeft: 10,
+    marginLeft: '2%',
   },
-  corazon: {
+  heart: {
     color: "red",
     textAlign: "right",
-    fontSize: 30,
-    marginTop: 15,
-    marginRight: 15,
+    fontSize: 20,
+    marginLeft: '60%',
+    marginTop: '20%',
   },
-  descripcion: {
-    fontSize: 15,
-    color: "grey",
-    marginLeft: 13,
-  },
+
   boton: {
-    width: '50%',
-    height: '100%',
-  }
+    width: '40%',
+    marginLeft: '2%',
+    height: '60%',
+    marginTop: '5%',
+ 
+  },
+  row: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
 });
