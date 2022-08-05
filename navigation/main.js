@@ -4,7 +4,7 @@ import HomeScreen from '../src/screens/home';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import RegisterScreen from '../src/screens/register';
-import Profile from '../src/screens/profile'
+import Profile from '../src/screens/Restaurantprofile'
 const Stack = createNativeStackNavigator();
 export default function Main() {
   return (
