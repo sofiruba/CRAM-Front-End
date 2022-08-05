@@ -3,6 +3,7 @@ import axios from 'axios'
 import { View, Text, StyleSheet } from 'react-native'
 import ListadoHome from '../components/ListadoHome'
 import { useNavigation } from '@react-navigation/native'
+import Filtros from '../components/filtros'
 
 export default function HomeScreen() {
     const navigation = useNavigation();
@@ -16,7 +17,6 @@ export default function HomeScreen() {
             .then(res => {
                 const l = res.data
                 setLugares(l)
-                console.log("LLegué");
             })
             .catch((err) => console.log(err))
     }
@@ -32,9 +32,11 @@ export default function HomeScreen() {
     return (
         <View style={styles.pag}>
             <View style={styles.row}>
-                <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
+                <Text  onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
+                <Text style={{marginLeft: '2%',marginRight: '2%',}}>|</Text>
                 <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
             </View>
+            <Filtros></Filtros>
             <ListadoHome lugares={lugares}></ListadoHome>
 
         </View>
@@ -53,5 +55,6 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: 'center',
         marginTop: '10%',
+       
     },
 })
