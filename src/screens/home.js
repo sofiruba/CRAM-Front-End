@@ -62,6 +62,7 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.pag}>
             <View style={styles.row}>
                 <Text onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
+                <Text> |</Text>
                 <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
             </View>
             <ListadoHome lugares={lugares}></ListadoHome>
@@ -82,5 +83,8 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: 'center',
         marginTop: '10%',
+    },
+    espacio: {
+        marginLeft: '2%',
     },
 })

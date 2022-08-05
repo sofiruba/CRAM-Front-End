@@ -9,7 +9,7 @@ export default function LoginForm() {
     <View style={styles.container}>
       <View>
         <TextInput style={styles.input}
-          placeholder="Usuario"
+          placeholder="  Usuario"
           onChangeText={(text) => props.setUser({ ...user, username: text })}
         />
       </View>
@@ -17,14 +17,14 @@ export default function LoginForm() {
         <View>
 
           <TextInput style={styles.input}
-            placeholder="Contraseña"
+            placeholder="  Contraseña"
             secureTextEntry={true}
             onChangeText={(text) => props.setUser({ ...props.user, password: text })}
           />
         </View>
       </View>
       <View style={styles.boton}>
-        <Button style={styles.boton} title="Ingresar" color="#DE95DB" onPress={() => navigation.navigate("Home")} />
+        <Button title="Ingresar" color="#DE95DB" onPress={() => navigation.navigate("Home")} />
       </View>
     </View>
   )
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: '11%',
-    marginTop: '5%',
+    marginTop: '10%',
   },
 
   imageStyle: {
@@ -49,17 +49,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   boton: {
-    marginTop: 10,
+    marginTop: '5%',
     height: '100%',
-    width: '150%',
+    width: '100%',
   },
 
   input: {
     backgroundColor: 'white',
-    borderRadius: 10,
-    marginTop: '10%',
-    width: 165,
-    height: 40,
+    borderRadius: 20,
+    marginTop: '5%',
+    width: 200,
+    height: 45,
 
   },
 
