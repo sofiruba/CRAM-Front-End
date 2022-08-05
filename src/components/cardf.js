@@ -5,7 +5,7 @@ import { useTailwind } from 'tailwind-rn';
 import { useFonts } from 'expo-font';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
+//* para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function CardF() {
   const tailwind = useTailwind();
   // elegir fonts

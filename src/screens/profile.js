@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text, Button, StyleSheet, Image } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 
+
+//* Para Le Pain Quotidien fuente POPPINS,para Confiteria y Descuentos disponibles HEEBO , para agregar lista LIBRE FRANKLIN y para mas informacion ARIMO
 export default function Profile() {
     const navigation = useNavigation();
     return (

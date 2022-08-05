@@ -3,6 +3,10 @@ import axios from 'axios'
 import { View, Text, StyleSheet } from 'react-native'
 import ListadoHome from '../components/ListadoHome'
 
+
+//* Fuentes: Arvo , slabo27 px y para el seguidos y para ti Shippori Antique B1
+
+
 export default function HomeScreen({ navigation }) {
 
     const lugares = [{
