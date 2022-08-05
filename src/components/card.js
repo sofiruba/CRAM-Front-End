@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from "@react-navigation/native";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
+
+//* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function Card({ props }) {
   const tailwind = useTailwind()
   const navigation = useNavigation();
@@ -19,19 +21,18 @@ export default function Card({ props }) {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <View style={{width: '65%',}}>
-        <Text style={styles.titulo}> {props.nombre}   </Text>
+        <View style={{ width: '65%', }}>
+          <Text style={styles.titulo}> {props.nombre}   </Text>
         </View>
-        <View style={{width: '25%',}}>
-        <Icon name={'heart'} style={styles.heart}/>
+        <View style={{ width: '25%', }}>
+          <Icon name={'heart'} style={styles.heart} />
         </View>
       </View>
       <View>
-
         <Image style={styles.image} source={props.imagen} />
       </View>
       <View style={styles.boton}>
-        <Button color={"#DE95DB"} onPress={() => navigation.navigate("Profile")} title=" Ver detalle" />
+        <Button onPress={() => navigation.navigate("Profile")} style={styles.verdetalle} title="Ver detalle" />
 
       </View>
     </View>
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 20,
     fontWeight: "bold",
+    marginTop: '3%',
     marginLeft: '2%',
   },
   heart: {
@@ -79,10 +81,14 @@ const styles = StyleSheet.create({
     marginLeft: '2%',
     height: '60%',
     marginTop: '5%',
- 
+
   },
   row: {
     flexDirection: "row",
     flexWrap: "wrap",
+  },
+  verdetalle: {
+    marginTop: '15%',
+    marginLeft: '5%',
   },
 });
