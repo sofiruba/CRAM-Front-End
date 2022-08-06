@@ -8,18 +8,19 @@ export default function Profile() {
         <View style={styles.pag}>
             <View>
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
-                <View style={styles.row}>
-                    <Text style={styles.title}> Le Pain Quotidien </Text>
-                    <Icon name={'comment'} style={styles.comment} />
+                <View style={styles.column}>
+
+                    <Text style={styles.title}> Le Pain Quotidien <Icon name={'comment'} style={styles.comment} /> </Text>
+                    <Text style={styles.subtitle}>Confiteria</Text>
+                    <Text style={styles.info}>Info...</Text>
                 </View>
                 <View >
-                    <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.parrafo}></Text>
                 </View>
                 <View>
                     <View style={styles.column}>
-                        <Text style={styles.elements}>Descuentos disponibles</Text>
-                        <Text style={styles.elements}>Agregar a lista</Text>
+                        <Text style={styles.descuento}>Descuentos disponibles<Image style={styles.tinyimg} source={require('../assets/Mapa-Ejemplo.PNG')} /></Text>
+                        <Text style={styles.lista}>Agregar a lista</Text>
                     </View>
                 </View>
                 <View>
@@ -36,20 +37,21 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
     img: {
-        height: 300,
-        width: 300,
-        marginTop: '10%',
+        height: '70%',
+        width: '100%',
+        marginTop: '1%',
         justifyContent: 'center',
         resizeMode: 'contain',
         position: 'relative'
     },
     tinyimg: {
-        height: '100%',
-        width: '100%',
+        height: '150%',
+        width: '150%',
         justifyContent: 'left',
+        marginLeft:'130%',
     },
     title: {
-        fontSize: 20,
+        fontSize: 28,
         textAlign: 'justify',
         fontWeight: 'bold',
     },
@@ -66,6 +68,8 @@ const styles = StyleSheet.create({
     subtitle: {
         fontWeight: '600',
         fontSize: 20,
+        marginLeft: '2%',
+        marginTop: '2%',
     },
     parrafo: {
         fontWeight: '400',
@@ -75,8 +79,16 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
     },
-    elements: {
-        marginRight: '1%',
+    descuento: {
+        marginRight: '100%',
+        marginTop: '15%',
+        marginBottom: '10%',
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    lista: {
+        marginRight: '10%',
+        marginTop: '20%',
         fontSize: 20,
         fontWeight: 'bold',
 
@@ -84,16 +96,28 @@ const styles = StyleSheet.create({
     column: {
         flexDirection: "column",
         flexWrap: "wrap",
-        marginTop: '5%',
+        marginTop: '1%',
         marginBottom: '8%',
     },
     comment:
     {
         color: "black",
         textAlign: "right",
-        fontSize: 20,
-        marginLeft: '60%',
-        marginTop: '20%',
+        fontSize: 30,
+        marginLeft: '2%',
+        marginTop: '2%',
+    },
+
+    boton: {
+        height: '60%',
+        width: '40%',
+        borderRadius: 13,
+    },
+    info: {
+        fontSize: 18,
+        opacity: '65%',
+        marginLeft: '3%',
+        marginTop: '1%',
     },
 
 })
