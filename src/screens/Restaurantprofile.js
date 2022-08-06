@@ -9,27 +9,20 @@ export default function Profile() {
             <View>
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
                 <View style={styles.column}>
-
                     <Text style={styles.title}> Le Pain Quotidien <Icon name={'comment'} style={styles.comment} /> </Text>
                     <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.info}>Info...</Text>
                 </View>
-                <View >
-                    <Text style={styles.parrafo}></Text>
-                </View>
                 <View>
                     <View style={styles.column}>
-                        <Text style={styles.descuento}>Descuentos disponibles<Image style={styles.tinyimg} source={require('../assets/Mapa-Ejemplo.PNG')} /></Text>
+                        <Text style={styles.descuento}>Descuentos disponibles</Text>
                         <Text style={styles.lista}>Agregar a lista</Text>
                     </View>
                 </View>
-                <View>
+                <View  style={styles.boton}>
                     <Button title="Ir a home" color="#DE95DB" onPress={() => navigation.goBack()} />
                 </View>
             </View>
-
-
-
         </View>
     );
 
@@ -37,7 +30,7 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
     img: {
-        height: '70%',
+        height: '38%',
         width: '100%',
         marginTop: '1%',
         justifyContent: 'center',
@@ -45,10 +38,9 @@ const styles = StyleSheet.create({
         position: 'relative'
     },
     tinyimg: {
-        height: '150%',
-        width: '150%',
-        justifyContent: 'left',
-        marginLeft:'130%',
+        height: '50%',
+        width: '50%',
+        marginLeft: '130%',
     },
     title: {
         fontSize: 28,
@@ -59,7 +51,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#E5E5E5",
         height: '100%',
         width: '100%',
-        padding: '10%',
+        padding: '8%',
         flex: 1,
         flexDirection: 'column',
         position: 'relative',
@@ -71,24 +63,20 @@ const styles = StyleSheet.create({
         marginLeft: '2%',
         marginTop: '2%',
     },
-    parrafo: {
-        fontWeight: '400',
-        fontSize: 13,
-    },
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
     },
     descuento: {
-        marginRight: '100%',
+        marginRight: '80%',
         marginTop: '15%',
-        marginBottom: '10%',
+        marginBottom: '2%',
         fontSize: 20,
         fontWeight: 'bold',
     },
     lista: {
         marginRight: '10%',
-        marginTop: '20%',
+        marginTop: '2%',
         fontSize: 20,
         fontWeight: 'bold',
 
@@ -109,13 +97,15 @@ const styles = StyleSheet.create({
     },
 
     boton: {
-        height: '60%',
+        height: '10%',
         width: '40%',
         borderRadius: 13,
+        justifyContent: 'center',
+        alignSelf: 'center',
     },
     info: {
         fontSize: 18,
-        opacity: '65%',
+        color: 'grey',
         marginLeft: '3%',
         marginTop: '1%',
     },
