@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import ListadoHome from '../components/ListadoHome'
 import { useNavigation } from '@react-navigation/native'
 import Filtros from '../components/filtros'
+import Buscador from '../components/buscador'
 
 export default function HomeScreen() {
     const navigation = useNavigation();
@@ -34,6 +35,7 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.pag}>
+            <Buscador></Buscador>
             <View style={styles.row}>
                 <Text >Seguidos</Text>
                 <Text style={{marginLeft: '2%',marginRight: '2%',}}>|</Text>
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
-        marginTop: '10%',
+
        
     },
 })
