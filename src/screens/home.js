@@ -5,20 +5,21 @@ import ListadoHome from '../components/ListadoHome'
 import { useNavigation } from '@react-navigation/native'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
-import BuscadorPrueba from '../components/buscadorprueba'
 
 export default function HomeScreen() {
     const navigation = useNavigation();
-    const [lugares, setLugares] = useState([{"IdLugar": "aaa123",
-    "nombre": "Las Violetas",
-    "description": "Confiteria",
-    "foto": {uri: '../assets/icon.png'}},])
+    const [lugares, setLugares] = useState([{
+        "IdLugar": "aaa123",
+        "nombre": "Las Violetas",
+        "description": "Confiteria",
+        "foto": { uri: '../assets/icon.png' }
+    },])
     const headers = {
         "Content-Type": "application/json",
 
     };
     const getLugares = () => {
-        return axios.get('http://localhost:3000/lugares', {headers})
+        return axios.get('http://localhost:3000/lugares', { headers })
             .then(res => {
                 const l = res.data
                 setLugares(l)
@@ -36,12 +37,15 @@ export default function HomeScreen() {
 
     return (
         <KeyboardAvoidingView style={styles.pag} behavior={Platform.OS === "ios" ? "padding" : "height"}>
+              <View>
+                    <Buscador />
+                </View>
             <View style={styles.row}>
                 <Text >Seguidos</Text>
-                <Text style={{marginLeft: '2%',marginRight: '2%',}}>|</Text>
+                <Text style={{ marginLeft: '2%', marginRight: '2%', }}>|</Text>
                 <Text > Para Ti </Text>
             </View>
-            <BuscadorPrueba/>
+
             <Filtros></Filtros>
             <ListadoHome lugares={lugares}></ListadoHome>
 
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
-        marginTop: '15%',
-        marginBottom: '-5%',
+        marginTop: '10%',
+        marginBottom: '5%',
     },
 })

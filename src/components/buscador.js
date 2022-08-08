@@ -1,39 +1,31 @@
-import { TextInput, View, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-export default function Buscador() {
-    return (
-        <View style={styles.busca}>
-            <Icon style={styles.icon} name={'search'} size={15} />
-            <TextInput style={styles.text} placeholder=" Buscar..." />
+import * as React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Searchbar } from 'react-native-paper';
 
-        </View>
-    )
-}
+const Buscador = () => {
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  const onChangeSearch = query => setSearchQuery(query);
+
+  return (
+    <View>
+      <Searchbar
+        placeholder="Buscar..."
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+        style={styles.buscador}
+      />
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
-    busca: {
-        backgroundColor: 'white',
-        width: '80%',
-        height: '4%',
-        opacity: 0.6,
-        color: 'white',
-        fontStyle: 'italic',
-        borderRadius: 20,
-        shadowColor: "7% 7% 5% rgba(0, 0, 0, 0.1)",
-        margin: '9%',
-        marginBottom: '12%',
-        marginTop: '10%',
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    text: {
-        marginTop: '1%',
-        marginLeft: '2%',
-        fontSize: 14,
-        color: 'white',
-    },
-    icon: {
-        alignItems: 'flex-start',
-        color: 'white',
+  buscador: {
+    width: '85%',
+    alignSelf: 'center',
+    borderRadius: 10,
+    marginTop: 30,
+  }
+});
 
-    }
-})
+export default Buscador;
