@@ -2,8 +2,16 @@ import React from 'react'
 import { View, Text, Button, StyleSheet, Image } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useFonts } from 'expo-font';
 export default function Profile() {
+
     const navigation = useNavigation();
+    const [loaded] = useFonts({
+        Montserrat: require('../assets/fonts/Poppins-Bold.ttf'),
+    });
+    if (!loaded) {
+        return null;
+    }
     return (
         <View style={styles.pag}>
             <View>
@@ -13,16 +21,18 @@ export default function Profile() {
                     <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.info}>Info...</Text>
                 </View>
-                <View>
+                <View style={styles.column}>
                     <View style={styles.row}>
                         <View style={styles.descuentos}>
                             <Text style={styles.simbolo}>%</Text>
                         </View>
                         <Text style={styles.descuento}>Descuentos disponibles</Text>
+
+
                     </View>
                     <View style={styles.row}>
-                        <Icon name={'heart'} size={35}style={styles.heart} />
-
+                        <Icon name={'heart'} size={35} style={styles.heart} />
+                        <Text style={styles.descuento}>Añadir a Lista</Text>
 
                     </View>
                 </View>
@@ -45,14 +55,17 @@ const styles = StyleSheet.create({
         position: 'relative'
     },
     tinyimg: {
-        height: '50%',
+        height: '200%',
         width: '50%',
-        marginLeft: '130%',
+        marginLeft: '70%',
+        marginTop: '-21%'
     },
     title: {
-        fontSize: 28,
+        fontSize: 37,
         textAlign: 'justify',
         fontWeight: 'bold',
+        fontFamily: 'Poppins',
+        marginTop: '-15%',
     },
     pag: {
         backgroundColor: "#FFFFFF",
@@ -62,22 +75,25 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         position: 'relative',
+        fontFamily: 'Poppins',
 
     },
     subtitle: {
         fontWeight: '600',
-        fontSize: 20,
+        fontSize: 25,
         marginLeft: '2%',
         marginTop: '2%',
     },
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
+        marginTop: '2%',
+        marginBottom: '2%',
     },
     descuento: {
-        marginTop: '7%',
+        marginTop: '1%',
         marginLeft: '2%',
-        fontSize: 32,
+        fontSize: 31,
         fontWeight: 'bold',
     },
     lista: {
@@ -90,8 +106,8 @@ const styles = StyleSheet.create({
     column: {
         flexDirection: "column",
         flexWrap: "wrap",
-        marginTop: '1%',
-        marginBottom: '8%',
+        marginTop: '15%',
+        marginBottom: '9%',
     },
     comment:
     {
@@ -116,7 +132,7 @@ const styles = StyleSheet.create({
         marginTop: '1%',
     },
     descuentos: {
-        height: '50%',
+        height: '40%',
         width: '13%',
         backgroundColor: "#F8F7F7",
         display: 'flex',
@@ -128,9 +144,9 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     },
-    heart:{
+    heart: {
         color: 'red',
         height: '150%',
         marginLeft: '2%',
-    }
+    },
 })
