@@ -1,10 +1,10 @@
 import React from 'react'
-import { TextInput, View, StyleSheet } from 'react-native';
-
+import { TextInput, View, StyleSheet, Text } from 'react-native';
+import Icon  from 'react-native-vector-icons/Ionicons';
 export default function Buscador() {
     return (
         <View style={styles.busca}>
-            <TextInput  placeholder="        Buscar..."/>
+            <TextInput  placeholder="        Buscar... ">  </TextInput>
         </View>
     )
 }
@@ -25,7 +25,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: '8%',
         textAlign: 'center',
+      
     },
+    icon: {
+        color: 'white',
+        width: '15%',
+    }
 })
 
 
