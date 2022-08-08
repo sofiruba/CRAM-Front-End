@@ -3,37 +3,33 @@ import { Image, StyleSheet, View } from 'react-native'
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from '../../tailwind.json';
 import LoginForm from '../components/LoginForm';
-
+import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 export default function LoginScreen() {
 
-  /*
-  const [user, setUser] = useState({})
-  const login = async (usern, pass) => {
-    const usuario = { username: usern, password: pass }
-    const axiosLogin = axios.create({
-      baseURL: 'http://localhost:3000/'
-    })
-    return axiosLogin.post('auth/login', usuario)
+  const navigation = useNavigation();
+  const login = async (username, password) => {
+    let nuevo_usuario = {"username": username, "password": password}
+    return axios.post('http://localhost:3000/auth/login', nuevo_usuario)
       .then(res => {
         if (res.status = 201) {
-          navigation.navigate('Home', { usuario })
+          navigation.navigate('Home')
         }
         else {
-          alert('Volver a ingresar') // hay q ver manera de hacer diferentes dependiendo el problema
+          alert('Volver a ingresar') 
         }
       })
       .catch(error => {
         console.error('error', error)
       })
   }
-*/
-  //meli estilos
+
   return (
     <TailwindProvider utilities={utilities}>
       <View style={styles.pag}>
         <View style={styles.container}>
           <Image style={styles.img} source={require('../assets/icon.png')}></Image>
-          <LoginForm></LoginForm>
+          <LoginForm login={ login}></LoginForm>
         </View>
       </View>
     </TailwindProvider>
