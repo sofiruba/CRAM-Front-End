@@ -15,11 +15,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
-        marginTop: '-3%',
+        marginTop: '-2%',
     },
     titulo:{
         fontWeight: 'bold',
         color: '#91908d',
+        fontSize: 15,
         backgroundColor: '#F5F5F5F5',
         borderRadius: 8,
         marginRight: '2%',
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     filtro:{
-        marginRight: '1.5%',
+        marginRight: '2%',
+        fontSize: 16,
     }
 })

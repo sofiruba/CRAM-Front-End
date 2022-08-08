@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         shadowColor: "7% 7% 5% rgba(0, 0, 0, 0.1)",
         fontSize: 14,
         margin: '9%',
-        marginBottom: '15%',
+        marginBottom: '12%',
+        marginTop: '10%',
     },
     text:{
         marginTop: '1%',
