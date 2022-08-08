@@ -7,7 +7,10 @@ import Filtros from '../components/filtros'
 
 export default function HomeScreen() {
     const navigation = useNavigation();
-    const [lugares, setLugares] = useState([])
+    const [lugares, setLugares] = useState([{"IdLugar": "aaa123",
+    "nombre": "Las Violetas",
+    "description": "Confiteria",
+    "foto": {uri: '../assets/icon.png'}},])
     const headers = {
         "Content-Type": "application/json",
 

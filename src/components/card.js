@@ -32,7 +32,7 @@ export default function Card({ props }) {
         <Image style={styles.image} source={props.imagen} />
       </View>
       <View style={styles.boton}>
-        <Button onPress={() => navigation.navigate("Profile")} style={styles.verdetalle} title="Ver detalle" />
+        <Button onPress={() => navigation.navigate("Profile")} color="#DE95DB" title="Ver detalle" />
 
       </View>
     </View>

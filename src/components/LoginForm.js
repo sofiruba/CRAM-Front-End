@@ -16,7 +16,6 @@ export default function LoginForm({login}) {
       </View>
       <View>
         <View>
-
           <TextInput style={styles.input}
             placeholder="  Contraseña"
             secureTextEntry={true}
