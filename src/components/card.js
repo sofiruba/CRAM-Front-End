@@ -18,28 +18,27 @@ export default function Card({ props }) {
   });
   if (!loaded) {
     return null;
-  }*/
-  // <CardItem button onPress={() => Alert.alert('hi')}> ?
+  }
+  
+    <View style={styles.boton}>
+        <Button onPress={() => navigation.navigate("Profile")} color="#DE95DB" title="Ver detalle" />
+
+      </View>*/
   return (
-    <SafeAreaView  style={styles.container}>
-      <ScrollView>
+    <View onTouchStart={() => navigation.navigate("Profile")} style={styles.container}>
+
       <View style={styles.row}>
         <View style={{ width: '65%', }}>
           <Text style={styles.titulo}> {props.nombre}   </Text>
         </View>
         <View style={{ width: '25%', }}>
-          <Icon name={'heart'}  size={25} style={styles.heart} />
+          <Icon name={'heart'} size={25} style={styles.heart} />
         </View>
       </View>
       <View>
         <Image style={styles.image} source={props.imagen} />
       </View>
-      <View style={styles.boton}>
-        <Button onPress={() => navigation.navigate("Profile")} color="#DE95DB" title="Ver detalle" />
-
-      </View>
-      </ScrollView>
-    </SafeAreaView >
+    </View >
 
 
   );

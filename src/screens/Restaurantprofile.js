@@ -7,7 +7,7 @@ export default function Profile() {
 
     const navigation = useNavigation();
     const [loaded] = useFonts({
-        Montserrat: require('../assets/fonts/Poppins-Bold.ttf'),
+        Poppins: require('../assets/fonts/Poppins-Bold.ttf'),
     });
     if (!loaded) {
         return null;
