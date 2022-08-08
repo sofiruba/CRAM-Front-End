@@ -1,8 +1,11 @@
 import { TextInput, View, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 export default function Buscador() {
     return (
         <View style={styles.busca}>
-            <TextInput  style={styles.text} placeholder=" Buscar..."/>
+            <Icon style={styles.icon} name={'search'} size={15} />
+            <TextInput style={styles.text} placeholder=" Buscar..." />
+
         </View>
     )
 }
@@ -16,13 +19,21 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         borderRadius: 20,
         shadowColor: "7% 7% 5% rgba(0, 0, 0, 0.1)",
-        fontSize: 14,
         margin: '9%',
         marginBottom: '12%',
         marginTop: '10%',
+        flexDirection: 'row',
+        alignItems: 'center',
     },
-    text:{
+    text: {
         marginTop: '1%',
         marginLeft: '2%',
+        fontSize: 14,
+        color: 'white',
+    },
+    icon: {
+        alignItems: 'flex-start',
+        color: 'white',
+
     }
 })
