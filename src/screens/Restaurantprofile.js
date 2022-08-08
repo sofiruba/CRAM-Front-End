@@ -15,29 +15,31 @@ export default function Profile() {
     return (
         <View style={styles.pag}>
             <View>
+                <View style={styles.content}>
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+
+                </View>
                 <View>
                     <Text style={styles.title}> Le Pain Quotidien <Icon name={'comment'} style={styles.comment} /> </Text>
                     <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.info}>Info...</Text>
                 </View>
-                <View style={styles.column}>
+                <View style={styles.bigrow}>
                     <View style={styles.row}>
                         <View style={styles.descuentos}>
                             <Text style={styles.simbolo}>%</Text>
                         </View>
                         <Text style={styles.descuento}>Descuentos disponibles</Text>
 
-
                     </View>
                     <View style={styles.row}>
                         <Icon name={'heart'} size={35} style={styles.heart} />
-                        <Text style={styles.descuento}>Añadir a Lista</Text>
-
+                        <Text style={styles.lista}>Añadir a Lista</Text>
                     </View>
+                    <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                 </View>
                 <View style={styles.boton}>
-                    <Button title="Ir a home" color="#DE95DB" onPress={() => navigation.goBack()} />
+                    <Button title="Ir a home" color="#DE95DB"  style={styles.boton} onPress={() => navigation.goBack()} />
                 </View>
             </View>
         </View>
@@ -46,62 +48,72 @@ export default function Profile() {
 }
 
 const styles = StyleSheet.create({
-    img: {
-        height: '38%',
+    content:{
+        justifyContent: 'center',
+        alignItems: 'center',
         width: '100%',
-        marginTop: '1%',
+        height: '40%',
+    },
+    img: {
+        height: '70%',
+        width: '110%',
+        marginTop: '2%',
         justifyContent: 'center',
         resizeMode: 'contain',
-        position: 'relative'
+        position: 'relative',
     },
     tinyimg: {
-        height: '200%',
-        width: '50%',
-        marginLeft: '70%',
-        marginTop: '-21%'
+        height: '50%',
+        width: '110%',
+        marginTop: '5%'
     },
     title: {
-        fontSize: 37,
+        fontSize: 35,
         textAlign: 'justify',
         fontWeight: 'bold',
         fontFamily: 'Poppins',
-        marginTop: '-15%',
+        marginTop: '-12%',
+        marginLeft: '-8%',
+        textAlign: 'left',
     },
     pag: {
         backgroundColor: "#FFFFFF",
         height: '100%',
         width: '100%',
-        padding: '8%',
-        flex: 1,
-        flexDirection: 'column',
-        position: 'relative',
+        padding: '10%',
         fontFamily: 'Poppins',
-
+        
     },
     subtitle: {
         fontWeight: '600',
         fontSize: 25,
-        marginLeft: '2%',
+        marginLeft: '-5%',
         marginTop: '2%',
+    },
+    bigrow:{
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: 'center',
     },
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
-        marginTop: '2%',
+        marginTop: '8%',
         marginBottom: '2%',
+        width: '50%',
+        alignItems: 'center',
     },
     descuento: {
-        marginTop: '1%',
+        marginTop: '2%',
         marginLeft: '2%',
-        fontSize: 31,
+        fontSize: 18,
         fontWeight: 'bold',
     },
     lista: {
-        marginRight: '10%',
         marginTop: '2%',
-        fontSize: 20,
+        marginRight: '3%',
+        fontSize: 18,
         fontWeight: 'bold',
-
     },
     column: {
         flexDirection: "column",
@@ -120,20 +132,21 @@ const styles = StyleSheet.create({
 
     boton: {
         height: '10%',
-        width: '40%',
+        width: '50%',
         borderRadius: 13,
         justifyContent: 'center',
         alignSelf: 'center',
+        overflow: 'hidden',
     },
     info: {
         fontSize: 18,
         color: 'grey',
-        marginLeft: '3%',
-        marginTop: '1%',
+        marginLeft: '-4%',
+        marginTop: '3%',
     },
     descuentos: {
-        height: '40%',
-        width: '13%',
+        height: '65%',
+        width: '25%',
         backgroundColor: "#F8F7F7",
         display: 'flex',
         alignItems: 'center',
@@ -141,12 +154,13 @@ const styles = StyleSheet.create({
         marginTop: '5%',
     },
     simbolo: {
-        fontSize: 15,
+        fontSize: 25,
         fontWeight: 'bold',
     },
     heart: {
         color: 'red',
-        height: '150%',
+        marginTop: '3%',
         marginLeft: '2%',
+        marginRight: '3%',
     },
 })
