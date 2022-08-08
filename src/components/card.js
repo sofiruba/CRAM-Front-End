@@ -19,6 +19,7 @@ export default function Card({ props }) {
   if (!loaded) {
     return null;
   }*/
+  // <CardItem button onPress={() => Alert.alert('hi')}> ?
   return (
     <SafeAreaView  style={styles.container}>
       <ScrollView>

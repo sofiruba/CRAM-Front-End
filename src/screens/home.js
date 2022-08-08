@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import ListadoHome from '../components/ListadoHome'
 import { useNavigation } from '@react-navigation/native'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
+import BuscadorPrueba from '../components/buscadorprueba'
 
 export default function HomeScreen() {
     const navigation = useNavigation();
@@ -34,17 +35,17 @@ export default function HomeScreen() {
     console.log(lugares)
 
     return (
-        <View style={styles.pag}>
+        <KeyboardAvoidingView style={styles.pag} behavior={Platform.OS === "ios" ? "padding" : "height"}>
             <View style={styles.row}>
                 <Text >Seguidos</Text>
                 <Text style={{marginLeft: '2%',marginRight: '2%',}}>|</Text>
                 <Text > Para Ti </Text>
             </View>
-            <Buscador></Buscador>
+            <BuscadorPrueba/>
             <Filtros></Filtros>
             <ListadoHome lugares={lugares}></ListadoHome>
 
-        </View>
+        </KeyboardAvoidingView>
     );
 
 }
