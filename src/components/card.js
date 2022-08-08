@@ -1,5 +1,6 @@
 import React from "react"
 import { View, Text, StyleSheet, Image, Button } from "react-native"
+import { SafeAreaView, ScrollView } from "react-native";
 
 import { useTailwind } from 'tailwind-rn';
 
@@ -19,13 +20,14 @@ export default function Card({ props }) {
     return null;
   }*/
   return (
-    <View style={styles.container}>
+    <SafeAreaView  style={styles.container}>
+      <ScrollView>
       <View style={styles.row}>
         <View style={{ width: '65%', }}>
           <Text style={styles.titulo}> {props.nombre}   </Text>
         </View>
         <View style={{ width: '25%', }}>
-          <Icon name={'heart'} style={styles.heart} />
+          <Icon name={'heart'}  size={25} style={styles.heart} />
         </View>
       </View>
       <View>
@@ -35,7 +37,8 @@ export default function Card({ props }) {
         <Button onPress={() => navigation.navigate("Profile")} color="#DE95DB" title="Ver detalle" />
 
       </View>
-    </View>
+      </ScrollView>
+    </SafeAreaView >
 
 
   );
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
   heart: {
     color: "red",
     textAlign: "right",
-    fontSize: 20,
+
     marginLeft: '60%',
     marginTop: '20%',
   },

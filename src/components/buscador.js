@@ -4,28 +4,28 @@ import { TextInput, View, StyleSheet } from 'react-native';
 export default function Buscador() {
     return (
         <View style={styles.busca}>
-            <TextInput  placeholder="        Buscar..."/>
+            <TextInput  style={styles.text} placeholder=" Buscar..."/>
         </View>
     )
 }
 const styles = StyleSheet.create({
     busca: {
         backgroundColor: 'white',
-        marginBottom: '2%',
-        marginTop: '10%',
-        width: '85%',
-        height: '3%',
-        opacity: 0.3,
+        width: '80%',
+        height: '4%',
+        opacity: 0.6,
         color: 'white',
         fontStyle: 'italic',
-        borderRadius: 8,
+        borderRadius: 20,
         shadowColor: "7% 7% 5% rgba(0, 0, 0, 0.1)",
         fontSize: 14,
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: '8%',
-        textAlign: 'center',
+        margin: '9%',
+        marginBottom: '15%',
     },
+    text:{
+        marginTop: '1%',
+        marginLeft: '2%',
+    }
 })
 
 

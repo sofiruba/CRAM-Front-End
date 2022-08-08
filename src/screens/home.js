@@ -35,12 +35,12 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.pag}>
-            <Buscador></Buscador>
             <View style={styles.row}>
                 <Text >Seguidos</Text>
                 <Text style={{marginLeft: '2%',marginRight: '2%',}}>|</Text>
                 <Text > Para Ti </Text>
             </View>
+            <Buscador></Buscador>
             <Filtros></Filtros>
             <ListadoHome lugares={lugares}></ListadoHome>
 
@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
-
+        marginTop: '15%',
+        marginBottom: '-5%',
        
     },
 })
