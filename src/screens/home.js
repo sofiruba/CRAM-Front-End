@@ -35,9 +35,9 @@ export default function HomeScreen() {
     return (
         <View style={styles.pag}>
             <View style={styles.row}>
-                <Text  onPress={() => navigation.navigate('Seguidos')}>Seguidos</Text>
+                <Text >Seguidos</Text>
                 <Text style={{marginLeft: '2%',marginRight: '2%',}}>|</Text>
-                <Text onPress={() => navigation.navigate('ParaTi')}> Para Ti </Text>
+                <Text > Para Ti </Text>
             </View>
             <Filtros></Filtros>
             <ListadoHome lugares={lugares}></ListadoHome>
