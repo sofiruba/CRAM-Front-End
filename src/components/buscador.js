@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
+import { TextInput, View, StyleSheet } from 'react-native';
 
 export default function Buscador() {
     return (

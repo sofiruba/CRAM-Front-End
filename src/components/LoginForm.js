@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 
-// al escribir en form hay error debido a los props
 //* FUENTE: RUBIK
 export default function LoginForm({login}) {
   const [username, setUsername] = useState("")
