@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     width: 200,
     height: 45,
-
+    marginLeft: '2%',
   },
 
 });
