@@ -13,9 +13,9 @@ export default function Filtros(){
 const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
-        flexWrap: "wrap",
         justifyContent: 'center',
-        marginTop: '-2%',
+        marginBottom: '5%',
+        marginTop: '-15%',
     },
     titulo:{
         fontWeight: 'bold',

@@ -36,20 +36,16 @@ export default function HomeScreen() {
     console.log(lugares)
 
     return (
-        <KeyboardAvoidingView style={styles.pag} behavior={Platform.OS ===  "" ? "padding" : "height"}>
+        <KeyboardAvoidingView style={styles.pag} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
-              <View>
-                    <Buscador />
+                <View style={styles.row}>
+                    <Text >Seguidos</Text>
+                    <Text style={{ marginLeft: '2%', marginRight: '2%', }}>|</Text>
+                    <Text > Para Ti </Text>
                 </View>
-                <View>
+                <Buscador />
                 <Filtros></Filtros>
-                </View>
-            <View style={styles.row}>
-                <Text >Seguidos</Text>
-                <Text style={{ marginLeft: '2%', marginRight: '2%', }}>|</Text>
-                <Text > Para Ti </Text>
-            </View>
-            <ListadoHome lugares={lugares}></ListadoHome>
+                <ListadoHome lugares={lugares}></ListadoHome>
             </View>
         </KeyboardAvoidingView>
     );
@@ -68,6 +64,5 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         justifyContent: 'center',
         marginTop: '10%',
-        marginBottom: '5%',
     },
 })

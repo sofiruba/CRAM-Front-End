@@ -18,27 +18,24 @@ export default function Card({ props }) {
   });
   if (!loaded) {
     return null;
-  }
-  
-    <View style={styles.boton}>
-        <Button onPress={() => navigation.navigate("Profile")} color="#DE95DB" title="Ver detalle" />
-
-      </View>*/
+  }*/
   return (
-    <View onTouchStart={() => navigation.navigate("Profile")} style={styles.container}>
+    <SafeAreaView onTouchStart={() => navigation.navigate("Profile")} style={styles.container}>
+      <ScrollView>        
+          <View style={styles.row}>
+            <View style={{ width: '65%', }}>
+              <Text style={styles.titulo}> {props.nombre}   </Text>
+            </View>
+            <View style={{ width: '25%', }}>
+              <Icon name={'heart'} size={25} style={styles.heart} />
+            </View>
+          </View>
+          <View>
+            <Image style={styles.image} source={props.imagen} />
+          </View>
+      </ScrollView>
+    </SafeAreaView>
 
-      <View style={styles.row}>
-        <View style={{ width: '65%', }}>
-          <Text style={styles.titulo}> {props.nombre}   </Text>
-        </View>
-        <View style={{ width: '25%', }}>
-          <Icon name={'heart'} size={25} style={styles.heart} />
-        </View>
-      </View>
-      <View>
-        <Image style={styles.image} source={props.imagen} />
-      </View>
-    </View >
 
 
   );
@@ -48,10 +45,10 @@ export default function Card({ props }) {
 const styles = StyleSheet.create({
   container: {
     width: '70%',
-    height: '13%',
+    height: '15%',
     backgroundColor: "#F8F7F7",
     borderRadius: 13,
-    marginTop: 40,
+    marginTop: '10%',
     marginHorizontal: 10,
     marginLeft: "auto",
     marginRight: "auto",
@@ -78,20 +75,9 @@ const styles = StyleSheet.create({
     marginLeft: '60%',
     marginTop: '20%',
   },
-
-  boton: {
-    width: '40%',
-    marginLeft: '2%',
-    height: '60%',
-    marginTop: '5%',
-
-  },
   row: {
     flexDirection: "row",
     flexWrap: "wrap",
   },
-  verdetalle: {
-    marginTop: '15%',
-    marginLeft: '5%',
-  },
+
 });
