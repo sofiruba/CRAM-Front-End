@@ -2,21 +2,18 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import ListadoHome from '../components/ListadoHome'
-import { useNavigation } from '@react-navigation/native'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
 
 export default function HomeScreen() {
-    const navigation = useNavigation();
     const [lugares, setLugares] = useState([{
         "IdLugar": "aaa123",
         "nombre": "Las Violetas",
         "description": "Confiteria",
-        "foto": { uri: '../assets/icon.png' }
+        "foto": require('../assets/lasvioletas.jpg'),
     },])
     const headers = {
         "Content-Type": "application/json",
-
     };
     const getLugares = () => {
         return axios.get('http://localhost:3000/lugares', { headers })
@@ -29,7 +26,6 @@ export default function HomeScreen() {
 
 
     useEffect(() => {
-
         getLugares()
     }, [])
 
@@ -41,7 +37,7 @@ export default function HomeScreen() {
                 <View style={styles.row}>
                     <Text >Seguidos</Text>
                     <Text style={{ marginLeft: '2%', marginRight: '2%', }}>|</Text>
-                    <Text > Para Ti </Text>
+                    <Text >Para Ti</Text>
                 </View>
                 <Buscador />
                 <Filtros></Filtros>
