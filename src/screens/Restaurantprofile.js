@@ -17,10 +17,14 @@ export default function Profile() {
             <View>
                 <View style={styles.content}>
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
-
                 </View>
                 <View>
-                    <Text style={styles.title}> Le Pain Quotidien <Icon name={'comment'} style={styles.comment} /> </Text>
+                <View style={styles.texto}>
+                    <View style={styles.bigrow}>
+                    <Text style={styles.title}> Le Pain Quotidien </Text>
+                    <Icon name={'comment'} style={styles.comment} /> 
+                    </View>
+                    </View>
                     <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.info}>Info...</Text>
                 </View>
@@ -52,15 +56,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        height: '40%',
+        height: '50%',
     },
     img: {
         height: '70%',
-        width: '110%',
+        width: '100%',
         marginTop: '2%',
         justifyContent: 'center',
         resizeMode: 'contain',
-        position: 'relative',
     },
     tinyimg: {
         height: '50%',
@@ -69,12 +72,13 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 35,
-        textAlign: 'justify',
+        textAlign: 'left',
         fontWeight: 'bold',
         fontFamily: 'Poppins',
         marginTop: '-12%',
-        marginLeft: '-8%',
+        marginLeft: 0,
         textAlign: 'left',
+        maxWidth: '99%',
     },
     pag: {
         backgroundColor: "#FFFFFF",
@@ -124,7 +128,7 @@ const styles = StyleSheet.create({
     comment:
     {
         color: "black",
-        textAlign: "right",
+        textAlign: "center",
         fontSize: 30,
         marginLeft: '2%',
         marginTop: '2%',
