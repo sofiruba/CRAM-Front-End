@@ -2,7 +2,7 @@ import { View, StyleSheet, Text, Button} from "react-native"
 export default function Filtros(){
     return(
         <View style={styles.row}>
-            <Button style={styles.titulo} title='Filtros'></Button>
+            <Text style={styles.titulo}>Filtros</Text>
             <Text style={styles.filtro}>Kosher</Text>
             <Text style={styles.filtro}>Vegano</Text>
             <Text style={styles.filtro}>Vegetariano</Text>
