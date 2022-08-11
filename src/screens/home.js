@@ -35,9 +35,9 @@ export default function HomeScreen() {
         <KeyboardAvoidingView style={styles.pag} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
                 <View style={styles.row}>
-                    <Text >Seguidos</Text>
-                    <Text style={{ marginLeft: '2%', marginRight: '2%', }}>|</Text>
-                    <Text >Para Ti</Text>
+                    <Text style={styles.texto} >Seguidos</Text>
+                    <Text  style={styles.texto}>|</Text>
+                    <Text style={styles.texto}>Para Ti</Text>
                 </View>
                 <Buscador />
                 <Filtros></Filtros>
@@ -59,6 +59,11 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
-        marginTop: '10%',
+        marginTop: '15%',
     },
+    texto: {
+        fontSize: 20,
+        marginLeft: '2%',
+        marginRight: '2%'
+    }
 })

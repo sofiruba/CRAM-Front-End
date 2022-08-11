@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'center',
         marginBottom: '5%',
-        marginTop: '-15%',
+        marginTop: '-18%',
     },
     titulo:{
         fontWeight: 'bold',
