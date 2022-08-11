@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     marginTop: '50%',
   },
   pag: {
-    backgroundColor: "#F5D2F6",
+    backgroundColor: "#F7D250",
     height: '100%',
     width: '100%',
 

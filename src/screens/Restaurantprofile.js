@@ -7,24 +7,20 @@ export default function Profile() {
 
     const navigation = useNavigation();
     const [loaded] = useFonts({
-        Poppins: require('../assets/fonts/Poppins-Bold.ttf'),
+        Montserrat: require('../assets/fonts/Poppins-Bold.ttf'),
     });
     if (!loaded) {
         return null;
     }
     return (
         <View style={styles.pag}>
-            
+            <View>
                 <View style={styles.content}>
-                    <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+                <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+
                 </View>
                 <View>
-                    <View style={styles.texto}>
-                        <View style={styles.bigrow}>
-                            <Text style={styles.title}> Le Pain Quotidien </Text>
-                            <Icon name={'comment'} style={styles.comment} />
-                        </View>
-                    </View>
+                    <Text style={styles.title}> Le Pain Quotidien <Icon name={'comment'} style={styles.comment} /> </Text>
                     <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.info}>Info...</Text>
                 </View>
@@ -43,26 +39,28 @@ export default function Profile() {
                     <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                 </View>
                 <View style={styles.boton}>
-                    <Button title="Ir a home" color="#DE95DB" style={styles.boton} onPress={() => navigation.goBack()} />
+                    <Button title="Ir a home" color="#DE95DB"  style={styles.boton} onPress={() => navigation.goBack()} />
                 </View>
-          
+            </View>
         </View>
     );
 
 }
 
 const styles = StyleSheet.create({
-    content: {
+    content:{
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        height: '35%',
+        height: '40%',
     },
     img: {
         height: '70%',
-        width: '100%',
+        width: '110%',
+        marginTop: '2%',
         justifyContent: 'center',
         resizeMode: 'contain',
+        position: 'relative',
     },
     tinyimg: {
         height: '50%',
@@ -71,13 +69,12 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 35,
-        textAlign: 'left',
+        textAlign: 'justify',
         fontWeight: 'bold',
         fontFamily: 'Poppins',
         marginTop: '-12%',
-        marginLeft: 0,
+        marginLeft: '-8%',
         textAlign: 'left',
-        maxWidth: '99%',
     },
     pag: {
         backgroundColor: "#FFFFFF",
@@ -85,7 +82,7 @@ const styles = StyleSheet.create({
         width: '100%',
         padding: '10%',
         fontFamily: 'Poppins',
-
+        
     },
     subtitle: {
         fontWeight: '600',
@@ -93,7 +90,7 @@ const styles = StyleSheet.create({
         marginLeft: '-5%',
         marginTop: '2%',
     },
-    bigrow: {
+    bigrow:{
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
@@ -127,7 +124,7 @@ const styles = StyleSheet.create({
     comment:
     {
         color: "black",
-        textAlign: "center",
+        textAlign: "right",
         fontSize: 30,
         marginLeft: '2%',
         marginTop: '2%',

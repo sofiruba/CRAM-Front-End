@@ -24,7 +24,7 @@ export default function LoginForm({login}) {
         </View>
       </View>
       <View style={styles.boton}>
-        <Button title="Ingresar" color="#DE95DB" onPress={() => login(username, password)} />
+        <Button title="Ingresar" color="#D7A625" onPress={() => login(username, password)} />
       </View>
     </View>
   )
