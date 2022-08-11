@@ -20,10 +20,10 @@ export default function Card({ props }) {
     <SafeAreaView onTouchStart={() => navigation.navigate("Profile")} style={styles.container}>
       <ScrollView>
         <View style={styles.row}>
-          <View style={{ width: '65%', }}>
+          <View style={{ width: 200 }}>
             <Text style={styles.titulo}> {props.nombre}   </Text>
           </View>
-          <View style={{ width: '25%', }}>
+          <View style={{ width: 70 }}>
             <Icon name={'heart'} size={25} style={styles.heart} />
           </View>
         </View>
@@ -41,11 +41,11 @@ export default function Card({ props }) {
 
 const styles = StyleSheet.create({
   container: {
-    width: '70%',
-    height: '30%',
+    width: 300,
+    height: 170,
     backgroundColor: "#F8F7F7",
     borderRadius: 13,
-    marginTop: '10%',
+    marginTop: 30,
     marginHorizontal: 10,
     marginLeft: "auto",
     marginRight: "auto",
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 100,
-    width: '80%',
+    width: 250,
   },
   titulo: {
     fontSize: 20,

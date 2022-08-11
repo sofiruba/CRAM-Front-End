@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
     titulo:{
         fontWeight: 'bold',
         color: '#91908d',
-        fontSize: 17,
+        fontSize: 18,
         backgroundColor: '#F5F5F5F5',
         borderRadius: 6,
-        marginRight: '2%',
-        width: '14%',
+        marginRight: 6,
+        width: 56,
         textAlign: 'left',
     },
     filtro:{
