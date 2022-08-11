@@ -18,7 +18,7 @@ export default function Card({ props }) {
   console.log(img)
   return (
     <SafeAreaView onTouchStart={() => navigation.navigate("Profile")} style={styles.container}>
-      <ScrollView>
+      
         <View style={styles.row}>
           <View style={{ width: 200 }}>
             <Text style={styles.titulo}> {props.nombre}   </Text>
@@ -30,7 +30,7 @@ export default function Card({ props }) {
         <View style={styles.img}>
           <Image style={styles.image} source={props.foto}></Image>
         </View>
-      </ScrollView>
+
     </SafeAreaView>
 
 

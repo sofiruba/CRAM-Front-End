@@ -11,6 +11,12 @@ export default function HomeScreen() {
         "nombre": "Las Violetas",
         "description": "Confiteria",
         "foto": require('../assets/lasvioletas.jpg'),
+    },
+    {
+        "IdLugar": "bbb456",
+        "nombre": "Le Pain Quotidien",
+        "description": "Confiteria",
+        "foto": require('../assets/Restaurante-ejemplo.jpg'),
     },])
     const headers = {
         "Content-Type": "application/json",

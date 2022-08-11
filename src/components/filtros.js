@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
         justifyContent: 'center',
+        marginTop: -20,
     },
     titulo:{
         fontWeight: 'bold',
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         textAlign: 'left',
     },
     filtro:{
-        marginRight: '2%',
+        marginRight: 6,
         fontSize: 16,
     }
 })
