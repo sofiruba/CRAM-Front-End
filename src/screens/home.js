@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         marginTop: '15%',
     },
     texto: {
-        fontSize: 20,
+        fontSize: 18,
         marginLeft: '2%',
         marginRight: '2%'
     }

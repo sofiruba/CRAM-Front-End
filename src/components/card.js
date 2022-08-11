@@ -70,9 +70,8 @@ const styles = StyleSheet.create({
   heart: {
     color: "red",
     textAlign: "right",
-
-    marginLeft: '60%',
-    marginTop: '20%',
+    marginLeft: 40,
+    marginTop: 10,
   },
   row: {
     flexDirection: "row",
