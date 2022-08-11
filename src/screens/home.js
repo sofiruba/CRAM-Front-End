@@ -34,6 +34,7 @@ export default function HomeScreen() {
     return (
         <KeyboardAvoidingView style={styles.pag} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
+                <View>
                 <View style={styles.row}>
                     <Text style={styles.texto} >Seguidos</Text>
                     <Text  style={styles.texto}>|</Text>
@@ -41,6 +42,7 @@ export default function HomeScreen() {
                 </View>
                 <Buscador />
                 <Filtros></Filtros>
+                </View>
                 <ListadoHome lugares={lugares}></ListadoHome>
             </View>
         </KeyboardAvoidingView>

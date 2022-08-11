@@ -7,7 +7,7 @@ export default function Profile() {
 
     const navigation = useNavigation();
     const [loaded] = useFonts({
-        Montserrat: require('../assets/fonts/Poppins-Bold.ttf'),
+        Poppins: require('../assets/fonts/Poppins-Bold.ttf'),
     });
     if (!loaded) {
         return null;
@@ -39,7 +39,7 @@ export default function Profile() {
                     <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                 </View>
                 <View style={styles.boton}>
-                    <Button title="Ir a home" color="#DE95DB"  style={styles.boton} onPress={() => navigation.goBack()} />
+                    <Button title="Ir a home" color="#D7A625"  style={styles.boton} onPress={() => navigation.goBack()} />
                 </View>
             </View>
         </View>

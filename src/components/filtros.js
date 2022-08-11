@@ -1,5 +1,7 @@
 import { View, StyleSheet, Text, Button} from "react-native"
 export default function Filtros(){
+
+    // después hacer el título un botón con animación para que salgan los filtros (se hace con hide?:)
     return(
         <View style={styles.row}>
             <Text style={styles.titulo}>Filtros</Text>
@@ -14,18 +16,16 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
         justifyContent: 'center',
-        marginBottom: '5%',
-        marginTop: '-18%',
     },
     titulo:{
         fontWeight: 'bold',
         color: '#91908d',
-        fontSize: 25,
+        fontSize: 17,
         backgroundColor: '#F5F5F5F5',
-        borderRadius: 8,
+        borderRadius: 6,
         marginRight: '2%',
         width: '14%',
-        textAlign: 'center',
+        textAlign: 'left',
     },
     filtro:{
         marginRight: '2%',

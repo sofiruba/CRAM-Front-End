@@ -8,6 +8,7 @@ export default function ListadoHome({ lugares}){
             lugares.map((l) => {
                 return (
                     <Card key={l.IdLugar} props={l}></Card>
+                    
                 )
             })
         }

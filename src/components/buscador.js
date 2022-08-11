@@ -22,11 +22,12 @@ const Buscador = () => {
 const styles = StyleSheet.create({
   buscador: {
     width: '85%',
-    height: '23%',
+    height: '28%',
     alignSelf: 'center',
     borderRadius: 10,
     ocapacity: '80%',
     marginTop: '10%',
+    marginBottom: 0,
   }
 });
 
