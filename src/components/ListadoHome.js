@@ -19,7 +19,7 @@ export default function ListadoHome({ lugares}){
 
 const styles = StyleSheet.create({
     container: {
-        height: 600,
+        height: 700,
         marginTop: 30,
         width: '100%',
         backgroundColor: "#FFFFFF",
