@@ -1,8 +1,8 @@
-import { View, StyleSheet, Text } from "react-native"
+import { View, StyleSheet, Text, Button} from "react-native"
 export default function Filtros(){
     return(
         <View style={styles.row}>
-            <Text style={styles.titulo}>Filtros</Text>
+            <Button style={styles.titulo} name='Filtros'></Button>
             <Text style={styles.filtro}>Kosher</Text>
             <Text style={styles.filtro}>Vegano</Text>
             <Text style={styles.filtro}>Vegetariano</Text>
@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'center',
         marginBottom: '5%',
-        marginTop: '-15%',
+        marginTop: '-18%',
     },
     titulo:{
         fontWeight: 'bold',
         color: '#91908d',
-        fontSize: 15,
+        fontSize: 25,
         backgroundColor: '#F5F5F5F5',
         borderRadius: 8,
         marginRight: '2%',
