@@ -14,16 +14,16 @@ export default function Profile() {
     }
     return (
         <View style={styles.pag}>
-            <View>
+            
                 <View style={styles.content}>
-                <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+                    <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
                 </View>
                 <View>
-                <View style={styles.texto}>
-                    <View style={styles.bigrow}>
-                    <Text style={styles.title}> Le Pain Quotidien </Text>
-                    <Icon name={'comment'} style={styles.comment} /> 
-                    </View>
+                    <View style={styles.texto}>
+                        <View style={styles.bigrow}>
+                            <Text style={styles.title}> Le Pain Quotidien </Text>
+                            <Icon name={'comment'} style={styles.comment} />
+                        </View>
                     </View>
                     <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.info}>Info...</Text>
@@ -43,25 +43,24 @@ export default function Profile() {
                     <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                 </View>
                 <View style={styles.boton}>
-                    <Button title="Ir a home" color="#DE95DB"  style={styles.boton} onPress={() => navigation.goBack()} />
+                    <Button title="Ir a home" color="#DE95DB" style={styles.boton} onPress={() => navigation.goBack()} />
                 </View>
-            </View>
+          
         </View>
     );
 
 }
 
 const styles = StyleSheet.create({
-    content:{
+    content: {
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        height: '50%',
+        height: '35%',
     },
     img: {
         height: '70%',
         width: '100%',
-        marginTop: '2%',
         justifyContent: 'center',
         resizeMode: 'contain',
     },
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
         width: '100%',
         padding: '10%',
         fontFamily: 'Poppins',
-        
+
     },
     subtitle: {
         fontWeight: '600',
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
         marginLeft: '-5%',
         marginTop: '2%',
     },
-    bigrow:{
+    bigrow: {
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: 'center',
