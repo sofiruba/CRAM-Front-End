@@ -3,6 +3,7 @@ import { View, Text, Button, StyleSheet, Image } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
+// prob para la parte de ig podemos poner un botón que se abre?
 export default function Profile() {
 
     const navigation = useNavigation();
@@ -19,7 +20,7 @@ export default function Profile() {
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
 
                 </View>
-                <View>
+                <View style={styles.infores}>
                     <Text style={styles.title}> Le Pain Quotidien <Icon name={'comment'} style={styles.comment} /> </Text>
                     <Text style={styles.subtitle}>Confiteria</Text>
                     <Text style={styles.info}>Info...</Text>
@@ -57,38 +58,38 @@ const styles = StyleSheet.create({
     img: {
         height: 150,
         width: '100%',
-        marginTop: '2%',
+        marginTop: 10,
         justifyContent: 'center',
         resizeMode: 'contain',
         position: 'relative',
     },
     tinyimg: {
-        height: '50%',
-        width: '110%',
-        marginTop: '5%'
+        height: 130,
+        width: '100%',
+        marginTop: 7,
     },
     title: {
         fontSize: 35,
         textAlign: 'justify',
         fontWeight: 'bold',
         fontFamily: 'Poppins',
-        marginTop: '-12%',
-        marginLeft: '-8%',
+        marginTop: 0,
+        marginLeft: 0,
         textAlign: 'left',
     },
     pag: {
         backgroundColor: "#FFFFFF",
         height: '100%',
         width: '100%',
-        padding: '10%',
+        padding: 30,
         fontFamily: 'Poppins',
         
     },
     subtitle: {
         fontWeight: '600',
         fontSize: 25,
-        marginLeft: '-5%',
-        marginTop: '2%',
+        marginLeft: 0,
+        marginTop: 5,
     },
     bigrow:{
         flexDirection: "row",
@@ -98,41 +99,36 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
-        marginTop: '8%',
-        marginBottom: '2%',
-        width: '50%',
+        marginTop: 15,
+        marginBottom: 5,
+        width: 150,
+        height: 60,
         alignItems: 'center',
     },
     descuento: {
-        marginTop: '2%',
-        marginLeft: '2%',
+        marginTop: 10,
+        marginLeft: 5,
         fontSize: 18,
         fontWeight: 'bold',
     },
     lista: {
-        marginTop: '2%',
-        marginRight: '3%',
+        marginTop: 0,
+        marginRight: 5,
         fontSize: 18,
         fontWeight: 'bold',
-    },
-    column: {
-        flexDirection: "column",
-        flexWrap: "wrap",
-        marginTop: '15%',
-        marginBottom: '9%',
     },
     comment:
     {
         color: "black",
         textAlign: "right",
         fontSize: 30,
-        marginLeft: '2%',
-        marginTop: '2%',
+        marginLeft: 0,
+        marginTop: 0,
     },
 
     boton: {
-        height: '10%',
-        width: '50%',
+        height: 50,
+        width: 130,
         borderRadius: 13,
         justifyContent: 'center',
         alignSelf: 'center',
@@ -141,17 +137,16 @@ const styles = StyleSheet.create({
     info: {
         fontSize: 18,
         color: 'grey',
-        marginLeft: '-4%',
-        marginTop: '3%',
+        marginLeft: 0,
+        marginTop: 5,
     },
     descuentos: {
-        height: '65%',
-        width: '25%',
+        height: 50,
+        width: 30,
         backgroundColor: "#F8F7F7",
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: '5%',
     },
     simbolo: {
         fontSize: 25,
@@ -159,8 +154,8 @@ const styles = StyleSheet.create({
     },
     heart: {
         color: 'red',
-        marginTop: '3%',
-        marginLeft: '2%',
-        marginRight: '3%',
+        marginTop: 0,
+        marginLeft: 2,
+        marginRight: 0,
     },
 })
