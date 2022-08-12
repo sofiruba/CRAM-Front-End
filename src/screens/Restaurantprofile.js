@@ -2,7 +2,7 @@ import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from 'react-n
 import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect, React } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Poppins_700Bold, Heebo_400Regular, useFonts } from '@expo-google-fonts/dev';
+import { Poppins_700Bold, Heebo_400Regular,FrankRuhlLibre_700Bold,Arimo_700Bold, useFonts } from '@expo-google-fonts/dev';
 // en abierto o cerrado hay que poner un if en styles que se hace con ? supongo que podemos hacer un bool
 // https://directory.vercel.app/
 // import {el tipo de fuente que quieren}    
@@ -13,6 +13,8 @@ export default function Profile() {
     let [loaded] = useFonts({
         Poppins_700Bold,
         Heebo_400Regular,
+        FrankRuhlLibre_700Bold,
+        Arimo_700Bold,
       });
     
     if (!loaded) {
@@ -27,8 +29,8 @@ export default function Profile() {
                     <Text style={[{fontFamily: 'Heebo_400Regular'}, styles.subtitle]}>Confiteria</Text>
                     <View style={styles.bigrow}>
                     <Icon name={'clock-o'} style={styles.estado} />
-                    <Text style={styles.estado}>Abierto</Text>
-                    <Text style={styles.hora}> Cierra a las 20hs</Text>
+                    <Text style={[{fontFamily:'Arimo_700Bold'},styles.estado]}>Abierto</Text>
+                    <Text style={[{fontFamily:'Arimo_700Bold'},styles.hora]}> Cierra a las 20hs</Text>
                     </View>
                 </View>
                 <View style={styles.bigrow}>
@@ -36,16 +38,16 @@ export default function Profile() {
                         <View >
                            <Icon name={'phone'} style={styles.llamada}/>
                         </View>
-                        <Text style={styles.llamadatext}>Llamar</Text>
+                        <Text style={[{fontFamily:'FrankRuhlLibre_700Bold'},styles.llamadatext]}>Llamar</Text>
                     </View>
                     <View style={styles.row}>
                         <Icon name={'heart'} size={35} style={styles.heart} />
-                        <Text style={styles.lista}>Añadir a Lista</Text>
+                        <Text style={[{fontFamily:'FrankRuhlLibre_700Bold'},styles.lista]}>Añadir a Lista</Text>
                     </View>
                     <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                 </View>
                 <View>
-                    <Text onPress={() => navigation.goBack()} style={styles.boton}> Ir a Home </Text> 
+                    <Text onPress={() => navigation.goBack()} style={[{fontFamily:'Heebo_400Regular'},styles.boton]}> Ir a Home </Text> 
                 </View>
             </View>
         </View>
@@ -88,7 +90,6 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         padding: 10,
-        fontFamily: 'Inter_900Black',
         
     },
     subtitle: {
@@ -117,7 +118,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 5,
         fontSize: 18,
-        fontWeight: 'bold',
         textAlignVertical: 'bottom',
     },
     lista: {
@@ -125,7 +125,6 @@ const styles = StyleSheet.create({
         marginRight: 0,
         textAlignVertical: 'bottom',
         fontSize: 18,
-        fontWeight: 'bold',
     },
     comment:
     {
@@ -159,7 +158,6 @@ const styles = StyleSheet.create({
         marginRight: 5,
         marginTop: 0,
         opacity: 0.8,
-        fontWeight: 'bold',
         textAlignVertical: 'center',
     },
     hora: {
@@ -178,11 +176,9 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         textAlign: 'center',
         marginLeft: 5,
-        fontWeight: 'bold',
     },
     simbolo: {
         fontSize: 25,
-        fontWeight: 'bold',
     },
     heart: {
         color: 'red',

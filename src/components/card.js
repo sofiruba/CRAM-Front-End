@@ -2,18 +2,18 @@ import React from "react"
 import { View, Text, StyleSheet, Image } from "react-native"
 import { SafeAreaView, ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
-
+import { Arvo_400Regular,useFonts } from "@expo-google-fonts/dev";
 
 //* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function Card({ props }) {
   const navigation = useNavigation();
-  const [loaded] = useFonts({
-    Arvo: require('../assets/fonts/Arvo-Regular.ttf'), 
-  });
+  let [loaded] = useFonts({
+      Arvo_400Regular,
+    });
+  
   if (!loaded) {
-    return null;
+      return null;
   }
   let img = `../assets/${props.foto}.png`
   console.log(img)
@@ -22,7 +22,7 @@ export default function Card({ props }) {
       
         <View style={styles.row}>
           <View style={{ width: 200 }}>
-            <Text style={styles.titulo}> {props.nombre}   </Text>
+            <Text style={[{fontFamily:'Arvo_400Regular'},styles.titulo]}> {props.nombre}   </Text>
           </View>
           <View style={{ width: 70 }}>
             <Icon name={'heart'} size={25} style={styles.heart} />
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontSize: 20,
-    fontWeight: "bold",
     marginTop: '3%',
     marginLeft: '2%',
   },

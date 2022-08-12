@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import {Arvo_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
 import ListadoHome from '../components/ListadoHome'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
@@ -38,15 +39,22 @@ export default function HomeScreen() {
     }, [])
 
     console.log(lugares)
-
+    let [loaded] = useFonts({
+        Arvo_400Regular,
+        ShipporiAntiqueB1_400Regular,
+      });
+    
+    if (!loaded) {
+        return null;
+    }
     return (
-        <KeyboardAvoidingView style={styles.pag} behavior={Platform.OS === "" ? "padding" : "height"}>
+        <KeyboardAvoidingView style={[{fontFamily: 'Arvo_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
                 <View>
                 <View style={styles.row}>
-                    <Text style={styles.texto} >Seguidos</Text>
-                    <Text  style={styles.texto}>|</Text>
-                    <Text style={styles.texto}>Para Ti</Text>
+                    <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]} >Seguidos</Text>
+                    <Text  style={[{fontFamily:' Arvo_400Regular'},styles.texto]}>|</Text>
+                    <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]}>Para Ti</Text>
                 </View>
                 <Buscador />
                 <Filtros></Filtros>
