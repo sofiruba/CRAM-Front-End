@@ -1,9 +1,9 @@
 import React from 'react'
-import { View, Text, Button, StyleSheet, Image } from 'react-native'
+import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
-// prob para la parte de ig podemos poner un botón que se abre?
+// en abierto o cerrado hay que poner un if en styles que se hace con ? supongo que podemos hacer un bool
 export default function Profile() {
 
     const navigation = useNavigation();
@@ -15,23 +15,23 @@ export default function Profile() {
     }
     return (
         <View style={styles.pag}>
-            <View>
                 <View style={styles.content}>
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
-
-                </View>
-                <View style={styles.infores}>
-                    <Text style={styles.title}> Le Pain Quotidien <Icon name={'comment'} style={styles.comment} /> </Text>
+                <View>
+                    <Text style={styles.title}>Le Pain Quotidien  <Icon name={'comment'} style={styles.comment} /> </Text>
                     <Text style={styles.subtitle}>Confiteria</Text>
-                    <Text style={styles.info}>Info...</Text>
+                    <View style={styles.bigrow}>
+                    <Icon name={'clock-o'} style={styles.estado} />
+                    <Text style={styles.estado}>Abierto</Text>
+                    <Text style={styles.hora}> Cierra a las 20hs</Text>
+                    </View>
                 </View>
                 <View style={styles.bigrow}>
                     <View style={styles.row}>
-                        <View style={styles.descuentos}>
-                            <Text style={styles.simbolo}>%</Text>
+                        <View >
+                           <Icon name={'phone'} style={styles.llamada}/>
                         </View>
-                        <Text style={styles.descuento}>Descuentos disponibles</Text>
-
+                        <Text style={styles.llamadatext}>Llamar</Text>
                     </View>
                     <View style={styles.row}>
                         <Icon name={'heart'} size={35} style={styles.heart} />
@@ -39,8 +39,8 @@ export default function Profile() {
                     </View>
                     <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                 </View>
-                <View style={styles.boton}>
-                    <Button title="Ir a home" color="#D7A625"  style={styles.boton} onPress={() => navigation.goBack()} />
+                <View>
+                    <Text onPress={() => navigation.goBack()} style={styles.boton}> Ir a Home </Text> 
                 </View>
             </View>
         </View>
@@ -51,9 +51,14 @@ export default function Profile() {
 const styles = StyleSheet.create({
     content:{
         justifyContent: 'center',
-        alignItems: 'center',
         width: '100%',
-        height: 300,
+        height: 600,
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        backgroundColor: 'white',
+        borderRadius: 15,
+        padding: 5,
+       
     },
     img: {
         height: 150,
@@ -61,7 +66,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         justifyContent: 'center',
         resizeMode: 'contain',
-        position: 'relative',
     },
     tinyimg: {
         height: 130,
@@ -69,32 +73,31 @@ const styles = StyleSheet.create({
         marginTop: 7,
     },
     title: {
-        fontSize: 35,
-        textAlign: 'justify',
+        fontSize: 30,
+        textAlign: 'left',
         fontWeight: 'bold',
         fontFamily: 'Poppins',
-        marginTop: 0,
+        marginTop: 5,
         marginLeft: 0,
-        textAlign: 'left',
     },
     pag: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#F8F7F7",
         height: '100%',
         width: '100%',
-        padding: 30,
+        padding: 10,
         fontFamily: 'Poppins',
         
     },
     subtitle: {
         fontWeight: '600',
-        fontSize: 25,
+        fontSize: 22,
         marginLeft: 0,
-        marginTop: 5,
+        marginTop: 2,
     },
     bigrow:{
         flexDirection: "row",
         flexWrap: "wrap",
-        justifyContent: 'center',
+      
     },
     row: {
         flexDirection: "row",
@@ -104,16 +107,20 @@ const styles = StyleSheet.create({
         width: 150,
         height: 60,
         alignItems: 'center',
+        alignContent: 'center',
+
     },
-    descuento: {
+    llamadatext: {
         marginTop: 10,
         marginLeft: 5,
         fontSize: 18,
         fontWeight: 'bold',
+        textAlignVertical: 'bottom',
     },
     lista: {
         marginTop: 0,
-        marginRight: 5,
+        marginRight: 0,
+        textAlignVertical: 'bottom',
         fontSize: 18,
         fontWeight: 'bold',
     },
@@ -121,8 +128,9 @@ const styles = StyleSheet.create({
     {
         color: "black",
         textAlign: "right",
+        alignContent: 'flex-end',
         fontSize: 30,
-        marginLeft: 0,
+        marginLeft: 10,
         marginTop: 0,
     },
 
@@ -130,23 +138,43 @@ const styles = StyleSheet.create({
         height: 50,
         width: 130,
         borderRadius: 13,
+        backgroundColor:"#F8F7F7",
         justifyContent: 'center',
         alignSelf: 'center',
         overflow: 'hidden',
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        marginTop: 10,
     },
-    info: {
-        fontSize: 18,
-        color: 'grey',
+    estado: {
+        fontSize: 20,
+        color: 'green',
         marginLeft: 0,
-        marginTop: 5,
+        marginRight: 5,
+        marginTop: 0,
+        opacity: 0.8,
+        fontWeight: 'bold',
+        textAlignVertical: 'center',
     },
-    descuentos: {
-        height: 50,
-        width: 30,
+    hora: {
+        fontSize: 18,
+        textAlignVertical: 'center',
+    },
+    llamada: {
+        height: 45,
+        fontSize: 25,
+        width: 35,
         backgroundColor: "#F8F7F7",
-        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        textAlignVertical: 'center',
+        marginTop: 10,
+        borderRadius: 5,
+        textAlign: 'center',
+        marginLeft: 5,
+        fontWeight: 'bold',
     },
     simbolo: {
         fontSize: 25,
@@ -154,8 +182,9 @@ const styles = StyleSheet.create({
     },
     heart: {
         color: 'red',
+        textAlignVertical: 'center',
         marginTop: 0,
         marginLeft: 2,
-        marginRight: 0,
+        marginRight: 2.5,
     },
 })
