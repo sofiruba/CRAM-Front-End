@@ -3,11 +3,19 @@ import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 
 //* FUENTE: RUBIK
 export default function LoginForm({login}) {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+    const [nombre, setNombre] = useState("")
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [mail, setMail] = useState("")
 
   return (
     <View style={styles.container}>
+        <View>
+        <TextInput style={styles.input}
+          placeholder="  Nombre"
+          onChangeText={(text) => setNombre(text)}
+        />
+      </View>
       <View>
         <TextInput style={styles.input}
           placeholder="  Usuario"
@@ -22,9 +30,15 @@ export default function LoginForm({login}) {
             onChangeText={(text) => setPassword(text)}
           />
         </View>
+        <View>
+        <TextInput style={styles.input}
+          placeholder="  Mail"
+          onChangeText={(text) => setMail(text)}
+        />
+      </View>
       </View>
       <View style={styles.boton}>
-        <Button title="Registrarse" color="#D7A625" onPress={() => login(username, password)} />
+        <Button title="Registrarse" color="#D7A625" onPress={() => register(nombre, username, password, mail)} />
       </View>
     </View>
   )

@@ -14,7 +14,7 @@ export default function LoginScreen() {
         <View style={styles.pag}>
             <View style={styles.container}>
                 <Image style={styles.img} source={require('../assets/icon.png')}></Image>
-                <LoginForm login={login}></LoginForm>
+                <RegisterForm register={register}></RegisterForm>
             </View>
         </View>
     )
@@ -34,10 +34,9 @@ const styles = StyleSheet.create({
         marginTop: '50%',
     },
     pag: {
-        backgroundColor: "#F7D250",
+        backgroundColor: '#F7D250',
         height: '100%',
         width: '100%',
-
-
+        flex: 1,
     },
 });
