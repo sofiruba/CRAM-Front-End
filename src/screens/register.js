@@ -1,99 +1,43 @@
-import React, { useState } from "react";
-import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
-import { useTailwind } from 'tailwind-rn';
-import axios from 'axios'
+import React, { useState } from 'react'
+import { Image, StyleSheet, View } from 'react-native'
+import LoginForm from '../components/LoginForm';
+import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
+export default function LoginScreen() {
 
-export default function RegisterScreen({ navigation }) {
-
-    const register = async (usern, pass) => {
-        const usuario = { username: usern, password: pass, nombre: n, mail: e }
-        const axiosRegister = axios.create({
-            baseURL: 'http://localhost:3000'
-        })
-        return axiosRegister.post('/auth/register', usuario)
-            .then(res => {
-                if (res.status = 201) { //fijarse q codigo devuelve 
-                    navigation.navigate('Home', { usuario })
-                }
-                else {
-                    alert('Volver a ingresar') // hay q ver manera de hacer diferentes dependiendo el problema
-                }
-            })
-            .catch(error => {
-                console.error('error', error)
-            })
+    const navigation = useNavigation();
+    const login = () => {
+        return navigation.navigate('Home')
     }
-    const tailwind = useTailwind();
-    const [user, setUser] = useState({})
-    return (
-        <View style={styles.container}>
-            <View style={tailwind("mt-8 space-y-6")}>
-                <View style={tailwind("rounded-md shadow-sm -space-y-px")}>
-                    <TextInput
-                        placeholder="Nombre"
-                        onChangeText={(text) => setUser({ ...user, name: text })}
-                        style={[tailwind("appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"), styles.formstyle]}
-                    />
-                </View>
-            </View>
-            <View style={tailwind("mt-8 space-y-6")}>
-                <View style={tailwind("rounded-md shadow-sm -space-y-px")}>
-                    <TextInput
-                        placeholder="Mail"
-                        onChangeText={(text) => setUser({ ...user, mail: text })}
-                        style={[tailwind("appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"), styles.formstyle]}
-                    />
-                </View>
-            </View>
-            <View style={tailwind("mt-8 space-y-6")}>
-                <View style={tailwind("rounded-md shadow-sm -space-y-px")}>
-                    <TextInput
-                        placeholder="Usuario"
-                        onChangeText={(text) => setUser({ ...user, username: text })}
-                        style={[tailwind("appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"), styles.formstyle]}
-                    />
-                </View>
-            </View>
-            <View style={tailwind("mt-8 space-y-6")}>
-                <View style={tailwind("rounded-md shadow-sm -space-y-px")}>
 
-                    <TextInput
-                        placeholder="Contraseña"
-                        secureTextEntry={true}
-                        onChangeText={(text) => setUser({ ...user, password: text })}
-                        style={[tailwind("appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"), styles.formstyle]}>
-                    </TextInput>
-                </View>
-            </View>
-            <View style={styles.boton}>
-                <Button title="Registrar" color="#DE95DB" onClick={register(user.username, user.password, user.name, user.mail)} > </Button>
+    return (
+        <View style={styles.pag}>
+            <View style={styles.container}>
+                <Image style={styles.img} source={require('../assets/icon.png')}></Image>
+                <LoginForm login={login}></LoginForm>
             </View>
         </View>
     )
 }
+
+
 const styles = StyleSheet.create({
-    formstyle: {
-        backgroundColor: 'white',
-        marginBottom: 0,
-        marginTop: 0,
-        flex: 1,
-    },
-    margin: {
-        margin: 2,
+    img: {
+        height: 150,
+        width: 375,
+        marginTop: '40%',
     },
     container: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        margin: '8%',
+        marginTop: '50%',
     },
+    pag: {
+        backgroundColor: "#F7D250",
+        height: '100%',
+        width: '100%',
 
-    imageStyle: {
-        resizeMode: 'stretch',
-        alignItems: 'center',
+
     },
-    boton: {
-        marginTop: 20,
-        width: 100,
-    }
-
 });
