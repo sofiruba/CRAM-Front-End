@@ -5,6 +5,8 @@ import ListadoHome from '../components/ListadoHome'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
 
+//* Fuentes: Arvo , slabo27 px y para el seguidos y para ti Shippori Antique B1
+
 export default function HomeScreen() {
     const [lugares, setLugares] = useState([{
         "IdLugar": "aaa123",

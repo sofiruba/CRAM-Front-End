@@ -2,18 +2,19 @@ import React from "react"
 import { View, Text, StyleSheet, Image } from "react-native"
 import { SafeAreaView, ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 
 
 //* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function Card({ props }) {
   const navigation = useNavigation();
-  /*const [loaded] = useFonts({
-    Montserrat: require('./assets/fonts/Montserrat.ttf'), 
+  const [loaded] = useFonts({
+    Arvo: require('../assets/fonts/Arvo-Regular.ttf'), 
   });
   if (!loaded) {
     return null;
-  }*/
+  }
   let img = `../assets/${props.foto}.png`
   console.log(img)
   return (

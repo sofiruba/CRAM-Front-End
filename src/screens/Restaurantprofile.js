@@ -1,15 +1,20 @@
-import React from 'react'
 import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
+import { useState, useEffect, React } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useFonts } from 'expo-font';
+import { Poppins_700Bold, Heebo_400Regular, useFonts } from '@expo-google-fonts/dev';
 // en abierto o cerrado hay que poner un if en styles que se hace con ? supongo que podemos hacer un bool
+// https://directory.vercel.app/
+// import {el tipo de fuente que quieren}    
+// Para Le Pain Quotidien fuente POPPINS,para Confiteria y Descuentos disponibles HEEBO , para agregar lista LIBRE FRANKLIN y para mas informacion ARIMO
 export default function Profile() {
 
     const navigation = useNavigation();
-    const [loaded] = useFonts({
-        Poppins: require('../assets/fonts/Poppins-Bold.ttf'),
-    });
+    let [loaded] = useFonts({
+        Poppins_700Bold,
+        Heebo_400Regular,
+      });
+    
     if (!loaded) {
         return null;
     }
@@ -18,8 +23,8 @@ export default function Profile() {
                 <View style={styles.content}>
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
                 <View>
-                    <Text style={styles.title}>Le Pain Quotidien  <Icon name={'comment'} style={styles.comment} /> </Text>
-                    <Text style={styles.subtitle}>Confiteria</Text>
+                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>Le Pain Quotidien  <Icon name={'comment'} style={styles.comment} /> </Text>
+                    <Text style={[{fontFamily: 'Heebo_400Regular'}, styles.subtitle]}>Confiteria</Text>
                     <View style={styles.bigrow}>
                     <Icon name={'clock-o'} style={styles.estado} />
                     <Text style={styles.estado}>Abierto</Text>
@@ -75,8 +80,6 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 30,
         textAlign: 'left',
-        fontWeight: 'bold',
-        fontFamily: 'Poppins',
         marginTop: 5,
         marginLeft: 0,
     },
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         padding: 10,
-        fontFamily: 'Poppins',
+        fontFamily: 'Inter_900Black',
         
     },
     subtitle: {
