@@ -136,9 +136,9 @@ const styles = StyleSheet.create({
 
     boton: {
         height: 50,
-        width: 130,
+        width: 170,
         borderRadius: 13,
-        backgroundColor:"#F8F7F7",
+        backgroundColor:"#F0B57D",
         justifyContent: 'center',
         alignSelf: 'center',
         overflow: 'hidden',
@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
         marginTop: 10,
+        color: 'white',
     },
     estado: {
         fontSize: 20,
