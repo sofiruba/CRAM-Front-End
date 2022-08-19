@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Image, StyleSheet, View } from 'react-native'
-import LoginForm from '../components/LoginForm';
+import { Image, StyleSheet, View, Text, KeyboardAvoidingView} from 'react-native'
+import LoginForm from '../components/loginForm';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 export default function LoginScreen() {
@@ -22,17 +22,21 @@ export default function LoginScreen() {
       })
   }
 */
- const login = () =>{
+  const login = () => {
     return navigation.navigate('Home')
- }
- 
+  }
+
   return (
-      <View style={styles.pag}>
-        <View style={styles.container}>
-          <Image style={styles.img} source={require('../assets/icon.png')}></Image>
-          <LoginForm login={ login}></LoginForm>
-        </View>
-      </View>
+    <View style={styles.pag}>
+      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "" ? "padding" : "height"}>
+        <Image style={styles.img} source={require('../assets/icon.png')}></Image>
+        <LoginForm login={login}></LoginForm>      
+        <KeyboardAvoidingView style={styles.texto}>
+        <Text onPress={() => navigation.navigate("Register")}>¿Todavía no te registraste?</Text>
+      </KeyboardAvoidingView >
+      </KeyboardAvoidingView>
+
+    </View>
   )
 }
 
@@ -41,19 +45,22 @@ const styles = StyleSheet.create({
   img: {
     height: 150,
     width: 375,
-    marginTop: '40%',
+    marginTop: 100,
   },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '8%',
-    marginTop: '50%',
+    margin: 30,
+    marginTop: 200,
   },
   pag: {
     backgroundColor: "#F7D250",
     height: '100%',
     width: '100%',
-
-
+  },
+  texto: {
+    color: '#000000',
+    position: 'absolute',
+    marginTop: 5,
   },
 });

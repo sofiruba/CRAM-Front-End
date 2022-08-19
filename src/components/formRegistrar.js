@@ -2,40 +2,32 @@ import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 
 //* FUENTE: RUBIK
-export default function LoginForm({login}) {
-    const [nombre, setNombre] = useState("")
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [mail, setMail] = useState("")
+export default function FormRegistrar({ register }) {
+  const [nombre, setNombre] = useState("")
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [mail, setMail] = useState("")
 
   return (
     <View style={styles.container}>
-        <View>
+      <View style={styles.inputs}>
         <TextInput style={styles.input}
           placeholder="  Nombre"
           onChangeText={(text) => setNombre(text)}
         />
-      </View>
-      <View>
         <TextInput style={styles.input}
           placeholder="  Usuario"
           onChangeText={(text) => setUsername(text)}
         />
-      </View>
-      <View>
-        <View>
           <TextInput style={styles.input}
             placeholder="  Contraseña"
             secureTextEntry={true}
             onChangeText={(text) => setPassword(text)}
           />
-        </View>
-        <View>
-        <TextInput style={styles.input}
-          placeholder="  Mail"
-          onChangeText={(text) => setMail(text)}
-        />
-      </View>
+          <TextInput style={styles.input}
+            placeholder="  Mail"
+            onChangeText={(text) => setMail(text)}
+          />
       </View>
       <View style={styles.boton}>
         <Button title="Registrarse" color="#D7A625" onPress={() => register(nombre, username, password, mail)} />
@@ -50,12 +42,17 @@ const styles = StyleSheet.create({
     marginTop: 0,
     flex: 1,
   },
-
+  inputs:{
+    marginTop: 35,
+  },
   container: {
-    justifyContent: 'center',
     alignItems: 'center',
-    padding: '11%',
-    marginTop: '10%',
+    padding: 10,
+    marginTop: 30,
+    height: 700,
+    width: '100%',
+    backgroundColor: "#FFF",
+    borderRadius: 60,
   },
 
   imageStyle: {
@@ -63,18 +60,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   boton: {
-    marginTop: '5%',
+    marginTop: 20,
     height: '100%',
-    width: '100%',
+    width: 150,
   },
 
   input: {
-    backgroundColor: 'white',
+    backgroundColor: '#F8F7F7',
     borderRadius: 20,
-    marginTop: '5%',
-    width: 200,
-    height: 45,
-    marginLeft: '2%',
+    marginTop: 20,
+    width: 300,
+    height: 50,
   },
 
 });

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from "react-native"
 import { SafeAreaView, ScrollView } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from "@react-navigation/native";
-import { Arvo_400Regular,useFonts } from "@expo-google-fonts/dev";
+import { Arvo_400Regular, useFonts } from "@expo-google-fonts/dev";
 
 //* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function Card({ props }) {
