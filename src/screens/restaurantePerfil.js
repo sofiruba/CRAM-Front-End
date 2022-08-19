@@ -25,7 +25,7 @@ export default function Profile() {
                 <View style={styles.content}>
                 <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
                 <View>
-                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>Le Pain Quotidien  <Icon name={'comment'} style={styles.comment} /> </Text>
+                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>Le Pain Quotidien  <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas")}/> </Text>
                     <Text style={[{fontFamily: 'Heebo_400Regular'}, styles.subtitle]}>Confiteria</Text>
                     <View style={styles.bigrow}>
                     <Icon name={'clock-o'} style={styles.estado} />
