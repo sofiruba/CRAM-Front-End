@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
        
     },
     img: {
-        height: 150,
+        height: 230,
         width: '100%',
         marginTop: 10,
         justifyContent: 'center',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         marginLeft: 0,
     },
     pag: {
-        backgroundColor: "#F8F7F7",
+        backgroundColor: "#FFF",
         height: '100%',
         width: '100%',
         padding: 10,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         marginTop: 15,
         marginBottom: 5,
-        width: 150,
+        width: 180,
         height: 60,
         alignItems: 'center',
         alignContent: 'center',
@@ -121,8 +121,6 @@ const styles = StyleSheet.create({
         textAlignVertical: 'bottom',
     },
     lista: {
-        marginTop: 0,
-        marginRight: 0,
         textAlignVertical: 'bottom',
         fontSize: 18,
     },
