@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text,TextInput, StyleSheet, Button,KeyboardAvoidingView } from 'react-native'
-import {Arvo_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
+import {DaysOne_400Regular,Comfortaa_300Light, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
 
 
-//* Fuentes: Arvo , slabo27 px y para el seguidos y para ti Shippori Antique B1
+//* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
 
 export default function Reseñas({props}) {
 
@@ -15,32 +15,34 @@ export default function Reseñas({props}) {
     let [loaded] = useFonts({
         Arvo_400Regular,
         ShipporiAntiqueB1_400Regular,
+        DaysOne_400Regular,
+        Comfortaa_300Light,
       });
     
     if (!loaded) {
         return null;
     }
     return (
-        <KeyboardAvoidingView style={[{fontFamily: 'Arvo_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
+        <KeyboardAvoidingView style={[{fontFamily: 'DaysOne_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
             <Text style={styles.titulo}>Crear Reseña</Text>
             </View>
-            <View style={styles.container}>
+            <View style={[{fontfamily:'Comfortaa_300Light'},styles.container]}>
             <Text style={styles.titulo}>Seleccione el puntaje</Text>
             </View>
             <View>
-        <TextInput style={[{fontFamily: 'Rubik_600SemiBold'},styles.input]}
+        <TextInput style={[{fontFamily: 'Comfortaa_300Light'},styles.input]}
           placeholder="¿Algo que llamo la atencion?"
           onChangeText={(text) => setUsername(text)}
         />
       </View>
       <View>
-        <TextInput style={[{fontFamily: 'Rubik_600SemiBold'},styles.input]}
+        <TextInput style={[{fontFamily: 'Comfortaa_300Light'},styles.input]}
           placeholder="Comentarios adicionales..."
           onChangeText={(text) => setUsername(text)}
         />
       </View>
-      <View style={styles.boton}>
+      <View style={[{fontFamily:'Comfortaa_300Light'},styles.boton]}>
         <Button title="Enviar" color="#D7A625"/>
       </View>
       

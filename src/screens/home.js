@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
-import {Arvo_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
+import {Comfortaa_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
 import ListadoHome from '../components/listadoHome'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
 
-//* Fuentes: Arvo , slabo27 px y para el seguidos y para ti Shippori Antique B1
+//* Fuentes: comfortaa y shipporiAntique
+// https://directory.vercel.app/
 
 export default function HomeScreen() {
     const [lugares, setLugares] = useState([{
@@ -43,7 +44,7 @@ export default function HomeScreen() {
 
     console.log(lugares)
     let [loaded] = useFonts({
-        Arvo_400Regular,
+        Comfortaa_400Regular,
         ShipporiAntiqueB1_400Regular,
       });
     
@@ -51,12 +52,12 @@ export default function HomeScreen() {
         return null;
     }
     return (
-        <KeyboardAvoidingView style={[{fontFamily: 'Arvo_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
+        <KeyboardAvoidingView style={[{fontFamily: 'Comfortaa_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
                 <View>
                 <View style={styles.row}>
                     <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]} >Seguidos</Text>
-                    <Text  style={[{fontFamily:'Arvo_400Regular'},styles.texto]}>|</Text>
+                    <Text  style={[{fontFamily:'Comfortaa_400Regular'},styles.texto]}>|</Text>
                     <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]}>Para Ti</Text>
                 </View>
                 <Buscador />
