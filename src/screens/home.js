@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import {Arvo_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
-import ListadoHome from '../components/listadoHome'
+import ListadoHome from '../components/ListadoHome'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
 
@@ -23,7 +23,7 @@ export default function HomeScreen() {
         "foto": require('../assets/Restaurante-ejemplo.jpg'),
         "filtro": "frances",
     },])
-    const [filtro, setFiltro] = useState('')
+
     const headers = {
         "Content-Type": "application/json",
     };

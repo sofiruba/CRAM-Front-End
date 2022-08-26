@@ -20,6 +20,7 @@ export default function Reseñas({props}) {
     if (!loaded) {
         return null;
     }
+    useEffect()
     return (
         <KeyboardAvoidingView style={[{fontFamily: 'Arvo_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>

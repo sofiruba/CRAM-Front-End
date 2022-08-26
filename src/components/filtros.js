@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect } from "react"
 import { View, StyleSheet, Text, Button} from "react-native"
-export default function Filtros({props}){
+export default function Filtros(){
 
 
     
@@ -10,9 +10,7 @@ export default function Filtros({props}){
     return(
         <View style={styles.row}>
             <Text style={styles.titulo}>Filtros</Text>
-            {props.filtros.map(f => (
-                <Text style={style.filtro}>{f}</Text>
-            ))}
+
         </View>
     )
 }
