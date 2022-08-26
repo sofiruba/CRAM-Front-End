@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text,TextInput, StyleSheet, Button,KeyboardAvoidingView } from 'react-native'
-import {DaysOne_400Regular,Comfortaa_300Light, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
+//import {DaysOne_400Regular,Comfortaa_300Light, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
 
 
 //* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
@@ -24,7 +24,7 @@ export default function CrearReseña({props}) {
     }
     useEffect()*/
     return (
-        <KeyboardAvoidingView style={[{fontFamily: 'DaysOne_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
+        <KeyboardAvoidingView /*style={[{fontFamily: 'DaysOne_400Regular'},*/ style={styles.pag} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
             <Text style={styles.titulo}>Crear Reseña</Text>
             </View>

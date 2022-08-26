@@ -15,7 +15,7 @@ export default function Profile(props) {
         Heebo_400Regular,
         FrankRuhlLibre_700Bold,
         Arimo_700Bold,
-        DaysOne_400Regular,
+        /*DaysOne_400Regular,*/
         Comfortaa_400Regular,
       });
     

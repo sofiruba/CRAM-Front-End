@@ -20,7 +20,7 @@ export default function ReseñasView(lugar){
     */
     console.log(lugar)
    let restaurante = lugar.route.params.lugar
-   const reseñas = [{IdReview: 1, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi', puntaje: 5}, {IdReview: 10, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi'}]
+   const reseñas = [{IdReview: 1, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi', puntaje: 3}, {IdReview: 10, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi'}]
 
     return(
         <View>

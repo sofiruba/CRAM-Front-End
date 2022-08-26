@@ -3,32 +3,13 @@ import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 
 //* FUENTE: RUBIK
-export default function FormRegistrar() {
+export default function FormRegistrar({register}) {
   const [nombre, setNombre] = useState("")
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [mail, setMail] = useState("")
 
-  const register = () => {
-    const user = {
-      "nombre": nombre,
-      "username": username,
-      "password": password,
-      "mail": mail
-    }
-    return axios.post('http://localhost:3000/auth/login', user)
-      .then(res => {
-        if (res.status = 201) {
-          navigation.navigate('Home')
-        }
-        else {
-          console.log(res.message)
-        }
-      })
-      .catch(error => {
-        console.error('error', error)
-      })
-  }
+ 
 
   
   return (
@@ -53,7 +34,7 @@ export default function FormRegistrar() {
         />
       </View>
       <View style={styles.boton}>
-        <Button title="Registrarse" color="#D7A625" onPress={() => register(user)} />
+        <Button title="Registrarse" color="#D7A625" onPress={() => register({"nombre": nombre, "username": username, "password": password, "mail": mail})} />
       </View>
     </View>
   )

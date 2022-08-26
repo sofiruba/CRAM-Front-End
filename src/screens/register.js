@@ -10,12 +10,29 @@ export default function Register() {
         return navigation.navigate('Home')
     }
 
+
+    /*const register = (user) => {
+
+        return axios.post('http://localhost:3000/auth/login', user)
+            .then(res => {
+                if (res.status = 201) {
+                    navigation.navigate('Home')
+                }
+                else {
+                    console.log(res.message)
+                }
+            })
+            .catch(error => {
+                console.error('error', error)
+            })
+    }*/
+
     return (
         <View style={styles.pag}>
             <View style={styles.perfilfoto}>
                 <Text style={styles.iconmas}>+</Text>
             </View>
-                <FormRegistrar register={register}></FormRegistrar>
+            <FormRegistrar register={register}></FormRegistrar>
         </View>
     )
 }
