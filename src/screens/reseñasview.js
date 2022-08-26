@@ -5,6 +5,7 @@ import ListadoReseñas from "../components/ListadoReseñas"
 
 export default function ReseñasView({restaurante}){
     const [reseñas, setReseñas] = useState([])
+    /*
     const getReseñas =() =>{
         return axios.get('localhost:3000/reseñas/'+ restaurante.IdLugar)
         .then(res => {
@@ -12,9 +13,11 @@ export default function ReseñasView({restaurante}){
             setReseñas(l)
         })
     }
+    
     useEffect(() => {
         getReseñas()
     })
+    */
     return(
         <View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>

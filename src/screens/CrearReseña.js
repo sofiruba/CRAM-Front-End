@@ -6,7 +6,7 @@ import {Arvo_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-go
 
 //* Fuentes: Arvo , slabo27 px y para el seguidos y para ti Shippori Antique B1
 
-export default function Reseñas({props}) {
+export default function CrearReseña({props}) {
 
 
     const getReseñas = (restaurante) =>{
