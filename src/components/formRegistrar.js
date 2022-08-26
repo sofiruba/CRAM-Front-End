@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 
@@ -8,6 +9,28 @@ export default function FormRegistrar({ register }) {
   const [password, setPassword] = useState("")
   const [mail, setMail] = useState("")
 
+  const register = () => {
+    const user = {
+      "nombre": nombre,
+      "username": username,
+      "password": password,
+      "mail": mail
+    }
+    return axios.post('http://localhost:3000/auth/login', user)
+      .then(res => {
+        if (res.status = 201) {
+          navigation.navigate('Home')
+        }
+        else {
+          console.log(res.message)
+        }
+      })
+      .catch(error => {
+        console.error('error', error)
+      })
+  }
+
+  
   return (
     <View style={styles.container}>
       <View style={styles.inputs}>
@@ -19,18 +42,18 @@ export default function FormRegistrar({ register }) {
           placeholder="  Usuario"
           onChangeText={(text) => setUsername(text)}
         />
-          <TextInput style={styles.input}
-            placeholder="  Contraseña"
-            secureTextEntry={true}
-            onChangeText={(text) => setPassword(text)}
-          />
-          <TextInput style={styles.input}
-            placeholder="  Mail"
-            onChangeText={(text) => setMail(text)}
-          />
+        <TextInput style={styles.input}
+          placeholder="  Contraseña"
+          secureTextEntry={true}
+          onChangeText={(text) => setPassword(text)}
+        />
+        <TextInput style={styles.input}
+          placeholder="  Mail"
+          onChangeText={(text) => setMail(text)}
+        />
       </View>
       <View style={styles.boton}>
-        <Button title="Registrarse" color="#D7A625" onPress={() => register(nombre, username, password, mail)} />
+        <Button title="Registrarse" color="#D7A625" onPress={() => register(user)} />
       </View>
     </View>
   )
@@ -42,7 +65,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
     flex: 1,
   },
-  inputs:{
+  inputs: {
     marginTop: 35,
   },
   container: {

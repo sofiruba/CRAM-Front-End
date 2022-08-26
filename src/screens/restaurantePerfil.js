@@ -7,7 +7,7 @@ import { Poppins_700Bold, Heebo_400Regular,FrankRuhlLibre_700Bold,Arimo_700Bold,
 // https://directory.vercel.app/
 // import {el tipo de fuente que quieren}    
 // Para Le Pain Quotidien fuente POPPINS,para Confiteria y Descuentos disponibles HEEBO , para agregar lista LIBRE FRANKLIN y para mas informacion ARIMO
-export default function Profile() {
+export default function Profile(props) {
 
     const navigation = useNavigation();
     let [loaded] = useFonts({
@@ -20,13 +20,15 @@ export default function Profile() {
     if (!loaded) {
         return null;
     }
+    const lugar = props.route.params.props
+    console.log(props)
     return (
         <View style={styles.pag}>
                 <View style={styles.content}>
-                <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+                    <Image style={styles.img} source={lugar.foto}></Image>
                 <View>
-                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>Le Pain Quotidien  <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas")}/> </Text>
-                    <Text style={[{fontFamily: 'Heebo_400Regular'}, styles.subtitle]}>Confiteria</Text>
+                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>{lugar.nombre}<Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", lugar.IdLugar)}/> </Text>
+                    <Text style={[{fontFamily: 'Heebo_400Regular'}, styles.subtitle]}>{lugar.description}</Text>
                     <View style={styles.bigrow}>
                     <Icon name={'clock-o'} style={styles.estado} />
                     <Text style={[{fontFamily:'Arimo_700Bold'},styles.estado]}>Abierto</Text>
