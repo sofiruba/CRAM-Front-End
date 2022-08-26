@@ -1,14 +1,18 @@
+import axios from "axios"
+import { useEffect } from "react"
 import { View, StyleSheet, Text, Button} from "react-native"
-export default function Filtros(){
+export default function Filtros({props}){
 
+
+    
+    //https://github.com/react-native-image-picker/react-native-image-picker
     // después hacer el título un botón con animación para que salgan los filtros (se hace con hide?:)
     return(
         <View style={styles.row}>
             <Text style={styles.titulo}>Filtros</Text>
-            <Text style={styles.filtro}>Kosher</Text>
-            <Text style={styles.filtro}>Vegano</Text>
-            <Text style={styles.filtro}>Vegetariano</Text>
-            <Text style={styles.filtro}>Sin tacc</Text>
+            {props.filtros.map(f => (
+                <Text style={style.filtro}>{f}</Text>
+            ))}
         </View>
     )
 }

@@ -14,13 +14,16 @@ export default function HomeScreen() {
         "nombre": "Las Violetas",
         "description": "Confiteria",
         "foto": require('../assets/lasvioletas.jpg'),
+        "filtro": "merienda",
     },
     {
         "IdLugar": "bbb456",
         "nombre": "Le Pain Quotidien",
         "description": "Confiteria",
         "foto": require('../assets/Restaurante-ejemplo.jpg'),
+        "filtro": "frances",
     },])
+    const [filtro, setFiltro] = useState('')
     const headers = {
         "Content-Type": "application/json",
     };
@@ -57,7 +60,7 @@ export default function HomeScreen() {
                     <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]}>Para Ti</Text>
                 </View>
                 <Buscador />
-                <Filtros></Filtros>
+                <Filtros props ={filtro}></Filtros>
                 </View>
                 <ListadoHome lugares={lugares}></ListadoHome>
             </View>

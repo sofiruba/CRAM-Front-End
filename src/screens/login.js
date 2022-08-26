@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Image, StyleSheet, View, Text, KeyboardAvoidingView} from 'react-native'
-import LoginForm from '../components/loginForm';
+import LoginForm from '../components/LoginForm.js'
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 export default function LoginScreen() {
