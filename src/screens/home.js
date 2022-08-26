@@ -59,8 +59,8 @@ export default function HomeScreen() {
                     <Text  style={[{fontFamily:'Arvo_400Regular'},styles.texto]}>|</Text>
                     <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]}>Para Ti</Text>
                 </View>
-                <Buscador />
-                <Filtros ></Filtros>
+                <Buscador/>
+                <Filtros></Filtros>
                 </View>
                 <ListadoHome lugares={lugares}></ListadoHome>
             </View>

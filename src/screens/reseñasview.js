@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { View, Text } from "react-native"
+import { View, Text, StyleSheet } from "react-native"
 import ListadoReseñas from "../components/ListadoReseñas"
 
 export default function ReseñasView(lugar){
@@ -20,12 +20,18 @@ export default function ReseñasView(lugar){
     */
     console.log(lugar)
    let restaurante = lugar.route.params.lugar
-   const reseñas = [{IdReview: 1, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi'}, {IdReview: 10, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi'}]
+   const reseñas = [{IdReview: 1, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi', puntaje: 5}, {IdReview: 10, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi'}]
 
     return(
         <View>
-            <Text> {restaurante.nombre}</Text>
+            <Text style={styles.titulo}> {restaurante.nombre}</Text>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    titulo:{
+        alignSelf: 'center',
+    },
+});

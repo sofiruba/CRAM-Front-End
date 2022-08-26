@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image } from "react-native"
 import { SafeAreaView, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Arvo_400Regular, useFonts } from "@expo-google-fonts/dev";
+import Puntaje from "./puntaje";
 
 //* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function CardReseña({ props }) {
@@ -14,17 +15,21 @@ export default function CardReseña({ props }) {
     if (!loaded) {
         return null;
     }
+    console.log(props)
 
     return (
-        <SafeAreaView onTouchStart={() => navigation.navigate("Profile", props)} style={styles.container}>
+        <SafeAreaView >
+            
             <View style={styles.row}>
                 <View style={{ width: 200 }}>
                     <Text style={[{ fontFamily: 'Arvo_400Regular' }, styles.titulo]}>{props.titulo}</Text>
+                    <Puntaje puntaje={props.puntaje}></Puntaje>
                 </View>
-                <View>
+
+            </View>
+            <View>
                     <Text style={[{ fontFamily: 'Arvo_400Regular' }, styles.titulo]}>{props.descripcion}</Text>
                 </View>
-            </View>
             <View style={styles.img}>
                 <Image style={styles.image} source={props.foto}></Image>
             </View>
