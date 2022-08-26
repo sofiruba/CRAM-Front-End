@@ -15,10 +15,10 @@ export default function Card({ props }) {
   if (!loaded) {
       return null;
   }
-  let img = `../assets/${props.foto}.png`
-  console.log(img)
+
+ 
   return (
-    <SafeAreaView onTouchStart={() => navigation.navigate("Profile")} style={styles.container}>
+    <SafeAreaView onTouchStart={() => navigation.navigate("Profile", {props})} style={styles.container}>
       
         <View style={styles.row}>
           <View style={{ width: 200 }}>

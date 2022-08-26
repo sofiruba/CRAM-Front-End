@@ -10,9 +10,10 @@ export default function Filtros({props}){
     return(
         <View style={styles.row}>
             <Text style={styles.titulo}>Filtros</Text>
-            {props.filtros.map(f => (
-                <Text style={style.filtro}>{f}</Text>
-            ))}
+            <Text style={styles.filtro}>Kosher</Text>
+            <Text style={styles.filtro}>Vegano</Text>
+            <Text style={styles.filtro}>Vegetariano</Text>
+            <Text style={styles.filtro}>Sin tacc</Text>
         </View>
     )
 }

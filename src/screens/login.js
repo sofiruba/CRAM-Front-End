@@ -7,8 +7,8 @@ export default function LoginScreen() {
 
   const navigation = useNavigation();
   /* const login = async (username, password) => {
-    let nuevo_usuario = {"username": username, "password": password}
-    return axios.post('http://localhost:3000/auth/login', nuevo_usuario)
+    let usuario = {"username": username, "password": password}
+    return axios.post('http://localhost:3000/auth/login', usuario)
       .then(res => {
         if (res.status = 201) {
           navigation.navigate('Home')

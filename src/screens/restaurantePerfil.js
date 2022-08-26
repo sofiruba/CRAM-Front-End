@@ -7,7 +7,7 @@ import { Poppins_700Bold,Comfortaa_400Regular, Heebo_400Regular,FrankRuhlLibre_7
 // https://directory.vercel.app/
 // import {el tipo de fuente que quieren}    
 // Para Le Pain Quotidien fuente POPPINS,para Confiteria y Descuentos disponibles HEEBO , para agregar lista LIBRE FRANKLIN y para mas informacion ARIMO
-export default function Profile() {
+export default function Profile(props) {
 
     const navigation = useNavigation();
     let [loaded] = useFonts({
@@ -22,10 +22,12 @@ export default function Profile() {
     if (!loaded) {
         return null;
     }
+    const lugar = props.route.params.props
+
     return (
         <View style={styles.pag}>
                 <View style={styles.content}>
-                <Image style={styles.img} source={require('../assets/Restaurante-ejemplo.jpg')} />
+                    <Image style={styles.img} source={lugar.foto}></Image>
                 <View>
                     <Text style={[{fontFamily: ' Comfortaa_400Regular'}, styles.title]}>Le Pain Quotidien  <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas")}/> </Text>
                     <Text style={[{fontFamily: ' Comfortaa_400Regular'}, styles.subtitle]}>Confiteria</Text>

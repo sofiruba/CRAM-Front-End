@@ -24,7 +24,7 @@ export default function HomeScreen() {
         "foto": require('../assets/Restaurante-ejemplo.jpg'),
         "filtro": "frances",
     },])
-    const [filtro, setFiltro] = useState('')
+
     const headers = {
         "Content-Type": "application/json",
     };
@@ -42,7 +42,7 @@ export default function HomeScreen() {
         getLugares()
     }, [])
 
-    console.log(lugares)
+
     let [loaded] = useFonts({
         Comfortaa_400Regular,
         ShipporiAntiqueB1_400Regular,
@@ -60,8 +60,8 @@ export default function HomeScreen() {
                     <Text  style={[{fontFamily:'Comfortaa_400Regular'},styles.texto]}>|</Text>
                     <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]}>Para Ti</Text>
                 </View>
-                <Buscador />
-                <Filtros props ={filtro}></Filtros>
+                <Buscador/>
+                <Filtros></Filtros>
                 </View>
                 <ListadoHome lugares={lugares}></ListadoHome>
             </View>

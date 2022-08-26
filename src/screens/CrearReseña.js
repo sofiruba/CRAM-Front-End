@@ -6,9 +6,9 @@ import {DaysOne_400Regular,Comfortaa_300Light, ShipporiAntiqueB1_400Regular, use
 
 //* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
 
-export default function Reseñas({props}) {
+export default function CrearReseña({props}) {
 
-
+/*
     const getReseñas = (restaurante) =>{
         return axios.get('http://localhost:3000/reviews/'+ restaurante.IdLugar, { headers })
     }
@@ -22,6 +22,7 @@ export default function Reseñas({props}) {
     if (!loaded) {
         return null;
     }
+    useEffect()*/
     return (
         <KeyboardAvoidingView style={[{fontFamily: 'DaysOne_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
