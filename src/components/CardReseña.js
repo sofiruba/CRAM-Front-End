@@ -15,10 +15,10 @@ export default function CardReseña({ props }) {
     if (!loaded) {
         return null;
     }
-    console.log(props)
+
 
     return (
-        <SafeAreaView >
+        <SafeAreaView style={styles.container}>
             
             <View style={styles.row}>
                 <View style={{ width: 200 }}>

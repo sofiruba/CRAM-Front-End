@@ -15,6 +15,7 @@ export default function ListadoReseñas ({reseñas}){
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 100,
+        marginTop: 30,
+        height: 100,
     },
 })

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { View, Text, StyleSheet } from "react-native"
 import ListadoReseñas from "../components/ListadoReseñas"
 
-export default function ReseñasView(lugar){
+export default function ReseñasView(lugar) {
     /*const [reseñas, setReseñas] = useState([])
     
     const getReseñas =() =>{
@@ -18,20 +18,30 @@ export default function ReseñasView(lugar){
         getReseñas()
     })
     */
-    console.log(lugar)
-   let restaurante = lugar.route.params.lugar
-   const reseñas = [{IdReview: 1, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi', puntaje: 3}, {IdReview: 10, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi'}]
+   console.log(lugar)
+    let restaurante = lugar.route.params.lugar
+    const reseñas = [{ IdReview: 1, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi', puntaje: 3 }, { IdReview: 10, titulo: 'HAYSHGS', descripcion: 'que bueno ou sofi' }]
+    console.log(restaurante)
+    return (
+        <View style={styles.container}>
+            <View>
+                <Text style={styles.titulo}> {restaurante.nombre}</Text>
 
-    return(
-        <View>
-            <Text style={styles.titulo}> {restaurante.nombre}</Text>
+            </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    titulo:{
+    container: {
+        backgroundColor: '#fff',
+        height: '100%',
+    },
+    titulo: {
         alignSelf: 'center',
+        fontSize: 25,
+        marginTop: 70,
+        color: 'black',
     },
 });
