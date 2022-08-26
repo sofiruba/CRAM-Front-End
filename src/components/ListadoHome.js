@@ -1,18 +1,16 @@
 import Card from "./card"
 import { View, StyleSheet } from "react-native"
 
-export default function ListadoHome({ lugares}){
+export default function ListadoHome({ lugares }) {
 
     return (
         <View style={styles.container}>
-        {
-            lugares.map((l) => {
-                return (
+            {
+                lugares.map((l) => (
                     <Card key={l.IdLugar} props={l}></Card>
-                    
                 )
-            })
-        }
+                )
+            }
         </View>
 
     )

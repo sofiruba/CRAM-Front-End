@@ -21,13 +21,13 @@ export default function Profile(props) {
         return null;
     }
     const lugar = props.route.params.props
-    console.log(props)
+
     return (
         <View style={styles.pag}>
                 <View style={styles.content}>
                     <Image style={styles.img} source={lugar.foto}></Image>
                 <View>
-                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>{lugar.nombre}<Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", lugar.IdLugar)}/> </Text>
+                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>{lugar.nombre}<Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", {lugar})}/> </Text>
                     <Text style={[{fontFamily: 'Heebo_400Regular'}, styles.subtitle]}>{lugar.description}</Text>
                     <View style={styles.bigrow}>
                     <Icon name={'clock-o'} style={styles.estado} />

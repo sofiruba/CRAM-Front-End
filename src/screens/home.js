@@ -41,7 +41,7 @@ export default function HomeScreen() {
         getLugares()
     }, [])
 
-    console.log(lugares)
+
     let [loaded] = useFonts({
         Arvo_400Regular,
         ShipporiAntiqueB1_400Regular,
