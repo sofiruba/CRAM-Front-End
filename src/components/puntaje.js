@@ -28,10 +28,10 @@ export default function Puntaje({ puntaje }) {
 }
 const styles = StyleSheet.create({
     star_filled: {
-        color: 'yellow',
+        color: '#FFC800',
     },
     star: {
-        color: 'rgba(255, 255, 0, 0.2)',
+        color: 'rgba(255, 200, 0, 0.2)',
 
     },
     row: {

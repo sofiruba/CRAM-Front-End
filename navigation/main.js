@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Profile from '../src/screens/restaurantePerfil'
 import Register from '../src/screens/register'
 import CrearReseña from '../src/screens/CrearReseña';
-import ReseñasView from '../src/screens/reseñasview';
+import ReseñasView from '../src/screens/reseñas';
 const Stack = createNativeStackNavigator();
 export default function Main() {
   return (
