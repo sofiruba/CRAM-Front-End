@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
+import { View, Text,TextInput, StyleSheet, Button,KeyboardAvoidingView } from 'react-native'
 import {Arvo_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
 
 
@@ -23,8 +23,27 @@ export default function Reseñas({props}) {
     return (
         <KeyboardAvoidingView style={[{fontFamily: 'Arvo_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
-
+            <Text style={styles.titulo}>Crear Reseña</Text>
             </View>
+            <View style={styles.container}>
+            <Text style={styles.titulo}>Seleccione el puntaje</Text>
+            </View>
+            <View>
+        <TextInput style={[{fontFamily: 'Rubik_600SemiBold'},styles.input]}
+          placeholder="¿Algo que llamo la atencion?"
+          onChangeText={(text) => setUsername(text)}
+        />
+      </View>
+      <View>
+        <TextInput style={[{fontFamily: 'Rubik_600SemiBold'},styles.input]}
+          placeholder="Comentarios adicionales..."
+          onChangeText={(text) => setUsername(text)}
+        />
+      </View>
+      <View style={styles.boton}>
+        <Button title="Enviar" color="#D7A625"/>
+      </View>
+      
         </KeyboardAvoidingView>
     );
 
