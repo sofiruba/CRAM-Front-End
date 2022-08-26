@@ -16,7 +16,7 @@ export default function Card({ props }) {
       return null;
   }
 
-  console.log(img)
+ 
   return (
     <SafeAreaView onTouchStart={() => navigation.navigate("Profile", {props})} style={styles.container}>
       

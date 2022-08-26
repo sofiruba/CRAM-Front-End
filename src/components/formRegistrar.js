@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 
 //* FUENTE: RUBIK
-export default function FormRegistrar({ register }) {
+export default function FormRegistrar() {
   const [nombre, setNombre] = useState("")
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")

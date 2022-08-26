@@ -1,5 +1,6 @@
 import Card from "./card"
 import { View, StyleSheet } from "react-native"
+
 export default function ListadoHome({ lugares}){
 
     return (

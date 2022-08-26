@@ -8,7 +8,7 @@ import {Arvo_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-go
 
 export default function CrearReseña({props}) {
 
-
+/*
     const getReseñas = (restaurante) =>{
         return axios.get('http://localhost:3000/reviews/'+ restaurante.IdLugar, { headers })
     }
@@ -20,7 +20,7 @@ export default function CrearReseña({props}) {
     if (!loaded) {
         return null;
     }
-    useEffect()
+    useEffect()*/
     return (
         <KeyboardAvoidingView style={[{fontFamily: 'Arvo_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
