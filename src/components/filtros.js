@@ -34,16 +34,19 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'center',
         marginTop: 30,
+        height: 30,
     },
     titulo: {
-        fontWeight: 'bold',
-        color: '#91908d',
+        fontWeight: '600',
+        color: '#000',
         fontSize: 18,
-        backgroundColor: '#F5F5F5F5',
+        backgroundColor: 'rgba(255, 232, 149, 0.38)',
+        borderColor: 'rgba(233, 199, 76, 1)',
+        borderWidth: 2,
         borderRadius: 6,
         marginRight: 6,
-        width: 56,
-        textAlign: 'left',
+
+
     },
     filtroc: {
         alignItems: 'center',
@@ -52,10 +55,10 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 10,
         backgroundColor: 'rgba(255, 232, 149, 0.38)',
-            marginRight: 6,
+        marginHorizontal: 1,
     },
     filtro: {
         fontSize: 16,
-        marginHorizontal: 1,
+        marginHorizontal: 2,
     }
 })

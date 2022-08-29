@@ -2,7 +2,7 @@ import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from 'react-n
 import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect, React } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Poppins_700Bold, Heebo_400Regular,FrankRuhlLibre_700Bold,Arimo_700Bold, useFonts, Comfortaa_400Regular } from '@expo-google-fonts/dev';
+import { Poppins_700Bold, Heebo_400Regular, FrankRuhlLibre_700Bold, Arimo_700Bold, useFonts, Comfortaa_400Regular } from '@expo-google-fonts/dev';
 // en abierto o cerrado hay que poner un if en styles que se hace con ? supongo que podemos hacer un bool
 // https://directory.vercel.app/
 // import {el tipo de fuente que quieren}    
@@ -15,8 +15,8 @@ export default function Profile(props) {
         Heebo_400Regular,
         FrankRuhlLibre_700Bold,
         Arimo_700Bold,
-      });
-    
+    });
+
     if (!loaded) {
         return null;
     }
@@ -24,32 +24,36 @@ export default function Profile(props) {
 
     return (
         <View style={styles.pag}>
-                <View style={styles.content}>
-                    <Image style={styles.img} source={lugar.foto}></Image>
+            <View style={styles.content}>
+                <Image style={styles.img} source={lugar.foto}></Image>
                 <View>
-                    <Text style={[{fontFamily: 'Comfortaa_400Regular'}, styles.title]}>{lugar.nombre}<Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", {lugar})}/> </Text>
-                    <Text style={[{fontFamily: 'Comfortaa_400Regular'}, styles.subtitle]}>{lugar.description}</Text>
                     <View style={styles.bigrow}>
-                    <Icon name={'clock-o'} style={styles.estado} />
-                    <Text style={[{fontFamily:'Arimo_700Bold'},styles.estado]}>Abierto</Text>
-                    <Text style={[{fontFamily:'Arimo_700Bold'},styles.hora]}> Cierra a las 20hs</Text>
+                        <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.title]}>{lugar.nombre}</Text>
+                        <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { lugar })} />
+                    </View>
+
+                    <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.subtitle]}>{lugar.description}</Text>
+                    <View style={styles.bigrow}>
+                        <Icon name={'clock-o'} style={styles.estado} />
+                        <Text style={[{ fontFamily: 'Arimo_700Bold' }, styles.estado]}>Abierto</Text>
+                        <Text style={[{ fontFamily: 'Arimo_700Bold' }, styles.hora]}> Cierra a las 20hs</Text>
                     </View>
                 </View>
                 <View style={styles.bigrow}>
                     <View style={styles.row}>
                         <View >
-                           <Icon name={'phone'} style={styles.llamada}/>
+                            <Icon name={'phone'} style={styles.llamada} />
                         </View>
-                        <Text style={[{fontFamily:'FrankRuhlLibre_700Bold'},styles.llamadatext]}>Llamar</Text>
+                        <Text style={[{ fontFamily: 'FrankRuhlLibre_700Bold' }, styles.llamadatext]}>Llamar</Text>
                     </View>
                     <View style={styles.row}>
                         <Icon name={'heart'} size={35} style={styles.heart} />
-                        <Text style={[{fontFamily:'FrankRuhlLibre_700Bold'},styles.lista]}>Añadir a Lista</Text>
+                        <Text style={[{ fontFamily: 'FrankRuhlLibre_700Bold' }, styles.lista]}>Añadir a Lista</Text>
                     </View>
                     <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                 </View>
                 <View>
-                    <Text onPress={() => navigation.goBack()} style={[{fontFamily:'Heebo_400Regular'},styles.boton]}> Ir a Home </Text> 
+                    <Text onPress={() => navigation.goBack()} style={[{ fontFamily: 'Heebo_400Regular' }, styles.boton]}> Ir a Home </Text>
                 </View>
             </View>
         </View>
@@ -58,7 +62,7 @@ export default function Profile(props) {
 }
 
 const styles = StyleSheet.create({
-    content:{
+    content: {
         justifyContent: 'center',
         width: '100%',
         height: 600,
@@ -67,10 +71,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 15,
         padding: 5,
-       
+
     },
     img: {
-        height: 230,
+        height: 285,
         width: '100%',
         marginTop: 10,
         justifyContent: 'center',
@@ -82,28 +86,31 @@ const styles = StyleSheet.create({
         marginTop: 7,
     },
     title: {
-        fontSize: 30,
+        fontSize: 35,
         textAlign: 'left',
         marginTop: 5,
         marginLeft: 0,
+        fontWeight: '900',
+        height: 50,
+        width: '80%',
     },
     pag: {
         backgroundColor: "#FFF",
         height: '100%',
         width: '100%',
         padding: 10,
-        
+
     },
     subtitle: {
         fontWeight: '600',
         fontSize: 22,
         marginLeft: 0,
-        marginTop: 2,
+        marginTop: 0,
     },
-    bigrow:{
+    bigrow: {
         flexDirection: "row",
         flexWrap: "wrap",
-      
+
     },
     row: {
         flexDirection: "row",
@@ -132,15 +139,15 @@ const styles = StyleSheet.create({
         textAlign: "right",
         alignContent: 'flex-end',
         fontSize: 30,
-        marginLeft: 10,
-        marginTop: 0,
+
+        marginTop: 15,
     },
 
     boton: {
         height: 50,
         width: 170,
         borderRadius: 13,
-        backgroundColor:"#F0B57D",
+        backgroundColor: "#F0B57D",
         justifyContent: 'center',
         alignSelf: 'center',
         overflow: 'hidden',
