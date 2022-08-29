@@ -1,9 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet, Button } from "react-native"
 import ListadoReseñas from "../components/ListadoReseñas"
+import { useNavigation } from "@react-navigation/native"
 
 export default function ReseñasView(lugar) {
+    const navigation = useNavigation()
     /*const [reseñas, setReseñas] = useState([])
     
     const getReseñas =() =>{
@@ -18,9 +20,9 @@ export default function ReseñasView(lugar) {
         getReseñas()
     })
     */
-   console.log(lugar)
+    console.log(lugar)
     let restaurante = lugar.route.params.lugar
-    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ou sofi', puntaje: 3 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que bueno ou sofi', puntaje: 1 }]
+    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1 }]
     console.log(restaurante)
     return (
         <View style={styles.container}>
@@ -29,6 +31,10 @@ export default function ReseñasView(lugar) {
 
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
+            <View style={styles.botonContainer}>
+                <Button style={styles.boton} title='Crear reseña' onPress={() => navigation.navigate('CrearReseña')}></Button>
+
+            </View>
         </View>
     )
 }
@@ -44,4 +50,13 @@ const styles = StyleSheet.create({
         marginTop: 70,
         color: 'black',
     },
+    botonContainer:{
+        alignItems: 'center',
+        marginTop: 400,
+        width: 400,
+        height: 120,
+    },
+    boton:{
+        width: 50,
+    }
 });

@@ -1,19 +1,31 @@
 import axios from "axios"
 import { useEffect } from "react"
-import { View, StyleSheet, Text, Button} from "react-native"
-export default function Filtros({props}){
+import { View, StyleSheet, Text, Button } from "react-native"
+export default function Filtros({ props }) {
 
 
-    
+
     //https://github.com/react-native-image-picker/react-native-image-picker
     // después hacer el título un botón con animación para que salgan los filtros (se hace con hide?:)
-    return(
+    return (
         <View style={styles.row}>
             <Text style={styles.titulo}>Filtros</Text>
-            <Text style={styles.filtro}>Kosher</Text>
-            <Text style={styles.filtro}>Vegano</Text>
-            <Text style={styles.filtro}>Vegetariano</Text>
-            <Text style={styles.filtro}>Sin tacc</Text>
+            <View style={styles.filtroc}>
+                <Text style={styles.filtro}>Kosher</Text>
+            </View>
+
+            <View style={styles.filtroc}>
+                <Text style={styles.filtro}>Vegano</Text>
+            </View>
+
+            <View style={styles.filtroc}>
+                <Text style={styles.filtro}>Vegetariano</Text>
+            </View>
+
+            <View style={styles.filtroc}>
+                <Text style={styles.filtro}>Sin tacc</Text>
+            </View>
+
         </View>
     )
 }
@@ -23,7 +35,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 30,
     },
-    titulo:{
+    titulo: {
         fontWeight: 'bold',
         color: '#91908d',
         fontSize: 18,
@@ -33,8 +45,17 @@ const styles = StyleSheet.create({
         width: 56,
         textAlign: 'left',
     },
-    filtro:{
-        marginRight: 6,
+    filtroc: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: 'rgba(233, 199, 76, 1)',
+        borderWidth: 2,
+        borderRadius: 10,
+        backgroundColor: 'rgba(255, 232, 149, 0.38)',
+            marginRight: 6,
+    },
+    filtro: {
         fontSize: 16,
+        marginHorizontal: 1,
     }
 })

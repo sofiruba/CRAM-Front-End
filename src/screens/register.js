@@ -29,9 +29,6 @@ export default function Register() {
 
     return (
         <View style={styles.pag}>
-            <View style={styles.perfilfoto}>
-                <Text style={styles.iconmas}>+</Text>
-            </View>
             <FormRegistrar register={register}></FormRegistrar>
         </View>
     )
@@ -52,18 +49,5 @@ const styles = StyleSheet.create({
         width: '100%',
         flex: 1,
     },
-    perfilfoto: {
-        backgroundColor: '#FFFFFF',
-        width: 120,
-        height: 120,
-        borderRadius: 100,
-        marginTop: 115,
-        marginLeft: 150,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    iconmas: {
-        fontSize: 50,
-        color: '#CCCCCC',
-    },
+    
 });

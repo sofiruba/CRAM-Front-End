@@ -2,7 +2,7 @@ import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from 'react-n
 import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect, React } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Poppins_700Bold, Heebo_400Regular,FrankRuhlLibre_700Bold,Arimo_700Bold, useFonts } from '@expo-google-fonts/dev';
+import { Poppins_700Bold, Heebo_400Regular,FrankRuhlLibre_700Bold,Arimo_700Bold, useFonts, Comfortaa_400Regular } from '@expo-google-fonts/dev';
 // en abierto o cerrado hay que poner un if en styles que se hace con ? supongo que podemos hacer un bool
 // https://directory.vercel.app/
 // import {el tipo de fuente que quieren}    
@@ -27,8 +27,8 @@ export default function Profile(props) {
                 <View style={styles.content}>
                     <Image style={styles.img} source={lugar.foto}></Image>
                 <View>
-                    <Text style={[{fontFamily: 'Poppins_700Bold'}, styles.title]}>{lugar.nombre}<Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", {lugar})}/> </Text>
-                    <Text style={[{fontFamily: 'Heebo_400Regular'}, styles.subtitle]}>{lugar.description}</Text>
+                    <Text style={[{fontFamily: 'Comfortaa_400Regular'}, styles.title]}>{lugar.nombre}<Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", {lugar})}/> </Text>
+                    <Text style={[{fontFamily: 'Comfortaa_400Regular'}, styles.subtitle]}>{lugar.description}</Text>
                     <View style={styles.bigrow}>
                     <Icon name={'clock-o'} style={styles.estado} />
                     <Text style={[{fontFamily:'Arimo_700Bold'},styles.estado]}>Abierto</Text>

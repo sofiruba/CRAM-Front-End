@@ -1,73 +1,107 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { View, Text,TextInput, StyleSheet, Button,KeyboardAvoidingView } from 'react-native'
-//import {DaysOne_400Regular,Comfortaa_300Light, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
+import { View, Text, TextInput, StyleSheet, Button, KeyboardAvoidingView } from 'react-native'
+import { DaysOne_400Regular, Comfortaa_Regular, ShipporiAntiqueB1_400Regular, useFonts, Arvo_400Regular, Comfortaa_300Light } from '@expo-google-fonts/dev'
+import FormPuntaje from '../components/formPuntaje'
 
 
 //* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
 
-export default function CrearReseña({props}) {
+export default function CrearReseña({ props }) {
 
-/*
-    const getReseñas = (restaurante) =>{
-        return axios.get('http://localhost:3000/reviews/'+ restaurante.IdLugar, { headers })
-    }
-    let [loaded] = useFonts({
-        Arvo_400Regular,
-        ShipporiAntiqueB1_400Regular,
-        DaysOne_400Regular,
-        Comfortaa_300Light,
-      });
-    
-    if (!loaded) {
-        return null;
-    }
-    useEffect()*/
-    return (
-        <KeyboardAvoidingView /*style={[{fontFamily: 'DaysOne_400Regular'},*/ style={styles.pag} behavior={Platform.OS === "" ? "padding" : "height"}>
-            <View style={styles.container}>
-            <Text style={styles.titulo}>Crear Reseña</Text>
-            </View>
-            <View style={[{fontfamily:'Comfortaa_300Light'},styles.container]}>
-            <Text style={styles.titulo}>Seleccione el puntaje</Text>
-            </View>
-            <View>
-        <TextInput style={[{fontFamily: 'Comfortaa_300Light'},styles.input]}
-          placeholder="¿Algo que llamo la atencion?"
-          onChangeText={(text) => setUsername(text)}
-        />
+  const [titulo, setTitulo] = useState('')
+  const [puntaje, setPuntaje] = useState(0)
+
+  const [password, setPassword] = useState('')
+
+  /*const crearReseña = (reseña) => {
+    return axios.post('htps://localhost:3000/reviews', reseña)
+      .then(res => {
+        if (res.status = 201) {
+          navigation.navigate('Home')
+        }
+        else {
+          console.log(res.message)
+        }
+      })
+      .catch(error => {
+        console.error('error', error)
+      })
+  }*/
+
+  let [loaded] = useFonts({
+    Arvo_400Regular,
+    ShipporiAntiqueB1_400Regular,
+    DaysOne_400Regular,
+    Comfortaa_300Light,
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
+  return (
+    <View style={[{ fontFamily: 'DaysOne_400Regular' }, styles.pag]}>
+      <View style={styles.container}>
+        <Text style={styles.titulo}>Crear Reseña</Text>
       </View>
-      <View>
-        <TextInput style={[{fontFamily: 'Comfortaa_300Light'},styles.input]}
-          placeholder="Comentarios adicionales..."
-          onChangeText={(text) => setUsername(text)}
-        />
+      <View style={[{ fontfamily: 'Comfortaa_300Light' }, styles.container]}>
+        <Text style={styles.titulo}>Seleccione el puntaje</Text>
+        <FormPuntaje props={{ puntaje, setPuntaje }} ></FormPuntaje>
+        <View>
+          <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
+            placeholder="Titulo"
+            onChangeText={(text) => setTitulo(text)}
+          />
+        </View>
+        <View>
+          <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
+            placeholder="¿Algo que llamo la atencion?"
+          />
+        </View>
+        <View>
+          <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
+            placeholder="Descripcion"
+
+          />
+        </View>
+        <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.boton]}>
+          <Button title="Enviar"
+            color="#D7A625" />
+        </View>
+
       </View>
-      <View style={[{fontFamily:'Comfortaa_300Light'},styles.boton]}>
-        <Button title="Enviar" color="#D7A625"/>
-      </View>
-      
-        </KeyboardAvoidingView>
-    );
+
+    </View>
+  );
 
 }
 
 const styles = StyleSheet.create({
-    pag: {
-        backgroundColor: '#F7D250',
-        height: '100%',
-        width: '100%',
-        flex: 1,
-    },
-    row: {
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: 'center',
-        marginTop: '15%',
-    },
-    texto: {
-        fontSize: 18,
-        marginLeft: '2%',
-        marginRight: '2%'
-    }
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 35,
+    marginTop: 10,
+  },
+  pag: {
+    backgroundColor: '#fff',
+    height: '100%',
+    width: '100%',
+    flex: 1,
+  },
+  input: {
+    backgroundColor: 'white',
+    borderRadius: 20,
+    marginTop: 13,
+    width: 200,
+    height: 45,
+    marginLeft: 3,
+  },
+
+  texto: {
+    fontSize: 18,
+    marginLeft: '2%',
+    marginRight: '2%'
+  }
 })

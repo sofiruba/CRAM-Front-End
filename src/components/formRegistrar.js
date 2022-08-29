@@ -1,19 +1,24 @@
-import axios from "axios";
+
 import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
 
 //* FUENTE: RUBIK
-export default function FormRegistrar({register}) {
+export default function FormRegistrar({ register }) {
   const [nombre, setNombre] = useState("")
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [mail, setMail] = useState("")
 
- 
 
-  
+
+
   return (
-    <View style={styles.container}>
+    <View style={styles.contain}>
+      <View style={styles.perfilfoto}>
+        <Text style={styles.iconmas}>+</Text>
+      </View>
+      <View style={styles.container}>
+      
       <View style={styles.inputs}>
         <TextInput style={styles.input}
           placeholder="  Nombre"
@@ -34,12 +39,32 @@ export default function FormRegistrar({register}) {
         />
       </View>
       <View style={styles.boton}>
-        <Button title="Registrarse" color="#D7A625" onPress={() => register({"nombre": nombre, "username": username, "password": password, "mail": mail})} />
+        <Button title="Registrarse" color="#D7A625" onPress={() => register({ "nombre": nombre, "username": username, "password": password, "mail": mail })} />
       </View>
     </View>
+    </View>
+    
   )
 }
 const styles = StyleSheet.create({
+  contain:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 80,
+  },
+  perfilfoto: {
+    backgroundColor: '#FFFFFF',
+    width: 120,
+    height: 120,
+    borderRadius: 100,
+
+    justifyContent: 'center',
+    alignItems: 'center',
+},
+iconmas: {
+    fontSize: 50,
+    color: '#CCCCCC',
+},
   formstyle: {
     backgroundColor: 'white',
     marginBottom: 0,

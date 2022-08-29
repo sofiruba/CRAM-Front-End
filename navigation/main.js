@@ -9,6 +9,7 @@ import CrearReseña from '../src/screens/CrearReseña';
 import ReseñasView from '../src/screens/reseñas';
 const Stack = createNativeStackNavigator();
 export default function Main() {
+  //props de crear reseñas: lugar y user
   return (
     <NavigationContainer  >
       <Stack.Navigator initialRouteName="Login">
@@ -17,7 +18,7 @@ export default function Main() {
         <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} initialParams={{ props: {} }} />
         <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
         <Stack.Screen name="Reseñas" component={ReseñasView} options={{ headerShown: false }} initialParams={{ lugar: {} }}/>
-        <Stack.Screen name="CrearReseña" component={CrearReseña} options={{ headerShown: false }} />
+        <Stack.Screen name="CrearReseña" component={CrearReseña} options={{ headerShown: false }} initialParams={{ props: {}}} /> 
 
       </Stack.Navigator>
     </NavigationContainer>

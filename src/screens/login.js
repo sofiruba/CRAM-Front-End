@@ -11,7 +11,7 @@ export default function LoginScreen() {
     return axios.post('http://localhost:3000/auth/login', usuario)
       .then(res => {
         if (res.status = 201) {
-          navigation.navigate('Home')
+          navigation.navigate('Home', {res.data}) mandar al usuario por parametro para desp poder crear reviews, y todo eso 
         }
         else {
           console.log(res.message)
@@ -23,7 +23,7 @@ export default function LoginScreen() {
   }
 */
   const login = () => {
-    return navigation.navigate('Home')
+    return navigation.navigate('Home' , {idUsuario : 1}) 
   }
 
   return (
