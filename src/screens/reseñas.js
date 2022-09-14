@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Button } from "react-native"
 import ListadoReseñas from "../components/ListadoReseñas"
 import { useNavigation } from "@react-navigation/native"
 
-export default function ReseñasView(lugar) {
+export default function ReseñasView(props) {
     const navigation = useNavigation()
     /*const [reseñas, setReseñas] = useState([])
     
@@ -20,8 +20,8 @@ export default function ReseñasView(lugar) {
         getReseñas()
     })
     */
-    console.log(lugar)
-    let restaurante = lugar.route.params.lugar
+    let restaurante = props.route.params.props.route.lugar
+    console.log(restaurante)
     const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1 }]
     console.log(restaurante)
     return (
@@ -32,7 +32,7 @@ export default function ReseñasView(lugar) {
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
             <View style={styles.botonContainer}>
-                <Button style={styles.boton} title='Crear reseña' onPress={() => navigation.navigate('CrearReseña')}></Button>
+                <Button style={styles.boton} title='Crear reseña' onPress={() => navigation.navigate('CrearReseña', props )}></Button>
 
             </View>
         </View>

@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import axios from 'axios'
 import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native'
-import {Comfortaa_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
+import { Comfortaa_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@expo-google-fonts/dev'
 import ListadoHome from '../components/ListadoHome'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
 
 //* Fuentes: comfortaa y shipporiAntique
 // https://directory.vercel.app/
-
-export default function HomeScreen() {
+export const UserContext = createContext({})
+export default function HomeScreen(user) {
     const [lugares, setLugares] = useState([{
         "IdLugar": "aaa123",
         "nombre": "Las Violetas",
@@ -25,7 +25,7 @@ export default function HomeScreen() {
         "filtro": "frances",
     },])
 
-    const headers = {
+    /*const headers = {
         "Content-Type": "application/json",
     };
     const getLugares = () => {
@@ -40,30 +40,33 @@ export default function HomeScreen() {
 
     useEffect(() => {
         getLugares()
-    }, [])
+    }, [])*/
 
 
     let [loaded] = useFonts({
         Comfortaa_400Regular,
         ShipporiAntiqueB1_400Regular,
-      });
-    
+    });
+
     if (!loaded) {
         return null;
     }
     return (
-        <KeyboardAvoidingView style={[{fontFamily: 'Comfortaa_400Regular'},styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
+        <KeyboardAvoidingView style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
             <View style={styles.container}>
                 <View>
-                <View style={styles.row}>
-                    <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]} >Seguidos</Text>
-                    <Text  style={[{fontFamily:'Comfortaa_400Regular'},styles.texto]}>|</Text>
-                    <Text style={[{fontFamily:'ShipporiAntiqueB1_400Regular'},styles.texto]}>Para Ti</Text>
+                    <View style={styles.row}>
+                        <Text style={[{ fontFamily: 'ShipporiAntiqueB1_400Regular' }, styles.texto]} >Seguidos</Text>
+                        <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.texto]}>|</Text>
+                        <Text style={[{ fontFamily: 'ShipporiAntiqueB1_400Regular' }, styles.texto]}>Para Ti</Text>
+                    </View>
+                    <Buscador />
+                    <Filtros></Filtros>
                 </View>
-                <Buscador/>
-                <Filtros></Filtros>
-                </View>
-                <ListadoHome lugares={lugares}></ListadoHome>
+                <UserContext.Provider value={user}>
+                    <ListadoHome lugares={lugares}></ListadoHome>
+                </UserContext.Provider>
+
             </View>
         </KeyboardAvoidingView>
     );

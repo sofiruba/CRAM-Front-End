@@ -20,7 +20,7 @@ export default function Profile(props) {
     if (!loaded) {
         return null;
     }
-    const lugar = props.route.params.props
+    const lugar = props.route.params.props.lugar
 
     return (
         <View style={styles.pag}>
@@ -29,7 +29,7 @@ export default function Profile(props) {
                 <View>
                     <View style={styles.bigrow}>
                         <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.title]}>{lugar.nombre}</Text>
-                        <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { lugar })} />
+                        <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { props })} />
                     </View>
 
                     <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.subtitle]}>{lugar.description}</Text>

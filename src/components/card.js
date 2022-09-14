@@ -22,14 +22,14 @@ export default function Card({ props }) {
       
         <View style={styles.row}>
           <View style={{ width: 200 }}>
-            <Text style={[{fontFamily:'Arvo_400Regular'},styles.titulo]}> {props.nombre}   </Text>
+            <Text style={[{fontFamily:'Arvo_400Regular'},styles.titulo]}> {props.lugar.nombre}   </Text>
           </View>
           <View style={{ width: 70 }}>
             <Icon name={'heart'} size={25} style={styles.heart} />
           </View>
         </View>
         <View style={styles.img}>
-          <Image style={styles.image} source={props.foto}></Image>
+          <Image style={styles.image} source={props.lugar.foto}></Image>
         </View>
 
     </SafeAreaView>

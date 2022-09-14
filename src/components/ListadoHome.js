@@ -1,13 +1,15 @@
 import Card from "./card"
 import { View, StyleSheet } from "react-native"
+import { useContext } from "react"
+import { UserContext } from "../screens/home"
 
 export default function ListadoHome({ lugares }) {
-
+    const User = useContext(UserContext)
     return (
         <View style={styles.container}>
             {
-                lugares.map((l) => (
-                    <Card key={l.IdLugar} props={l}></Card>
+                lugares.map((lugar) => (
+                    <Card key={lugar.IdLugar} props={{lugar, User}}></Card>
                 )
                 )
             }

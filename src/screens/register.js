@@ -16,7 +16,7 @@ export default function Register() {
         return axios.post('http://localhost:3000/auth/login', user)
             .then(res => {
                 if (res.status = 201) {
-                    navigation.navigate('Home')
+                    navigation.navigate('Home', user)
                 }
                 else {
                     console.log(res.message)

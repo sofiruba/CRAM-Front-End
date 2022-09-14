@@ -11,7 +11,8 @@ export default function LoginScreen() {
     return axios.post('http://localhost:3000/auth/login', usuario)
       .then(res => {
         if (res.status = 201) {
-          navigation.navigate('Home', {res.data}) mandar al usuario por parametro para desp poder crear reviews, y todo eso 
+          let user = res.data
+          navigation.navigate('Home', {user}) mandar al usuario por parametro para desp poder crear reviews, y todo eso 
         }
         else {
           console.log(res.message)
@@ -22,8 +23,9 @@ export default function LoginScreen() {
       })
   }
 */
+let user = {IdUsuario: 1, username: 'jsjskd', nombre: 'jdddk'}
   const login = () => {
-    return navigation.navigate('Home' , {idUsuario : 1}) 
+    return navigation.navigate('Home' , {user}) 
   }
 
   return (
