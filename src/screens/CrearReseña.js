@@ -83,11 +83,8 @@ export default function CrearReseña(props) {
           />
         </View>
         <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.boton]}>
-          <Button title="Enviar"
-           onPress={() => crearReseña()}
-            color="#D7A625" />
+          <Button title="Enviar" onPress={() => crearReseña()} color="#D7A625" />
         </View>
-
       </View>
 
     </View>

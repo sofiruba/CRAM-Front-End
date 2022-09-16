@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from "react-native"
+import { Button } from "react-native-paper";
 import Icon from 'react-native-vector-icons/FontAwesome';
 export default function Puntaje({ puntaje }) {
     var estrellas = []
@@ -37,5 +38,5 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
-    }
+    },
 })
