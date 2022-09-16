@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, StyleSheet, View, Text, KeyboardAvoidingView} from 'react-native'
+import { Image, StyleSheet, View, Text, KeyboardAvoidingView, SafeAreaView, ScrollView} from 'react-native'
 import LoginForm from '../components/LoginForm.js'
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
@@ -29,16 +29,17 @@ let user = {IdUsuario: 1, username: 'jsjskd', nombre: 'jdddk'}
   }
 
   return (
+    <SafeAreaView >
+    <ScrollView >
     <View style={styles.pag}>
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "" ? "padding" : "height"}>
         <Image style={styles.img} source={require('../assets/icon.png')}></Image>
         <LoginForm login={login}></LoginForm>      
-        <KeyboardAvoidingView style={styles.texto}>
-        <Text onPress={() => navigation.navigate("Register")}>¿Todavía no te registraste?</Text>
+        <Text onPress={() => navigation.navigate("Register")} style={styles.texto}>¿Todavía no te registraste?</Text>
       </KeyboardAvoidingView >
-      </KeyboardAvoidingView>
-
     </View>
+    </ScrollView >
+    </SafeAreaView >
   )
 }
 
@@ -47,7 +48,6 @@ const styles = StyleSheet.create({
   img: {
     height: 150,
     width: 375,
-    marginTop: 100,
   },
   container: {
     justifyContent: 'center',
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
   },
   texto: {
     color: '#000000',
-    position: 'absolute',
-    marginTop: 5,
+    textAlign: 'center'
   },
 });

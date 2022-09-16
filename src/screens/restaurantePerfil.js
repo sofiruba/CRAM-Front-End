@@ -23,9 +23,10 @@ export default function Profile(props) {
     const lugar = props.route.params.props.lugar
 
     return (
-        <SafeAreaView style={styles.pag} >
-            <ScrollView style={styles.content}>
-                <View >
+        <SafeAreaView >
+            <ScrollView >
+                <View style={styles.pag}>
+                <View  style={styles.content}>
                 <View >
                     <Image style={styles.img} source={lugar.foto}></Image>
                     <View>
@@ -34,7 +35,7 @@ export default function Profile(props) {
                             <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { props })} />
                         </View>
 
-                        <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.subtitle]}>{lugar.description}</Text>
+                        <Text style={ styles.subtitle}>{lugar.description}</Text>
                         <View style={styles.bigrow}>
                             <Icon name={'clock-o'} style={styles.estado} />
                             <Text style={[{ fontFamily: 'Arimo_700Bold' }, styles.estado]}>Abierto</Text>
@@ -59,6 +60,7 @@ export default function Profile(props) {
                     </View>
                 </View>
                 </View>
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
@@ -68,10 +70,9 @@ export default function Profile(props) {
 const styles = StyleSheet.create({
     content: {
         width: '100%',
-        height: 600,
         backgroundColor: 'white',
         borderRadius: 15,
-        padding: 5,
+        padding: 2,
 
     },
     img: {
@@ -100,7 +101,6 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         padding: 10,
-
         marginTop: 50,
 
     },
