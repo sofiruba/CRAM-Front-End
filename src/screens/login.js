@@ -35,7 +35,7 @@ let user = {IdUsuario: 1, username: 'jsjskd', nombre: 'jdddk'}
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "" ? "padding" : "height"}>
         <Image style={styles.img} source={require('../assets/icon.png')}></Image>
         <LoginForm login={login}></LoginForm>      
-        <Text onPress={() => navigation.navigate("Register")} style={styles.texto}>¿Todavía no te registraste?</Text>
+        <Text  onPress={() => navigation.navigate("Register")} style={styles.texto}>¿Todavía no te registraste?</Text>
       </KeyboardAvoidingView >
 
     </ScrollView >
@@ -46,21 +46,22 @@ let user = {IdUsuario: 1, username: 'jsjskd', nombre: 'jdddk'}
 
 const styles = StyleSheet.create({
   img: {
-    height: 150,
-    width: 375,
+    height: 200,
+    width: 400,
   },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
     margin: 30,
-    marginTop: 200,
+    marginTop: 100,
   },
   pag: {
     backgroundColor: "#F7D250",
     height: 1000,
   },
   texto: {
-    color: '#000000',
-    textAlign: 'center'
+    color: '#9B791E',
+    textAlign: 'center',
+    textDecorationLine: 'underline'
   },
 });

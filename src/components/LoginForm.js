@@ -30,40 +30,40 @@ export default function LoginForm({login}) {
           />
         </View>
       </View>
-      <View style={[{fontFamily: 'Rubik_600SemiBold'},styles.boton]}>
-        <Button title="Ingresar" color="#D7A625" onPress={() => login(username, password)} />
+      <View style={[{fontFamily: 'Rubik_600SemiBold'},styles.boton]} >
+        <Text  style={{color: '#fff'}} onPress={() => login(username, password)} >Iniciar</Text>
       </View>
     </View>
   )
 }
 const styles = StyleSheet.create({
-  formstyle: {
-    backgroundColor: 'white',
-    marginTop: 10,
-  },
 
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 15,
-    marginTop: 10,
+
   },
 
   imageStyle: {
     alignItems: 'center',
   },
-  boton: {
-    marginTop: 13,
-    height: 100,
-    width: 100,
+  boton: { 
+    marginTop: 20,
+    height: 60,
+    width: 300,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#D7A625',
+    marginBottom: 40,
   },
 
   input: {
     backgroundColor: 'white',
     borderRadius: 20,
-    marginTop: 13,
-    width: 200,
-    height: 45,
+    marginTop: 20,
+    width: 300,
+    height: 60,
     marginLeft: 3,
   },
 

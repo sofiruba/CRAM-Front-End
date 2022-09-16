@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import { View, Text, StyleSheet, Button } from "react-native"
 import ListadoReseñas from "../components/ListadoReseñas"
 import { useNavigation } from "@react-navigation/native"
+import {Poppins_700Bold } from "@expo-google-fonts/poppins"
+import { useFonts } from "@expo-google-fonts/dev"
 
 export default function ReseñasView(props) {
     const navigation = useNavigation()
@@ -20,11 +22,17 @@ export default function ReseñasView(props) {
         getReseñas()
     })
     */
+    let [loaded] = useFonts({
+        Poppins_700Bold,
+      });
+      if (!loaded) {
+        return null;
+      }
     const restaurante = props.route.params.props.route.params.props.lugar
     const usuario = props.route.params.props.route.params.props.User.route.params.user
     props = {usuario, restaurante}
     const usuarios_reseñas = []
-    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4, IdUsuario: 3 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1, IdUsuario: 3  }]
+    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4, IdUsuario: 3 , foto: 'https://i.pinimg.com/600x315/b7/e1/20/b7e12039ad5f2c98b9cd5a57492fdfca.jpg'}, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1, IdUsuario: 3  }]
     /*reseñas.map(r => {
             axios.get('localhost:3000/usuarios/'+ r.IdUsuario)
             .then(res => {
@@ -34,7 +42,7 @@ export default function ReseñasView(props) {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={styles.titulo}>{restaurante.nombre} </Text>
+                <Text style={[{ fontFamily: 'Poppins_700Bold' },styles.titulo]}>{restaurante.nombre} </Text>
 
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
@@ -47,14 +55,15 @@ export default function ReseñasView(props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
+        backgroundColor: "#F8F7F7",
         height: '100%',
     },
     titulo: {
         alignSelf: 'center',
-        fontSize: 25,
+        fontSize: 40,
         marginTop: 70,
         color: 'black',
+
     },
     botonContainer:{
         alignItems: 'center',

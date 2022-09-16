@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet} from "react-native"
+import { View,  StyleSheet} from "react-native"
 import CardReseña from "../components/CardReseña"
 
 export default function ListadoReseñas ({reseñas}){
@@ -17,5 +17,6 @@ const styles = StyleSheet.create({
     container: {
         marginTop: 30,
         height: 100,
+        alignItems: 'center'
     },
 })
