@@ -39,8 +39,7 @@ export default function ReseñasView(props) {
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
             <View style={styles.botonContainer}>
-                <Button style={styles.boton} title='Crear reseña' onPress={() => navigation.navigate('CrearReseña', props )}></Button>
-
+                <Text style={styles.boton} onPress={() => navigation.navigate('CrearReseña', props )}>Crear reseña</Text>
             </View>
         </View>
     )
@@ -63,7 +62,19 @@ const styles = StyleSheet.create({
         width: 400,
         height: 120,
     },
-    boton:{
-        width: 50,
-    }
+    boton: {
+        height: 50,
+        width: 170,
+        borderRadius: 13,
+        backgroundColor: "#F0B57D",
+        justifyContent: 'center',
+        alignSelf: 'center',
+        overflow: 'hidden',
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        marginTop: 10,
+        color: 'white',
+    },
 });

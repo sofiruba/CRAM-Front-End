@@ -14,16 +14,16 @@ export default function LoginForm({login}) {
       return null;
   }
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <View style={styles.container}>
       <View>
-        <TextInput style={[{fontFamily: 'Rubik_600SemiBold'},styles.input]}
+        <TextInput style={styles.input}
           placeholder="  Usuario"
           onChangeText={(text) => setUsername(text)}
         />
       </View>
       <View>
         <View>
-          <TextInput style={[{fontFamily: 'Rubik_600SemiBold'},styles.input]}
+          <TextInput style={styles.input}
             placeholder="  Contraseña"
             secureTextEntry={true}
             onChangeText={(text) => setPassword(text)}
@@ -33,25 +33,23 @@ export default function LoginForm({login}) {
       <View style={[{fontFamily: 'Rubik_600SemiBold'},styles.boton]}>
         <Button title="Ingresar" color="#D7A625" onPress={() => login(username, password)} />
       </View>
-    </KeyboardAvoidingView>
+    </View>
   )
 }
 const styles = StyleSheet.create({
   formstyle: {
     backgroundColor: 'white',
-    marginBottom: 0,
     marginTop: 10,
   },
 
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 35,
+    padding: 15,
     marginTop: 10,
   },
 
   imageStyle: {
-    resizeMode: 'stretch',
     alignItems: 'center',
   },
   boton: {
