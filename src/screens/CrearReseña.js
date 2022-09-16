@@ -15,9 +15,9 @@ export default function CrearReseña(props) {
   const [puntaje, setPuntaje] = useState(0)
 
   const [password, setPassword] = useState('')
-  let user = props.route.params.user //? no anda eñl tunel nose
-  let lugar = props.route.params.lugar //? no anda eñl tunel nose
-  console.log(props)
+  const usuario = props.route.params.usuario
+  const lugar  = props.route.params.restaurante
+
   /*const crearReseña = () => {
     let reseña = {
       "titulo": titulo, 
@@ -56,7 +56,7 @@ export default function CrearReseña(props) {
   }
 
   return (
-    <View style={[{ fontFamily: 'DaysOne_400Regular' }, styles.pag]}>
+    <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.pag]}>
       <View style={styles.container}>
         <Text style={styles.titulo}>Crear Reseña</Text>
       </View>
