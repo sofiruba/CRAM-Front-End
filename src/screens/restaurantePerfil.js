@@ -100,9 +100,7 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         padding: 10,
-
         marginTop: 50,
-
     },
     subtitle: {
         fontWeight: '600',
@@ -113,7 +111,6 @@ const styles = StyleSheet.create({
     bigrow: {
         flexDirection: "row",
         flexWrap: "wrap",
-
     },
     row: {
         flexDirection: "row",
@@ -136,13 +133,11 @@ const styles = StyleSheet.create({
         textAlignVertical: 'bottom',
         fontSize: 18,
     },
-    comment:
-    {
+    comment:{
         color: "black",
         textAlign: "right",
         alignContent: 'flex-end',
         fontSize: 30,
-
         marginTop: 15,
     },
 

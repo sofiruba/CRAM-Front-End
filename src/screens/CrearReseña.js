@@ -3,6 +3,7 @@ import axios from 'axios'
 import { View, Text, TextInput, StyleSheet, Button, KeyboardAvoidingView } from 'react-native'
 import { DaysOne_400Regular, Comfortaa_Regular, ShipporiAntiqueB1_400Regular, useFonts, Arvo_400Regular, Comfortaa_300Light } from '@expo-google-fonts/dev'
 import FormPuntaje from '../components/formPuntaje'
+import SubirFoto from '../components/SubirFoto'
 
 
 //* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
@@ -13,10 +14,10 @@ export default function CrearReseña(props) {
   const [destacar, setDestacar] = useState('')
   const [descripcion, setDescripcion] = useState('')
   const [puntaje, setPuntaje] = useState(0)
-
+  const [foto, setFoto] = useState(null)
   const [password, setPassword] = useState('')
   const usuario = props.route.params.usuario
-  const lugar  = props.route.params.restaurante
+  const lugar = props.route.params.restaurante
 
   /*const crearReseña = () => {
     let reseña = {
@@ -26,7 +27,7 @@ export default function CrearReseña(props) {
       "puntaje": puntaje,
       "IdUsuario": user.IdUsuario,
       "IdLugar": lugar.IdLugar, 
-      "foto": ""
+      "foto": foto
 
     }
     return axios.post('htps://localhost:3000/reviews', reseña)
@@ -59,37 +60,32 @@ export default function CrearReseña(props) {
     <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.pag]}>
       <View style={styles.container}>
         <Text style={styles.titulo}>Crear Reseña</Text>
-      </View>
-      <View style={[{ fontfamily: 'Comfortaa_300Light' }, styles.container]}>
-        <Text style={styles.titulo}>Seleccione el puntaje</Text>
-        <FormPuntaje props={{ puntaje, setPuntaje }} ></FormPuntaje>
-        <View>
+        <View style={[{ fontfamily: 'Comfortaa_300Light' }, styles.container]}>
+          <SubirFoto props={{ foto, setFoto, styles }}></SubirFoto>
+          <View>
+            <Text style={styles.titulo}>Seleccione el puntaje</Text>
+            <FormPuntaje props={{ puntaje, setPuntaje }} ></FormPuntaje>
+          </View>
+
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
             placeholder="Titulo"
             onChangeText={(text) => setTitulo(text)}
           />
-        </View>
-        <View>
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
             placeholder="¿Algo que llamo la atencion?"
             onChangeText={(text) => setDestacar(text)}
           />
-        </View>
-        <View>
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
             placeholder="Descripcion"
             onChangeText={(text) => setDescripcion(text)}
 
           />
-        </View>
-        <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.boton]}>
-          <Button title="Enviar"
-           onPress={() => crearReseña()}
-            color="#D7A625" />
-        </View>
 
+          <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.boton]}>
+            <Button title="Enviar" onPress={() => crearReseña()} color="#D7A625" />
+          </View>
+        </View>
       </View>
-
     </View>
   );
 
@@ -116,10 +112,21 @@ const styles = StyleSheet.create({
     height: 45,
     marginLeft: 3,
   },
-
   texto: {
     fontSize: 18,
-    marginLeft: '2%',
-    marginRight: '2%'
+    marginLeft: 2,
+    marginRight: 2
+  },
+  foto:{
+    width: 300,
+    height: 200,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'C4C4C4'
+  },
+  mas:{
+    color: '#fff',
+    fontSize: 50,
   }
 })

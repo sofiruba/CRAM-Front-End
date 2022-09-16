@@ -23,7 +23,14 @@ export default function ReseñasView(props) {
     const restaurante = props.route.params.props.route.params.props.lugar
     const usuario = props.route.params.props.route.params.props.User.route.params.user
     props = {usuario, restaurante}
-    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1 }]
+    const usuarios_reseñas = []
+    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4, IdUsuario: 3 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1, IdUsuario: 3  }]
+    /*reseñas.map(r => {
+            axios.get('localhost:3000/usuarios/'+ r.IdUsuario)
+            .then(res => {
+                usuarios_reseñas.push(res.data)
+            })
+    })*/
     return (
         <View style={styles.container}>
             <View>

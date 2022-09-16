@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
+import SubirFoto from "./SubirFoto";
 
 //* FUENTE: RUBIK
 export default function FormRegistrar({ register }) {
@@ -8,63 +9,47 @@ export default function FormRegistrar({ register }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [mail, setMail] = useState("")
-
-
-
-
+  const [foto, setFoto] = useState(null)
   return (
     <View style={styles.contain}>
-      <View style={styles.perfilfoto}>
-        <Text style={styles.iconmas}>+</Text>
+      <View>
+        <SubirFoto props={{ foto, setFoto, styles }} ></SubirFoto>
       </View>
       <View style={styles.container}>
-      
-      <View style={styles.inputs}>
-        <TextInput style={styles.input}
-          placeholder="  Nombre"
-          onChangeText={(text) => setNombre(text)}
-        />
-        <TextInput style={styles.input}
-          placeholder="  Usuario"
-          onChangeText={(text) => setUsername(text)}
-        />
-        <TextInput style={styles.input}
-          placeholder="  Contraseña"
-          secureTextEntry={true}
-          onChangeText={(text) => setPassword(text)}
-        />
-        <TextInput style={styles.input}
-          placeholder="  Mail"
-          onChangeText={(text) => setMail(text)}
-        />
-      </View>
-      <View style={styles.boton}>
-        <Button title="Registrarse" color="#D7A625" onPress={() => register({ "nombre": nombre, "username": username, "password": password, "mail": mail })} />
+        <View style={styles.inputs}>
+          <TextInput style={[styles.input, styles.shadow]}
+            placeholder="  Nombre"
+            onChangeText={(text) => setNombre(text)}
+          />
+          <TextInput style={[styles.input, styles.shadow]}
+            placeholder="  Contraseña"
+            secureTextEntry={true}
+            onChangeText={(text) => setPassword(text)}
+          />
+          <TextInput style={[styles.input, styles.shadow]}
+            placeholder=" Nombre de Usuario"
+            onChangeText={(text) => setUsername(text)}
+          />
+          <TextInput style={[styles.input, styles.shadow]}
+            placeholder="  Mail"
+            onChangeText={(text) => setMail(text)}
+          />
+        </View>
+        <View style={styles.boton}>
+          <Text style={styles.btn} onPress={() => register({ "nombre": nombre, "username": username, "password": password, "mail": mail })} >Registrarse</Text>
+        </View>
       </View>
     </View>
-    </View>
-    
+
   )
 }
 const styles = StyleSheet.create({
-  contain:{
+  contain: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 80,
+    backgroundColor: '#F7D250',
+    marginTop: 130,
   },
-  perfilfoto: {
-    backgroundColor: '#FFFFFF',
-    width: 120,
-    height: 120,
-    borderRadius: 100,
-
-    justifyContent: 'center',
-    alignItems: 'center',
-},
-iconmas: {
-    fontSize: 50,
-    color: '#CCCCCC',
-},
   formstyle: {
     backgroundColor: 'white',
     marginBottom: 0,
@@ -77,29 +62,54 @@ iconmas: {
   container: {
     alignItems: 'center',
     padding: 10,
-    marginTop: 30,
+    marginTop: 50,
     height: 700,
     width: '100%',
     backgroundColor: "#FFF",
     borderRadius: 60,
   },
-
   imageStyle: {
     resizeMode: 'stretch',
     alignItems: 'center',
   },
   boton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 300,
+    height: 60,
+    backgroundColor: "#F4B980",
     marginTop: 20,
-    height: '100%',
-    width: 150,
-  },
+    borderRadius: 40,
 
+  },
   input: {
     backgroundColor: '#F8F7F7',
-    borderRadius: 20,
+    borderRadius: 10,
     marginTop: 20,
     width: 300,
-    height: 50,
+    height: 60,
+
   },
+  shadow: {
+    shadowColor: '#171717',
+    elevation: 20,
+  },
+  foto: {
+    backgroundColor: '#fff',
+    height: 150,
+    width: 150,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 100,
+  },
+  mas: {
+    fontSize: 50,
+    fontWeight: '600',
+    color: '#9C9C9C',
+  },
+  btn: {
+    color: '#fff'
+
+  }
 
 });
