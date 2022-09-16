@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   boton: {
     marginTop: 13,
-    height: 700,
+    height: 100,
     width: 100,
   },
 

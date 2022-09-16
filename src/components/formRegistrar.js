@@ -35,7 +35,7 @@ export default function FormRegistrar({ register }) {
             onChangeText={(text) => setMail(text)}
           />
         </View>
-        <View style={styles.boton}>
+        <View style={[styles.boton, styles.shadow]}>
           <Text style={styles.btn} onPress={() => register({ "nombre": nombre, "username": username, "password": password, "mail": mail })} >Registrarse</Text>
         </View>
       </View>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 60,
     backgroundColor: "#F4B980",
-    marginTop: 20,
+    marginTop: 30,
     borderRadius: 40,
 
   },
@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
   },
   shadow: {
     shadowColor: '#171717',
-    elevation: 20,
+    shadowOpacity: 0.1,
+    elevation: 10,
   },
   foto: {
     backgroundColor: '#fff',

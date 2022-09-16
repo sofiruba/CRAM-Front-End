@@ -29,15 +29,15 @@ let user = {IdUsuario: 1, username: 'jsjskd', nombre: 'jdddk'}
   }
 
   return (
-    <SafeAreaView >
+    <SafeAreaView style={styles.pag}>
     <ScrollView >
-    <View style={styles.pag}>
+
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "" ? "padding" : "height"}>
         <Image style={styles.img} source={require('../assets/icon.png')}></Image>
         <LoginForm login={login}></LoginForm>      
         <Text onPress={() => navigation.navigate("Register")} style={styles.texto}>¿Todavía no te registraste?</Text>
       </KeyboardAvoidingView >
-    </View>
+
     </ScrollView >
     </SafeAreaView >
   )
@@ -57,8 +57,7 @@ const styles = StyleSheet.create({
   },
   pag: {
     backgroundColor: "#F7D250",
-    height: '100%',
-    width: '100%',
+    height: 1000,
   },
   texto: {
     color: '#000000',
