@@ -1,4 +1,4 @@
-import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect, React } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -23,51 +23,52 @@ export default function Profile(props) {
     const lugar = props.route.params.props.lugar
 
     return (
-        <View style={styles.pag}>
-            <View style={styles.content}>
-                <Image style={styles.img} source={lugar.foto}></Image>
-                <View>
-                    <View style={styles.bigrow}>
-                        <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.title]}>{lugar.nombre}</Text>
-                        <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { props })} />
-                    </View>
-
-                    <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.subtitle]}>{lugar.description}</Text>
-                    <View style={styles.bigrow}>
-                        <Icon name={'clock-o'} style={styles.estado} />
-                        <Text style={[{ fontFamily: 'Arimo_700Bold' }, styles.estado]}>Abierto</Text>
-                        <Text style={[{ fontFamily: 'Arimo_700Bold' }, styles.hora]}> Cierra a las 20hs</Text>
-                    </View>
-                </View>
-                <View style={styles.bigrow}>
-                    <View style={styles.row}>
-                        <View >
-                            <Icon name={'phone'} style={styles.llamada} />
+        <SafeAreaView style={styles.pag} >
+            <ScrollView style={styles.content}>
+                <View >
+                <View >
+                    <Image style={styles.img} source={lugar.foto}></Image>
+                    <View>
+                        <View style={styles.bigrow}>
+                            <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.title]}>{lugar.nombre}</Text>
+                            <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { props })} />
                         </View>
-                        <Text style={[{ fontFamily: 'FrankRuhlLibre_700Bold' }, styles.llamadatext]}>Llamar</Text>
+
+                        <Text style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.subtitle]}>{lugar.description}</Text>
+                        <View style={styles.bigrow}>
+                            <Icon name={'clock-o'} style={styles.estado} />
+                            <Text style={[{ fontFamily: 'Arimo_700Bold' }, styles.estado]}>Abierto</Text>
+                            <Text style={[{ fontFamily: 'Arimo_700Bold' }, styles.hora]}> Cierra a las 20hs</Text>
+                        </View>
                     </View>
-                    <View style={styles.row}>
-                        <Icon name={'heart'} size={35} style={styles.heart} />
-                        <Text style={[{ fontFamily: 'FrankRuhlLibre_700Bold' }, styles.lista]}>Añadir a Lista</Text>
+                    <View style={styles.bigrow}>
+                        <View style={styles.row}>
+                            <View >
+                                <Icon name={'phone'} style={styles.llamada} />
+                            </View>
+                            <Text style={[{ fontFamily: 'FrankRuhlLibre_700Bold' }, styles.llamadatext]}>Llamar</Text>
+                        </View>
+                        <View style={styles.row}>
+                            <Icon name={'heart'} size={35} style={styles.heart} />
+                            <Text style={[{ fontFamily: 'FrankRuhlLibre_700Bold' }, styles.lista]}>Añadir a Lista</Text>
+                        </View>
+                        <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                     </View>
-                    <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
+                    <View>
+                        <Text onPress={() => navigation.goBack()} style={[{ fontFamily: 'Heebo_400Regular' }, styles.boton]}> Ir a Home </Text>
+                    </View>
                 </View>
-                <View>
-                    <Text onPress={() => navigation.goBack()} style={[{ fontFamily: 'Heebo_400Regular' }, styles.boton]}> Ir a Home </Text>
                 </View>
-            </View>
-        </View>
+            </ScrollView>
+        </SafeAreaView>
     );
 
 }
 
 const styles = StyleSheet.create({
     content: {
-        justifyContent: 'center',
         width: '100%',
         height: 600,
-        marginTop: 'auto',
-        marginBottom: 'auto',
         backgroundColor: 'white',
         borderRadius: 15,
         padding: 5,
@@ -99,6 +100,8 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         padding: 10,
+
+        marginTop: 50,
 
     },
     subtitle: {

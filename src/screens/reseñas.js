@@ -21,8 +21,8 @@ export default function ReseñasView(props) {
     })
     */
     const restaurante = props.route.params.props.route.params.props.lugar
-    
-    console.log(restaurante)
+    const usuario = props.route.params.props.route.params.props.User.route.params.user
+    props = {usuario, restaurante}
     const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1 }]
     return (
         <View style={styles.container}>
