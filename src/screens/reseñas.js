@@ -20,14 +20,14 @@ export default function ReseñasView(props) {
         getReseñas()
     })
     */
-    let restaurante = props.route.params.props.route.lugar
+    const restaurante = props.route.params.props.route.params.props.lugar
+    
     console.log(restaurante)
     const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4 }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1 }]
-    console.log(restaurante)
     return (
         <View style={styles.container}>
             <View>
-                <Text style={styles.titulo}> {restaurante.nombre}</Text>
+                <Text style={styles.titulo}>{restaurante.nombre} </Text>
 
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>

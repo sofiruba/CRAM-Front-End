@@ -17,6 +17,7 @@ export default function CrearReseña( props) {
   const [password, setPassword] = useState('')
   let user = props.route.params.user //? no anda eñl tunel nose
   let lugar = props.route.params.lugar //? no anda eñl tunel nose
+  console.log(props)
   /*const crearReseña = () => {
     let reseña = {
       "titulo": titulo, 
