@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text, StyleSheet, Image } from "react-native"
+import { View, Text, StyleSheet, Image, Button } from "react-native"
 import { SafeAreaView, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Arvo_400Regular, useFonts } from "@expo-google-fonts/dev";
@@ -19,7 +19,7 @@ export default function CardReseña({ props }) {
 
     return (
         <SafeAreaView style={styles.container}>
-            
+
             <View style={styles.row}>
                 <View style={{ width: 200 }}>
                     <Text style={[{ fontFamily: 'Arvo_400Regular' }, styles.titulo]}>{props.titulo}</Text>
@@ -28,8 +28,12 @@ export default function CardReseña({ props }) {
 
             </View>
             <View>
-                    <Text style={[{ fontFamily: 'Arvo_400Regular' }, styles.titulo]}>{props.descripcion}</Text>
-                </View>
+                <Text style={[{ fontFamily: 'Arvo_400Regular' }, styles.titulo]}>{props.descripcion}</Text>
+            </View>
+            <View style={styles.row}>
+                <Text style={styles.boton}>A favor</Text>
+                <Text style={styles.boton}>En contra</Text>
+            </View>
             <View style={styles.img}>
                 <Image style={styles.image} source={props.foto}></Image>
             </View>
@@ -78,5 +82,13 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
     },
-
+    boton: {
+        backgroundColor: 'rgba(71, 71, 71, 0.08)',
+        marginLeft: 8,
+        marginTop: 15,
+        borderWidth: 1,
+        borderColor: 'rgba(71, 71, 71, 0.22)',
+        borderRadius: 5,
+        fontSize: 14,
+    },
 });

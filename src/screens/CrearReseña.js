@@ -7,7 +7,7 @@ import FormPuntaje from '../components/formPuntaje'
 
 //* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
 
-export default function CrearReseña( props) {
+export default function CrearReseña(props) {
 
   const [titulo, setTitulo] = useState('')
   const [destacar, setDestacar] = useState('')
@@ -83,11 +83,8 @@ export default function CrearReseña( props) {
           />
         </View>
         <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.boton]}>
-          <Button title="Enviar"
-           onPress={() => crearReseña()}
-            color="#D7A625" />
+          <Button title="Enviar" onPress={() => crearReseña()} color="#D7A625" />
         </View>
-
       </View>
 
     </View>
