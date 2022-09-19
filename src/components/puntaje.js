@@ -8,14 +8,14 @@ export default function Puntaje({ puntaje }) {
     for (let i = 0; i < puntaje; i++) {
         estrellas.push(
 
-            <Icon size={30} name={'star'} style={styles.star_filled} key={i} ></Icon>
+            <Icon size={33} name={'star'} style={styles.star_filled} key={i} ></Icon>
 
         )
     }
     for (let i = 0; i < estrellas_vacias; i++) {
         estrellas.push(
 
-            <Icon name={'star'} size={30} style={styles.star} key={i + puntaje} ></Icon>
+            <Icon name={'star'} size={33} style={styles.star} key={i + puntaje} ></Icon>
 
         )
     }

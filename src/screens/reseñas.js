@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     },
     boton: {
         height: 50,
-        width: 170,
-        borderRadius: 13,
+        width: 300,
+        borderRadius: 30,
         backgroundColor: "#F0B57D",
         justifyContent: 'center',
         alignSelf: 'center',

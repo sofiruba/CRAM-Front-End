@@ -30,8 +30,8 @@ export default function LoginForm({login}) {
           />
         </View>
       </View>
-      <View style={[{fontFamily: 'Rubik_600SemiBold'},styles.boton]} >
-        <Text  style={{color: '#fff'}} onPress={() => login(username, password)} >Iniciar</Text>
+      <View style={[{fontFamily: 'Rubik_600SemiBold'},styles.boton]} onTouchStart={() => login(username, password)} >
+        <Text  style={{color: '#fff'}}  >Iniciar</Text>
       </View>
     </View>
   )

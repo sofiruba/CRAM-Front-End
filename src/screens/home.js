@@ -53,7 +53,7 @@ export default function HomeScreen(user) {
     }
     return (
         <KeyboardAvoidingView style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
-            <View style={styles.container}>
+            <View>
                 <View>
                     <View style={styles.row}>
                         <Text style={[{ fontFamily: 'ShipporiAntiqueB1_400Regular' }, styles.texto]} >Seguidos</Text>

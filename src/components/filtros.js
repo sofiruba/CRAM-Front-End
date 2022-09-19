@@ -37,13 +37,10 @@ const styles = StyleSheet.create({
         height: 30,
     },
     titulo: {
-        fontWeight: '600',
-        color: '#000',
+        color: '#605e5e',
         fontSize: 18,
-        backgroundColor: 'rgba(255, 232, 149, 0.38)',
-        borderColor: 'rgba(233, 199, 76, 1)',
-        borderWidth: 2,
-        borderRadius: 6,
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        borderRadius: 12,
         marginRight: 6,
 
 
@@ -51,10 +48,6 @@ const styles = StyleSheet.create({
     filtroc: {
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: 'rgba(233, 199, 76, 1)',
-        borderWidth: 2,
-        borderRadius: 10,
-        backgroundColor: 'rgba(255, 232, 149, 0.38)',
         marginHorizontal: 1,
     },
     filtro: {

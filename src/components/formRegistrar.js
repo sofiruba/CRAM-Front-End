@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   shadow: {
     shadowColor: '#171717',
     shadowOpacity: 0.1,
-    elevation: 10,
+    elevation: 3,
   },
   foto: {
     backgroundColor: '#fff',
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   mas: {
     fontSize: 50,
-    fontWeight: '600',
+    fontWeight: '300',
     color: '#9C9C9C',
   },
   btn: {

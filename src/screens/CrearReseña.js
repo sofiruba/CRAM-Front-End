@@ -57,32 +57,33 @@ export default function CrearReseña(props) {
   }
 
   return (
-    <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.pag]}>
+    <View style={ styles.pag}>
       <View style={styles.container}>
-        <Text style={styles.titulo}>Crear Reseña</Text>
-        <View style={[{ fontfamily: 'Comfortaa_300Light' }, styles.container]}>
+        <Text style={[{ fontFamily: 'Comfortaa_300Light' },styles.title]}>{lugar.nombre}</Text>
+        <View style={ styles.container}>
           <SubirFoto props={{ foto, setFoto, styles }}></SubirFoto>
-          <View>
-            <Text style={styles.titulo}>Seleccione el puntaje</Text>
+          <View style={styles.cont}>
+            <Text style={[{ fontFamily: 'Comfortaa_300Light' },styles.titulo]}>Seleccione el puntaje</Text>
             <FormPuntaje props={{ puntaje, setPuntaje }} ></FormPuntaje>
           </View>
 
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
-            placeholder="Titulo"
+            placeholder=" Titulo"
             onChangeText={(text) => setTitulo(text)}
           />
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
-            placeholder="¿Algo que llamo la atencion?"
+            placeholder=" ¿Algo que llamo la atencion?"
             onChangeText={(text) => setDestacar(text)}
           />
-          <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
-            placeholder="Descripcion"
+          <TextInput style={[{ fontFamily: 'Comfortaa_300Light'}, styles.inputD]}
+            placeholder=" Descripcion"
+            placeholderStyle={{marginTop: 60}}
             onChangeText={(text) => setDescripcion(text)}
 
           />
 
-          <View style={[{ fontFamily: 'Comfortaa_300Light' }, styles.boton]}>
-            <Button title="Enviar" onPress={() => crearReseña()} color="#D7A625" />
+          <View style={ styles.boton} onTouchStart={CrearReseña}>
+          <Text style={styles.btn}  >Enviar</Text>
           </View>
         </View>
       </View>
@@ -96,10 +97,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 35,
-    marginTop: 10,
   },
   pag: {
-    backgroundColor: '#fff',
+    backgroundColor: '#F4F1F1',
     height: '100%',
     width: '100%',
     flex: 1,
@@ -108,25 +108,65 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 20,
     marginTop: 13,
-    width: 200,
+    width: 300,
     height: 45,
     marginLeft: 3,
+    shadowColor: '#000',
+    elevation: 5,
+    shadowOpacity: 0.2,
   },
-  texto: {
-    fontSize: 18,
-    marginLeft: 2,
-    marginRight: 2
+  inputD: {
+    backgroundColor: 'white',
+    borderRadius: 20,
+    marginTop: 13,
+    width: 300,
+    height: 150,
+    marginLeft: 3,
+    shadowColor: '#000',
+    elevation: 5,
+    shadowOpacity: 0.2,
   },
+
   foto:{
     width: 300,
     height: 200,
-    borderRadius: 20,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'C4C4C4'
+    backgroundColor: '#C4C4C4',
   },
   mas:{
-    color: '#fff',
-    fontSize: 50,
+    color: 'rgba(255,255,255,0.8)',
+    fontSize: 80,
+    fontWeight: '100'
+  },
+  boton: { 
+    marginTop: 20,
+    height: 60,
+    width: 300,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "#F0B57D",
+    fontWeight:'bold',
+    marginBottom: 40,
+  },
+  title:{
+    fontSize: 40,
+  },
+  titulo: {
+    fontSize: 15,
+    marginTop: 10
+  },
+  cont:{
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  btn:{
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: 'white',
+
+
   }
 })

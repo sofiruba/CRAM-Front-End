@@ -2,7 +2,8 @@ import React from "react"
 import { View, Text, StyleSheet, Image, Button } from "react-native"
 import { SafeAreaView, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Poppins_400Regular, useFonts } from "@expo-google-fonts/dev";
+import { Poppins_400Regular, useFonts, Poppins_600SemiBold } from "@expo-google-fonts/dev";
+
 import Puntaje from "./puntaje";
 
 //* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
@@ -10,6 +11,8 @@ export default function CardReseña({ props }) {
     const navigation = useNavigation();
     let [loaded] = useFonts({
         Poppins_400Regular,
+        Poppins_600SemiBold,
+        
     });
 
     if (!loaded) {
@@ -25,13 +28,14 @@ export default function CardReseña({ props }) {
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.titulo]}>{props.titulo}</Text>
                     <Puntaje puntaje={props.puntaje}></Puntaje>
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.descripcion]}>{props.descripcion}</Text>
+                    
                 </View>
                 <Image style={styles.image} source={{ uri: props.foto }}></Image>
             </View>
 
             <View style={styles.row}>
-                <Text style={styles.boton}>A favor</Text>
-                <Text style={styles.boton}>En contra</Text>
+                <Text style={[{ fontFamily: 'Poppins_600SemiBold' },styles.boton]}>A favor</Text>
+                <Text style={[{fontFamily:  'Poppins_600SemiBold'},styles.boton]}>En contra</Text>
             </View>
             <View style={styles.img}>
 
@@ -74,12 +78,7 @@ const styles = StyleSheet.create({
         marginBottom: '5%',
         marginLeft: '2%',
     },
-    heart: {
-        color: "red",
-        textAlign: "right",
-        marginLeft: 40,
-        marginTop: 10,
-    },
+
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
@@ -88,10 +87,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(71, 71, 71, 0.08)',
         marginLeft: 8,
         marginTop: 15,
-        fontSize: 14,
-        shadowColor: '#171717',
-        shadowOpacity: 0.1,
+        fontSize: 10,
+        shadowColor: 'rgba(71, 71, 71, 0.1)',
+        shadowOpacity: 0.05,
         elevation: 0.5,
+        borderRadius: 5
     },
     descripcion:{
         fontSize: 15,
