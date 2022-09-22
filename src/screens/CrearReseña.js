@@ -17,7 +17,7 @@ export default function CrearReseña(props) {
   const [foto, setFoto] = useState(null)
   const usuario = props.route.params.usuario
   const lugar = props.route.params.restaurante
-  console.log(usuario)
+
   const crearReseña = (e) => {
     let reseña = {
       "titulo": titulo, 
@@ -29,7 +29,6 @@ export default function CrearReseña(props) {
       "foto": foto
 
     }
-    console.log(reseña)
     e.preventDefault()
     return axios.post('http://localhost:3000/reviews', reseña)
       .then(res => {

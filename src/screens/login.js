@@ -6,7 +6,7 @@ import axios from 'axios';
 export default function LoginScreen() {
 
   const navigation = useNavigation();
-   const login = async (username, password) => {
+   /*const login = async (username, password) => {
     let usuario = {"username": username, "password": password}
     return axios.post('http://localhost:3000/auth/login', usuario)
       .then(res => {
@@ -21,6 +21,10 @@ export default function LoginScreen() {
       .catch(error => {
         console.log(error)
       })
+  }*/
+  const user = {username: 'admin', password: 'admin'}
+  const login = () => {
+    return navigation.replace('Home', {user})
   }
 
   return (

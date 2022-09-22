@@ -23,7 +23,7 @@ export default function Profile(props) {
     const lugar = props.route.params.props.lugar
 
     return (
-        <SafeAreaView >
+        <SafeAreaView style={{backgroundColor: '#fff', height: 900}} >
             <ScrollView >
                 <View style={styles.pag}>
                     <View style={styles.content}>
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     heart: {
         color: 'red',
         textAlignVertical: 'center',
-        marginTop: 0,
+        marginTop: 15,
         marginLeft: 2,
         marginRight: 2.5,
     },
