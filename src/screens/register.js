@@ -6,14 +6,12 @@ import axios from 'axios';
 export default function Register() {
 
     const navigation = useNavigation();
-    const register = () => {
-        return navigation.navigate('Home')
-    }
 
 
-    /*const register = (user) => {
 
-        return axios.post('http://localhost:3000/auth/login', user)
+    const register = (user) => {
+
+        return axios.post('http://localhost:3000/auth/register', user)
             .then(res => {
                 if (res.status = 201) {
                     navigation.navigate('Home', user)
@@ -25,7 +23,7 @@ export default function Register() {
             .catch(error => {
                 console.error('error', error)
             })
-    }*/
+    }
 
     return (
         <View style={styles.pag}>

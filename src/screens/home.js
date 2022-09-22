@@ -25,7 +25,7 @@ export default function HomeScreen(user) {
         "filtro": "frances",
     },])
 
-    /*const headers = {
+    const headers = {
         "Content-Type": "application/json",
     };
     const getLugares = () => {
@@ -36,11 +36,11 @@ export default function HomeScreen(user) {
             })
             .catch((err) => console.log(err))
     }
-
+    let usuario = user.route.params.user.usuario
 
     useEffect(() => {
         getLugares()
-    }, [])*/
+    }, [])
 
 
     let [loaded] = useFonts({
@@ -51,8 +51,9 @@ export default function HomeScreen(user) {
     if (!loaded) {
         return null;
     }
+    console.log(usuario)
     return (
-        <KeyboardAvoidingView style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.pag]} behavior={Platform.OS === "" ? "padding" : "height"}>
+        <View style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.pag]} >
             <View>
                 <View>
                     <View style={styles.row}>
@@ -63,12 +64,12 @@ export default function HomeScreen(user) {
                     <Buscador />
                     <Filtros></Filtros>
                 </View>
-                <UserContext.Provider value={user}>
+                <UserContext.Provider value={usuario}>
                     <ListadoHome lugares={lugares}></ListadoHome>
                 </UserContext.Provider>
 
             </View>
-        </KeyboardAvoidingView>
+        </View>
     );
 
 }

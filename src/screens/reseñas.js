@@ -3,51 +3,65 @@ import { useEffect, useState } from "react"
 import { View, Text, StyleSheet, Button } from "react-native"
 import ListadoReseñas from "../components/ListadoReseñas"
 import { useNavigation } from "@react-navigation/native"
-import {Poppins_700Bold } from "@expo-google-fonts/poppins"
+import { Poppins_700Bold } from "@expo-google-fonts/poppins"
 import { useFonts } from "@expo-google-fonts/dev"
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default function ReseñasView(props) {
     const navigation = useNavigation()
-    /*const [reseñas, setReseñas] = useState([])
-    
-    const getReseñas =() =>{
-        return axios.get('localhost:3000/reseñas/'+ restaurante.IdLugar)
-        .then(res => {
-            const l = res.data
-            setReseñas(l)
-        })
+    const [reseñas, setReseñas] = useState([])
+    const [seguidos, setSeguidos] = useState([])
+    const restaurante = props.route.params.props.route.params.props.lugar
+    const usuario = props.route.params.props.route.params.props.User
+    const getReseñas = () => {
+        return axios.get('http://localhost:3000/reviews?id_lugar=' + restaurante.IdLugar)
+            .then(res => {
+                const l = res.data
+                setReseñas(l)
+            })
     }
-    
+
     useEffect(() => {
         getReseñas()
     })
-    */
+    const getSeguidos = () => {
+        return axios.get('http://localhost:3000/seguido/seguidores/' + usuario.IdUsuario)
+            .then(res => {
+                console.log(res.data)
+                const l = res.data
+                setSeguidos(l)
+            })
+    }
+    const getReviewsSeguidos = () => {
+        getSeguidos()
+        console.log('seguidos',seguidos)
+        seguidos.map(user => {
+             let nuevas_reseñas = reseñas.filter(reseña => reseña.IdUsuario == user.IdUsuario)
+             setReseñas(nuevas_reseñas)
+        })
+        console.log('cambiadas')
+    }
+
     let [loaded] = useFonts({
         Poppins_700Bold,
-      });
-      if (!loaded) {
+    });
+    if (!loaded) {
         return null;
-      }
-    const restaurante = props.route.params.props.route.params.props.lugar
-    const usuario = props.route.params.props.route.params.props.User.route.params.user
-    props = {usuario, restaurante}
-    const usuarios_reseñas = []
-    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4, IdUsuario: 3 , foto: 'https://i.pinimg.com/600x315/b7/e1/20/b7e12039ad5f2c98b9cd5a57492fdfca.jpg'}, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1, IdUsuario: 3  }]
-    /*reseñas.map(r => {
-            axios.get('localhost:3000/usuarios/'+ r.IdUsuario)
-            .then(res => {
-                usuarios_reseñas.push(res.data)
-            })
-    })*/
+    }
+
+    props = { usuario, restaurante }
+
     return (
         <View style={styles.container}>
             <View>
-                <Text style={[{ fontFamily: 'Poppins_700Bold' },styles.titulo]}>{restaurante.nombre} </Text>
-
+                <Text style={[{ fontFamily: 'Poppins_700Bold' }, styles.titulo]}>{restaurante.nombre} </Text>
+                <Icon style={styles.arrow} name="arrow-left" size={20} onPress={() => navigation.goBack()} ></Icon>
+                <Text onPress={getReviewsSeguidos} >Ver reseñas de seguidos</Text>
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
             <View style={styles.botonContainer}>
-                <Text style={styles.boton} onPress={() => navigation.navigate('CrearReseña', props )}>Crear reseña</Text>
+                <Text style={styles.boton} onPress={() => navigation.navigate('CrearReseña', props)}>Crear reseña</Text>
             </View>
         </View>
     )
@@ -65,7 +79,7 @@ const styles = StyleSheet.create({
         color: 'black',
 
     },
-    botonContainer:{
+    botonContainer: {
         alignItems: 'center',
         marginTop: 400,
         width: 400,
@@ -86,4 +100,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         color: 'white',
     },
+    arrow: {
+        marginLeft: 40
+    }
 });

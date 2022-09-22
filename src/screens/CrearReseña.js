@@ -4,36 +4,38 @@ import { View, Text, TextInput, StyleSheet, Button, KeyboardAvoidingView } from 
 import { DaysOne_400Regular, Comfortaa_Regular, ShipporiAntiqueB1_400Regular, useFonts, Arvo_400Regular, Comfortaa_300Light } from '@expo-google-fonts/dev'
 import FormPuntaje from '../components/formPuntaje'
 import SubirFoto from '../components/SubirFoto'
-
+import { useNavigation } from '@react-navigation/native'
 
 //* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
 
 export default function CrearReseña(props) {
-
+  const navigation = useNavigation()
   const [titulo, setTitulo] = useState('')
   const [destacar, setDestacar] = useState('')
   const [descripcion, setDescripcion] = useState('')
   const [puntaje, setPuntaje] = useState(0)
   const [foto, setFoto] = useState(null)
-  const [password, setPassword] = useState('')
   const usuario = props.route.params.usuario
   const lugar = props.route.params.restaurante
-
-  /*const crearReseña = () => {
+  console.log(usuario)
+  const crearReseña = (e) => {
     let reseña = {
       "titulo": titulo, 
       "destacar": destacar,
       "descripcion": descripcion,
       "puntaje": puntaje,
-      "IdUsuario": user.IdUsuario,
+      "IdUsuario": usuario.IdUsuario,
       "IdLugar": lugar.IdLugar, 
       "foto": foto
 
     }
-    return axios.post('htps://localhost:3000/reviews', reseña)
+    console.log(reseña)
+    e.preventDefault()
+    return axios.post('http://localhost:3000/reviews', reseña)
       .then(res => {
         if (res.status = 201) {
-          navigation.navigate('Home')
+          
+          navigation.goBack()
         }
         else {
           console.log(res.message)
@@ -42,9 +44,9 @@ export default function CrearReseña(props) {
       .catch(error => {
         console.error('error', error)
       })
-  }*/
+  }
 
-
+  console.log(lugar)
   let [loaded] = useFonts({
     Arvo_400Regular,
     ShipporiAntiqueB1_400Regular,
@@ -82,7 +84,7 @@ export default function CrearReseña(props) {
 
           />
 
-          <View style={ styles.boton} onTouchStart={CrearReseña}>
+          <View style={ styles.boton} onTouchStart={(e)=>crearReseña(e)}>
           <Text style={styles.btn}  >Enviar</Text>
           </View>
         </View>

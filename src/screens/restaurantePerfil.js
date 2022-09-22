@@ -44,7 +44,7 @@ export default function Profile(props) {
                             </View>
                             <View style={styles.bigrow}>
                                 <View style={styles.row}>
-                                    <View >
+                                    <View style={styles.iconllamar} >
                                         <Icon name={'phone'} style={styles.llamada} />
                                     </View>
                                     <Text style={[{ fontFamily: 'Poppins_600SemiBold' }, styles.llamadatext]}>Llamar</Text>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         marginTop: 7,
     },
     title: {
-        fontSize: 35,
+        fontSize: 30,
         textAlign: 'left',
         marginTop: 5,
         marginLeft: 0,
@@ -117,9 +117,9 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginBottom: 5,
         width: 180,
-        height: 60,
+        height: 50,
         alignItems: 'center',
-        alignContent: 'center',
+        justifyContent: 'center',
 
     },
     llamadatext: {
@@ -191,4 +191,8 @@ const styles = StyleSheet.create({
         marginLeft: 2,
         marginRight: 2.5,
     },
+    iconllamar:{
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
 })

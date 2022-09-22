@@ -1,24 +1,36 @@
-import React from "react"
+import React , {useEffect, useState}from "react"
 import { View, Text, StyleSheet, Image, Button } from "react-native"
 import { SafeAreaView, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Poppins_400Regular, useFonts, Poppins_600SemiBold } from "@expo-google-fonts/dev";
 
 import Puntaje from "./puntaje";
+import axios from "axios";
 
 //* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function CardReseña({ props }) {
     const navigation = useNavigation();
+    const getUser = () => {
+        return axios.get('http://localhost:3000/usuarios/'+ props.IdUsuario)
+        .then(res => {
+             setUsuario(res.data)
+        })
+        .catch((err) => console.log(err))
+
+    }
+    useEffect(() => {
+        getUser()
+    }, [])
+    const [usuario, setUsuario] = useState({})
     let [loaded] = useFonts({
         Poppins_400Regular,
         Poppins_600SemiBold,
         
     });
-
     if (!loaded) {
         return null;
     }
-
+    
 
     return (
         <SafeAreaView style={[styles.container, styles.shadow]}>
@@ -26,6 +38,7 @@ export default function CardReseña({ props }) {
             <View style={styles.row}>
                 <View style={{ width: 180, marginLeft: 5 }}>
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.titulo]}>{props.titulo}</Text>
+                    <Text>{usuario.nombre}</Text>
                     <Puntaje puntaje={props.puntaje}></Puntaje>
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.descripcion]}>{props.descripcion}</Text>
                     
