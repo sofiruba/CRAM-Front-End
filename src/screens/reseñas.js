@@ -29,7 +29,7 @@ export default function ReseñasView(props) {
         getReseñas()
     }, [])
     const getSeguidos = () => {
-        return axios.get('http://localhost:3000/seguido/seguidores/' + usuario.IdUsuario)
+        return axios.get('http://localhost:3000/seguido/' + usuario.IdUsuario)
             .then(res => {
                 console.log(res.data)
                 const l = res.data
@@ -37,13 +37,13 @@ export default function ReseñasView(props) {
             })
     }
     const getReviewsSeguidos = () => {
-        // getSeguidos(), hardcodeado porque no anda en el back
+         getSeguidos()
         
         filtrar(true)
         const reseñas_seguidos = []
         console.log('seguidos',seguidos)
         seguidos.map(user => {
-             let nuevas_reseñas = reseñas.filter(reseña => reseña.IdUsuario == user.IdUsuario)
+             let nuevas_reseñas = reseñas.filter(reseña => reseña.IdUsuario == user.IdSeguido)
              reseñas_seguidos.push(nuevas_reseñas)
         })
         setReseñasFromSeguidos(...reseñas_seguidos)
