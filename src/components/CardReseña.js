@@ -37,10 +37,10 @@ export default function CardReseña({ props }) {
             <View style={styles.row}>
                 <View style={{ width: 180, marginLeft: 5 }}>
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.titulo]}>{props.titulo}</Text>
-                    <Text>{usuario.nombre}</Text>
+                    <Image style={styles.tinyimg} source={{uri: usuario.foto}}></Image>
+                    <Text>{usuario.nombre}</Text> 
                     <Puntaje puntaje={props.puntaje}></Puntaje>
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.descripcion]}>{props.descripcion}</Text>
-                    
                 </View>
                 <Image style={styles.image} source={{ uri: props.foto }}></Image>
             </View>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     titulo: {
-        fontSize: 20,
+        fontSize: 15,
         marginTop: 3,
         marginLeft: 5,
     },
@@ -106,8 +106,12 @@ const styles = StyleSheet.create({
         borderRadius: 5
     },
     descripcion:{
-        fontSize: 15,
+        fontSize: 10,
         color:'#888888',
         marginLeft: 5,
+    },
+    tinyimg:{
+        width: 50,
+        height: 50
     }
 });

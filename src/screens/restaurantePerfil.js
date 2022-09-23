@@ -21,6 +21,7 @@ export default function Profile(props) {
         return null;
     }
     const lugar = props.route.params.props.lugar
+    
 
     return (
         <SafeAreaView style={{backgroundColor: '#fff', height: 900}} >

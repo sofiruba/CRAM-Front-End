@@ -28,6 +28,7 @@ export default function ReseñasView(props) {
     useEffect(() => {
         getReseñas()
     }, [])
+    console.log(usuario)
     const getSeguidos = () => {
         return axios.get('http://localhost:3000/seguido/' + usuario.IdUsuario)
             .then(res => {
@@ -38,7 +39,7 @@ export default function ReseñasView(props) {
     }
     const getReviewsSeguidos = () => {
          getSeguidos()
-        
+        console.log(seguidos)
         filtrar(true)
         const reseñas_seguidos = []
         console.log('seguidos',seguidos)
