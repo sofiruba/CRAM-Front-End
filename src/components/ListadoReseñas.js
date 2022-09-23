@@ -1,22 +1,25 @@
-import { View,  StyleSheet} from "react-native"
+import { SafeAreaView, ScrollView,  StyleSheet} from "react-native"
 import CardReseña from "../components/CardReseña"
 
 export default function ListadoReseñas ({reseñas}){
     return(
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
+            <ScrollView>
             {reseñas.map(r => (
 
                 <CardReseña key={r.IdReview} props={r}></CardReseña>
 
             ))}
-        </View>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         marginTop: 30,
-        height: 100,
-        alignItems: 'center'
+        height: 500,
+        alignItems: 'center',
+        width: 400
     },
 })

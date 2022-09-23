@@ -34,7 +34,6 @@ export default function CardReseña({ props }) {
 
     return (
         <SafeAreaView style={[styles.container, styles.shadow]}>
-
             <View style={styles.row}>
                 <View style={{ width: 180, marginLeft: 5 }}>
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.titulo]}>{props.titulo}</Text>
@@ -64,7 +63,7 @@ export default function CardReseña({ props }) {
 const styles = StyleSheet.create({
     container: {
         width: 300,
-        height: 150,
+        height: 170,
         backgroundColor: "#fff",
         borderRadius: 13,
         marginTop: 20,
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
     shadow: {
         shadowColor: '#171717',
         shadowOpacity: 0.1,
-        elevation: 15,
+        elevation: 2,
     },
     image: {
         height: 100,

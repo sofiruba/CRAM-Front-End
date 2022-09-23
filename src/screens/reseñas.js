@@ -10,11 +10,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function ReseñasView(props) {
     const navigation = useNavigation()
+    const [filtrado, filtrar] = useState(false)
+    const [reseñasFromSeguidos, setReseñasFromSeguidos] = useState([])
     const [reseñas, setReseñas] = useState([{IdReview: 1,IdUsuario: 7, IdLugar: 1, puntaje: 3, destacar: 'nada', titulo: 'Normal', descripcion: 'Nada que destacar', foto: ''}, {IdReview: 2,IdUsuario: 2, IdLugar: 1, puntaje: 2, destacar: 'nada', titulo: 'No me gusto', descripcion: 'Nada que destacar', foto: ''}, {IdReview: 1,IdUsuario: 5, IdLugar: 1, puntaje: 5, destacar: 'todo', titulo: 'Amo', descripcion: 'Que buen lugar!!', foto: ''}])
     const [seguidos, setSeguidos] = useState([{'IdUsuario': 7, 'IdSeguido': 3}, {'IdUsuario': 5, 'IdSeguido': 3},{'IdUsuario': 4, 'IdSeguido': 3}])
     const restaurante = props.route.params.props.route.params.props.lugar
     const usuario = props.route.params.props.route.params.props.User
-   /* const getReseñas = () => {
+   const getReseñas = () => {
+         filtrar(false)
         return axios.get('http://localhost:3000/reviews?id_lugar=' + restaurante.IdLugar)
             .then(res => {
                 const l = res.data
@@ -24,7 +27,7 @@ export default function ReseñasView(props) {
 
     useEffect(() => {
         getReseñas()
-    })
+    }, [])
     const getSeguidos = () => {
         return axios.get('http://localhost:3000/seguido/seguidores/' + usuario.IdUsuario)
             .then(res => {
@@ -32,16 +35,18 @@ export default function ReseñasView(props) {
                 const l = res.data
                 setSeguidos(l)
             })
-    }*/
+    }
     const getReviewsSeguidos = () => {
-        // getSeguidos()
+        // getSeguidos(), hardcodeado porque no anda en el back
+        
+        filtrar(true)
         const reseñas_seguidos = []
         console.log('seguidos',seguidos)
         seguidos.map(user => {
              let nuevas_reseñas = reseñas.filter(reseña => reseña.IdUsuario == user.IdUsuario)
              reseñas_seguidos.push(nuevas_reseñas)
         })
-        setReseñas(...reseñas_seguidos)
+        setReseñasFromSeguidos(...reseñas_seguidos)
         console.log('cambiadas')
     }
 
@@ -58,10 +63,18 @@ export default function ReseñasView(props) {
         <View style={styles.container}>
             <View>
                 <Text style={[{ fontFamily: 'Poppins_700Bold' }, styles.titulo]}>{restaurante.nombre} </Text>
+                <View style={styles.row}>
                 <Icon style={styles.arrow} name="arrow-left" size={20} onPress={() => navigation.goBack()} ></Icon>
-                <Text onPress={getReviewsSeguidos} >Ver reseñas de seguidos</Text>
+                <View styles={styles.botonChico}>
+                    {
+                        filtrado ? <Text style={styles.botonC} onPress={getReseñas} >Mostrar todas las reseñas</Text>:   <Text style={styles.botonC} onPress={getReviewsSeguidos} >Filtrar por seguidos</Text>
+                    }
+                </View>
+                </View>
             </View>
-            <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
+            {
+                filtrado ? <ListadoReseñas reseñas={reseñasFromSeguidos}></ListadoReseñas> : <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
+            }
             <View style={styles.botonContainer}>
                 <Text style={styles.boton} onPress={() => navigation.navigate('CrearReseña', props)}>Crear reseña</Text>
             </View>
@@ -83,9 +96,8 @@ const styles = StyleSheet.create({
     },
     botonContainer: {
         alignItems: 'center',
-        marginTop: 400,
-        width: 400,
         height: 120,
+        marginTop: 30
     },
     boton: {
         height: 50,
@@ -99,10 +111,27 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         textAlignVertical: 'center',
-        marginTop: 10,
         color: 'white',
     },
     arrow: {
         marginLeft: 40
-    }
+    },
+
+    botonC:{
+        backgroundColor: "#F0B57D",
+        justifyContent: 'center',
+        overflow: 'hidden',
+        fontSize: 10,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        color: 'white',
+        marginLeft: 200,
+        height: 30,
+        width: 120
+        },
+    row: {
+        flexDirection: "row",
+        width: 400
+    },
 });

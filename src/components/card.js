@@ -8,8 +8,7 @@ import { Arvo_400Regular, useFonts } from "@expo-google-fonts/dev";
 //* fuentes: para el Le Pain Quotidien va la fuente arvo y para Cafeteria fuente slabo 27px
 export default function Card({ props }) {
   const navigation = useNavigation();
-  const [heart, setHeart] = useState({color: '#C4C4C4'})
-  const [count, setCount] = useState(0)
+  const [liked, like] = useState(false)
   let [loaded] = useFonts({
       Arvo_400Regular,
     });
@@ -17,7 +16,6 @@ export default function Card({ props }) {
   if (!loaded) {
       return null;
   }
-  const options = [{color: 'red'}, {color: 'red'},{color: '#C4C4C4'}]
  
   return (
     <SafeAreaView  style={styles.container}>
@@ -27,15 +25,10 @@ export default function Card({ props }) {
             <Text style={[{fontFamily:'Arvo_400Regular'},styles.titulo]}> {props.lugar.nombre}   </Text>
           </View>
           <View style={{ width: 70 }}>
-            <Icon name={'heart'} size={25} style={[styles.heart, heart]} 
-            onPress={()=> {
-              setCount(count+1)
-              if(count > 1){
-                setCount(0)
-              }
-              setHeart(options[count])
+            {
+              liked ? <Icon name='heart' size={25} style={styles.heart} color='red' onPress={() => like(!liked)} /> : <Icon name='heart' style={styles.heart} size={25} color='#c4c4c4c4' onPress={()=> like(!liked) }/>
             }
-            }  />
+
           </View>
         </View>
         <View style={styles.img} onTouchStart={() => navigation.navigate("Profile", {props})}>
