@@ -12,7 +12,7 @@ export default function CardReseña({ props }) {
     let [loaded] = useFonts({
         Poppins_400Regular,
         Poppins_600SemiBold,
-        
+
     });
 
     if (!loaded) {
@@ -28,14 +28,14 @@ export default function CardReseña({ props }) {
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.titulo]}>{props.titulo}</Text>
                     <Puntaje puntaje={props.puntaje}></Puntaje>
                     <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.descripcion]}>{props.descripcion}</Text>
-                    
+
                 </View>
                 <Image style={styles.image} source={{ uri: props.foto }}></Image>
             </View>
 
             <View style={styles.row}>
-                <Text style={[{ fontFamily: 'Poppins_600SemiBold' },styles.boton]}>A favor</Text>
-                <Text style={[{fontFamily:  'Poppins_600SemiBold'},styles.boton]}>En contra</Text>
+                <Text style={[{ fontFamily: 'Poppins_600SemiBold' }, styles.boton]}>A favor</Text>
+                <Text style={[{ fontFamily: 'Poppins_600SemiBold' }, styles.boton]}>En contra</Text>
             </View>
             <View style={styles.img}>
 
@@ -51,10 +51,13 @@ export default function CardReseña({ props }) {
 const styles = StyleSheet.create({
     container: {
         width: 300,
-        height: 150,
-        backgroundColor: "#fff",
+        height: 170,
+        backgroundColor: "#F8F7F7",
         borderRadius: 13,
-        marginTop: 20,
+        marginTop: 30,
+        marginHorizontal: 10,
+        marginLeft: "auto",
+        marginRight: "auto",
         borderColor: '#F8F7F7',
         borderWidth: 1,
     },
@@ -93,9 +96,9 @@ const styles = StyleSheet.create({
         elevation: 0.5,
         borderRadius: 5
     },
-    descripcion:{
+    descripcion: {
         fontSize: 15,
-        color:'#888888',
+        color: '#888888',
         marginLeft: 5,
     }
 });

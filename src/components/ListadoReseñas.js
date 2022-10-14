@@ -15,8 +15,10 @@ export default function ListadoReseñas ({reseñas}){
 
 const styles = StyleSheet.create({
     container: {
+        height: 700,
         marginTop: 30,
-        height: 100,
-        alignItems: 'center'
+        width: '100%',
+        backgroundColor: "#FFF",
+        borderRadius: 60,
     },
 })

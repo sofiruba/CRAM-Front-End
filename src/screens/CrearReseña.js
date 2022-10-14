@@ -83,7 +83,7 @@ export default function CrearReseña(props) {
           />
 
           <View style={ styles.boton} onTouchStart={CrearReseña}>
-          <Text style={styles.btn}  >Enviar</Text>
+          <Text style={styles.btn} >Enviar</Text>
           </View>
         </View>
       </View>

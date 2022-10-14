@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { View, Text, StyleSheet, Button } from "react-native"
 import ListadoReseñas from "../components/ListadoReseñas"
 import { useNavigation } from "@react-navigation/native"
-import {Poppins_700Bold } from "@expo-google-fonts/poppins"
+import { Arvo_400Regular } from "@expo-google-fonts/dev"
 import { useFonts } from "@expo-google-fonts/dev"
 
 export default function ReseñasView(props) {
@@ -23,7 +23,7 @@ export default function ReseñasView(props) {
     })
     */
     let [loaded] = useFonts({
-        Poppins_700Bold,
+        Arvo_400Regular,
       });
       if (!loaded) {
         return null;
@@ -42,7 +42,7 @@ export default function ReseñasView(props) {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={[{ fontFamily: 'Poppins_700Bold' },styles.titulo]}>{restaurante.nombre} </Text>
+                <Text style={[{ fontFamily: 'Arvo_400Regular' },styles.titulo]}>Reseñas</Text>
 
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
@@ -55,13 +55,14 @@ export default function ReseñasView(props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#F8F7F7",
+        backgroundColor: "#F7D250",
         height: '100%',
     },
     titulo: {
         alignSelf: 'center',
         fontSize: 40,
         marginTop: 70,
+        marginBottom: 68,
         color: 'black',
 
     },

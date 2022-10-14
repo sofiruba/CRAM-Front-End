@@ -2,7 +2,7 @@ import { View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, Toucha
 import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect, React } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Poppins_700Bold, Poppins_400Regular, Poppins_600SemiBold, useFonts , Poppins_500Medium} from '@expo-google-fonts/dev';
+import { Arvo_400Regular, Arvo_700Bold, Heebo_400Regular, useFonts } from '@expo-google-fonts/dev';
 // en abierto o cerrado hay que poner un if en styles que se hace con ? supongo que podemos hacer un bool
 // https://directory.vercel.app/
 // import {el tipo de fuente que quieren}    
@@ -11,10 +11,9 @@ export default function Profile(props) {
 
     const navigation = useNavigation();
     let [loaded] = useFonts({
-        Poppins_700Bold,
-        Poppins_400Regular,
-        Poppins_600SemiBold,
-        Poppins_500Medium,
+        Arvo_700Bold,
+        Arvo_400Regular,
+        Heebo_400Regular,
     });
 
     if (!loaded) {
@@ -31,15 +30,16 @@ export default function Profile(props) {
                             <Image style={styles.img} source={lugar.foto}></Image>
                             <View>
                                 <View style={styles.bigrow}>
-                                    <Text style={[{ fontFamily: 'Poppins_700Bold' }, styles.title]}>{lugar.nombre}</Text>
+                                    <Text style={[{ fontFamily:'Arvo_400Regular' }, styles.title]}>{lugar.nombre}</Text>
                                     <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { props })} />
                                 </View>
 
-                                <Text style={[styles.subtitle, {fontFamily: 'Poppins_400Regular'}]}>{lugar.description}</Text>
-                                <View style={styles.bigrow}>
+                                <Text style={[styles.subtitle, {fontFamily:'Arvo_400Regular'}]}>{lugar.description}</Text>
+                                
+                                <View style={[styles.bigrow, {justifyContent: 'center'}]}>
                                     <Icon name={'clock-o'} style={styles.estado} />
-                                    <Text style={[{ fontFamily: 'Poppins_600SemiBold' }, styles.estado]}>Abierto</Text>
-                                    <Text style={[{ fontFamily: 'Poppins_400Regular' }, styles.hora]}>cierra a las 20hs</Text>
+                                    <Text style={[{ fontFamily:'Arvo_400Regular' }, styles.estado]}>Abierto</Text>
+                                    <Text style={[{ fontFamily:'Arvo_400Regular' }, styles.hora]}>Cierra a las 20hs</Text>
                                 </View>
                             </View>
                             <View style={styles.bigrow}>
@@ -47,16 +47,13 @@ export default function Profile(props) {
                                     <View >
                                         <Icon name={'phone'} style={styles.llamada} />
                                     </View>
-                                    <Text style={[{ fontFamily: 'Poppins_600SemiBold' }, styles.llamadatext]}>Llamar</Text>
+                                    <Text style={[{ fontFamily:'Arvo_400Regular' }, styles.llamadatext]}>Llamar</Text>
                                 </View>
                                 <View style={styles.row}>
                                     <Icon name={'heart'} size={35} style={styles.heart} />
-                                    <Text style={[{ fontFamily: 'Poppins_600SemiBold' }, styles.lista]}>Añadir a Lista</Text>
+                                    <Text style={[{ fontFamily:'Arvo_400Regular' }, styles.lista]}>Añadir a Lista</Text>
                                 </View>
                                 <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
-                            </View>
-                            <View>
-                                <Text onPress={() => navigation.goBack()} style={[{ fontFamily: 'Heebo_400Regular' }, styles.boton]}> Ir a Home </Text>
                             </View>
                         </View>
                     </View>
@@ -68,6 +65,7 @@ export default function Profile(props) {
 }
 
 const styles = StyleSheet.create({
+    
     content: {
         width: '100%',
         backgroundColor: 'white',
@@ -91,7 +89,7 @@ const styles = StyleSheet.create({
         fontSize: 35,
         textAlign: 'left',
         marginTop: 5,
-        marginLeft: 0,
+        
         height: 50,
         width: '80%',
     },
@@ -100,12 +98,12 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         padding: 10,
-        marginTop: 50,
+        marginTop: 80,
     },
     subtitle: {
         fontSize: 22,
-        marginLeft: 0,
-        marginTop: 0,
+        marginBottom: 40,
+        textAlign: 'left',
     },
     bigrow: {
         flexDirection: "row",
@@ -120,6 +118,7 @@ const styles = StyleSheet.create({
         height: 60,
         alignItems: 'center',
         alignContent: 'center',
+        justifyContent: 'center',
 
     },
     llamadatext: {
