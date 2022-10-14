@@ -5,6 +5,7 @@ import ListadoReseñas from "../components/ListadoReseñas"
 import { useNavigation } from "@react-navigation/native"
 import { Arvo_400Regular } from "@expo-google-fonts/dev"
 import { useFonts } from "@expo-google-fonts/dev"
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function ReseñasView(props) {
     const navigation = useNavigation()
@@ -24,15 +25,15 @@ export default function ReseñasView(props) {
     */
     let [loaded] = useFonts({
         Arvo_400Regular,
-      });
-      if (!loaded) {
+    });
+    if (!loaded) {
         return null;
-      }
+    }
     const restaurante = props.route.params.props.route.params.props.lugar
     const usuario = props.route.params.props.route.params.props.User.route.params.user
-    props = {usuario, restaurante}
+    props = { usuario, restaurante }
     const usuarios_reseñas = []
-    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4, IdUsuario: 3 , foto: 'https://i.pinimg.com/600x315/b7/e1/20/b7e12039ad5f2c98b9cd5a57492fdfca.jpg'}, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1, IdUsuario: 3  }]
+    const reseñas = [{ IdReview: 1, titulo: 'Me gusto', descripcion: 'que bueno ', puntaje: 4, IdUsuario: 3, foto: 'https://i.pinimg.com/600x315/b7/e1/20/b7e12039ad5f2c98b9cd5a57492fdfca.jpg' }, { IdReview: 10, titulo: 'Malardo', descripcion: 'que malo ', puntaje: 1, IdUsuario: 3 }]
     /*reseñas.map(r => {
             axios.get('localhost:3000/usuarios/'+ r.IdUsuario)
             .then(res => {
@@ -42,12 +43,20 @@ export default function ReseñasView(props) {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={[{ fontFamily: 'Arvo_400Regular' },styles.titulo]}>Reseñas</Text>
-
+                <Text style={[{ fontFamily: 'Arvo_400Regular' }, styles.titulo]}>Reseñas</Text>
+                <View style={styles.bckstar}>
+                    <View style={styles.row}>
+                        <Icon name={'star'} style={styles.star} />
+                        <Icon name={'star'} style={styles.star} />
+                        <Icon name={'star'} style={styles.star} />
+                        <Icon name={'star'} style={styles.star} />
+                        <Icon name={'star'} style={styles.star} />
+                    </View>
+                </View>
             </View>
             <ListadoReseñas reseñas={reseñas}></ListadoReseñas>
             <View style={styles.botonContainer}>
-                <Text style={styles.boton} onPress={() => navigation.navigate('CrearReseña', props )}>Crear reseña</Text>
+                <Text style={styles.boton} onPress={() => navigation.navigate('CrearReseña', props)}>Crear reseña</Text>
             </View>
         </View>
     )
@@ -62,11 +71,10 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 40,
         marginTop: 70,
-        marginBottom: 68,
         color: 'black',
 
     },
-    botonContainer:{
+    botonContainer: {
         alignItems: 'center',
         marginTop: 400,
         width: 400,
@@ -86,5 +94,25 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center',
         marginTop: 10,
         color: 'white',
+    },
+    star: {
+        color: "#FFC800",
+        fontSize: 30,
+        marginBottom: 68,
+        backgroundColor: 'white',
+        padding: 3,
+    },
+
+    bckstar: {
+
+    },
+
+    row: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignItems: 'center',
+        alignContent: 'center',
+        justifyContent: 'center',
+
     },
 });

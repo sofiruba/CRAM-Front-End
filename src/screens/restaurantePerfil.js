@@ -31,7 +31,7 @@ export default function Profile(props) {
                             <View>
                                 <View style={styles.bigrow}>
                                     <Text style={[{ fontFamily:'Arvo_400Regular' }, styles.title]}>{lugar.nombre}</Text>
-                                    <Icon name={'comment'} style={styles.comment} onPress={() => navigation.navigate("Reseñas", { props })} />
+                                    <Icon name={'star'} style={styles.star} onPress={() => navigation.navigate("Reseñas", { props })} />
                                 </View>
 
                                 <Text style={[styles.subtitle, {fontFamily:'Arvo_400Regular'}]}>{lugar.description}</Text>
@@ -131,11 +131,11 @@ const styles = StyleSheet.create({
         textAlignVertical: 'bottom',
         fontSize: 18,
     },
-    comment: {
-        color: "black",
+    star: {
+        color: "#FFC800",
         textAlign: "right",
         alignContent: 'flex-end',
-        fontSize: 30,
+        fontSize: 50,
         marginTop: 15,
     },
 
