@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Button, TextInput, View, Text, StyleSheet, Image } from 'react-native';
+import { Button, TextInput, View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import SubirFoto from "./SubirFoto";
 
 //* FUENTE: RUBIK
@@ -35,9 +35,9 @@ export default function FormRegistrar({ register }) {
             onChangeText={(text) => setMail(text)}
           />
         </View>
-        <View style={[styles.boton, styles.shadow]}>
-          <Text style={styles.btn} onPress={() => register({ "nombre": nombre, "username": username, "password": password, "mail": mail })} >Registrarse</Text>
-        </View>
+        <Pressable style={[styles.boton, styles.shadow]} onPress={() => register()} >
+          <Text style={styles.btn}  >Registrarse</Text>
+        </Pressable>
       </View>
     </View>
 
