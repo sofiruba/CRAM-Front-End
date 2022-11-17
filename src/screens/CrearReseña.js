@@ -5,6 +5,7 @@ import { DaysOne_400Regular, Comfortaa_Regular, ShipporiAntiqueB1_400Regular, us
 import FormPuntaje from '../components/formPuntaje'
 import SubirFoto from '../components/SubirFoto'
 import { useNavigation } from '@react-navigation/native'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 //* Fuentes: DaysOne,Comfortaa y para el seguidos y para ti Shippori Antique B1
 
@@ -59,6 +60,7 @@ export default function CrearReseña(props) {
 
   return (
     <View style={ styles.pag}>
+       <Icon style={styles.arrow} name="arrow-left" size={20} onPress={() => navigation.goBack()} ></Icon>
       <View style={styles.container}>
         <Text style={[{ fontFamily: 'Comfortaa_300Light' },styles.title]}>{lugar.nombre}</Text>
         <View style={ styles.container}>
@@ -169,5 +171,9 @@ const styles = StyleSheet.create({
     color: 'white',
 
 
-  }
+  },
+  arrow: {
+    marginLeft: 20,
+    marginTop: 30,
+},
 })

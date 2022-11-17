@@ -5,11 +5,14 @@ import { Comfortaa_400Regular, ShipporiAntiqueB1_400Regular, useFonts } from '@e
 import ListadoHome from '../components/ListadoHome'
 import Filtros from '../components/filtros'
 import Buscador from '../components/buscador'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native'
 
 //* Fuentes: comfortaa y shipporiAntique
 // https://directory.vercel.app/
 export const UserContext = createContext({})
 export default function HomeScreen(user) {
+    const navigation = useNavigation()
     const [lugares, setLugares] = useState([{
         "IdLugar": "aaa123",
         "nombre": "Las Violetas",
@@ -55,6 +58,7 @@ export default function HomeScreen(user) {
     return (
         <View style={[{ fontFamily: 'Comfortaa_400Regular' }, styles.pag]} >
             <View>
+            <Icon style={styles.arrow} name="arrow-left" size={20} onPress={() => navigation.goBack()} ></Icon>
                 <View>
                     <View style={styles.row}>
                         <Text style={[{ fontFamily: 'ShipporiAntiqueB1_400Regular' }, styles.texto]} >Seguidos</Text>
@@ -67,7 +71,6 @@ export default function HomeScreen(user) {
                 <UserContext.Provider value={usuario}>
                     <ListadoHome lugares={lugares}></ListadoHome>
                 </UserContext.Provider>
-
             </View>
         </View>
     );
@@ -91,5 +94,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginLeft: '2%',
         marginRight: '2%'
-    }
+    },
+    arrow: {
+        marginLeft: 20,
+        marginTop: 30,
+    },
 })

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, TextInput, View, Text, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
+import { Button, TextInput, View, Text, StyleSheet, Image, KeyboardAvoidingView, Pressable } from 'react-native';
 import { Rubik_600SemiBold, useFonts  } from "@expo-google-fonts/dev";
 //* FUENTE: RUBIK
 export default function LoginForm({login}) {
@@ -30,9 +30,9 @@ export default function LoginForm({login}) {
           />
         </View>
       </View>
-      <View style={[{fontFamily: 'Rubik_600SemiBold'},styles.boton]} onTouchStart={() => login(username, password)} >
+      <Pressable style={[{fontFamily: 'Rubik_600SemiBold'},styles.boton]} onPress={() => login(username, password)} >
         <Text  style={{color: '#fff'}}  >Iniciar</Text>
-      </View>
+      </Pressable>
     </View>
   )
 }

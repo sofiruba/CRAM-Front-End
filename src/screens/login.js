@@ -6,33 +6,37 @@ import axios from 'axios';
 export default function LoginScreen() {
 
   const navigation = useNavigation();
-   const login = async (username, password) => {
+  /* const login = async (username, password) => {
     let usuario = {"username": username, "password": password}
     return axios.post('http://localhost:3000/auth/login', usuario)
       .then(res => {
         if (res.status = 201) {
           let user = res.data
-          navigation.replace('Home', {user}) 
+          navigation.navigate('Home', {user}) mandar al usuario por parametro para desp poder crear reviews, y todo eso 
         }
         else {
-          alert('Vuelva a intentar')
+          console.log(res.message)
         }
       })
       .catch(error => {
-        console.log(error)
+        console.error('error', error)
       })
   }
-
+*/
+let user = {IdUsuario: 1, username: 'jsjskd', nombre: 'jdddk'}
+  const login = () => {
+    return navigation.navigate('Home' , {user}) 
+  }
 
   return (
     <SafeAreaView style={styles.pag}>
     <ScrollView >
 
-      <View style={styles.container} >
+      <KeyboardAvoidingView style={styles.container} >
         <Image style={styles.img} source={require('../assets/icon.png')}></Image>
         <LoginForm login={login}></LoginForm>      
         <Text  onPress={() => navigation.navigate("Register")} style={styles.texto}>¿Todavía no te registraste?</Text>
-      </View >
+      </KeyboardAvoidingView >
 
     </ScrollView >
     </SafeAreaView >

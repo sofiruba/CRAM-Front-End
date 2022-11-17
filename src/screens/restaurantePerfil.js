@@ -3,10 +3,6 @@ import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect, React } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Poppins_700Bold, Poppins_400Regular, Poppins_600SemiBold, useFonts , Poppins_500Medium} from '@expo-google-fonts/dev';
-// en abierto o cerrado hay que poner un if en styles que se hace con ? supongo que podemos hacer un bool
-// https://directory.vercel.app/
-// import {el tipo de fuente que quieren}    
-// Para Le Pain Quotidien fuente POPPINS,para Confiteria y Descuentos disponibles HEEBO , para agregar lista LIBRE FRANKLIN y para mas informacion ARIMO
 export default function Profile(props) {
 
     const navigation = useNavigation();
@@ -27,6 +23,7 @@ export default function Profile(props) {
         <SafeAreaView style={{backgroundColor: '#fff', height: 900}} >
             <ScrollView >
                 <View style={styles.pag}>
+                <Icon style={styles.arrow} name="arrow-left" size={20} onPress={() => navigation.goBack()} ></Icon>
                     <View style={styles.content}>
                         <View >
                             <Image style={styles.img} source={lugar.foto}></Image>
@@ -56,9 +53,7 @@ export default function Profile(props) {
                                 </View>
                                 <Image style={styles.tinyimg} source={require('../assets/mapaejemplo.png')}></Image>
                             </View>
-                            <View>
-                                <Text onPress={() => navigation.goBack()} style={[{ fontFamily: 'Heebo_400Regular' }, styles.boton]}> Ir a Home </Text>
-                            </View>
+                          
                         </View>
                     </View>
                 </View>
@@ -195,5 +190,9 @@ const styles = StyleSheet.create({
     iconllamar:{
         justifyContent: 'center',
         alignItems: 'center'
-    }
+    },
+    arrow: {
+        marginLeft: 20,
+        marginTop: 30,
+    },
 })

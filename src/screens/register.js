@@ -3,15 +3,19 @@ import { Image, StyleSheet, View, Text, KeyboardAvoidingView } from 'react-nativ
 import FormRegistrar from '../components/formRegistrar';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default function Register() {
 
     const navigation = useNavigation();
+    const register = () => {
+        return navigation.navigate('Home')
+    }
 
 
+    /*const register = (user) => {
 
-    const register = (user) => {
-
-        return axios.post('http://localhost:3000/auth/register', user)
+        return axios.post('http://localhost:3000/auth/login', user)
             .then(res => {
                 if (res.status = 201) {
                     navigation.navigate('Home', user)
@@ -23,10 +27,12 @@ export default function Register() {
             .catch(error => {
                 console.error('error', error)
             })
-    }
+    }*/
 
     return (
         <View style={styles.pag}>
+            <Icon style={styles.arrow} name="arrow-left" size={20} onPress={() => navigation.goBack()} ></Icon>
+
             <FormRegistrar register={register}></FormRegistrar>
         </View>
     )
@@ -46,6 +52,10 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         flex: 1,
+    },
+    arrow: {
+        marginLeft: 20,
+        marginTop: 30,
     },
     
 });
