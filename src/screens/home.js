@@ -72,6 +72,9 @@ export default function HomeScreen(user) {
                     <ListadoHome lugares={lugares}></ListadoHome>
                 </UserContext.Provider>
             </View>
+            <View style={styles.botonContainer}>
+                <Text style={styles.boton} onPress={() => navigation.navigate('AgregarRestaurante')}>Agregar Restaurante</Text>
+            </View>
         </View>
     );
 
@@ -99,4 +102,23 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginTop: 30,
     },
+    botonContainer: {
+        alignItems: 'center',
+        height: 120,
+        marginTop: 30
+    },
+    boton: {
+        height: 50,
+        width: 300,
+        borderRadius: 30,
+        backgroundColor: "#F0B57D",
+        justifyContent: 'center',
+        alignSelf: 'center',
+        overflow: 'hidden',
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        color: 'white',
+    }
 })

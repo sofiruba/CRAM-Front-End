@@ -7,6 +7,7 @@ import Profile from '../src/screens/restaurantePerfil'
 import Register from '../src/screens/register'
 import CrearReseña from '../src/screens/CrearReseña';
 import ReseñasView from '../src/screens/reseñas';
+import AgregarRestaurante from '../src/screens/AgregarRestaurante';
 const Stack = createNativeStackNavigator();
 export default function Main() {
   //props de crear reseñas: lugar y user
@@ -19,6 +20,7 @@ export default function Main() {
         <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
         <Stack.Screen name="Reseñas" component={ReseñasView} options={{ headerShown: false }} initialParams={{ lugar: {} }}/>
         <Stack.Screen name="CrearReseña" component={CrearReseña} options={{ headerShown: false }} initialParams={{ props: {}}} /> 
+        <Stack.Screen name="AgregarRestaurante" component={AgregarRestaurante} options={{ headerShown: false }} initialParams={{ props: {}}} />
 
       </Stack.Navigator>
     </NavigationContainer>
