@@ -1,0 +1,49 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Arimo-VariableFont_wght.ttf",
+      "sha1": "7d569515394fce64e331f3da571f59a96b0c5884"
+    },
+    {
+      "path": "assets/fonts/Arvo-Regular.ttf",
+      "sha1": "3857248afcedf01b6e9dc0048f4ca662bc328493"
+    },
+    {
+      "path": "assets/fonts/Bailamore.ttf",
+      "sha1": "9c219079f38dd144d65385821e1871592e2ea4d2"
+    },
+    {
+      "path": "assets/fonts/Comfortaa-Regular.ttf",
+      "sha1": "018c91b57e43873172a1767df40434cb56e130e4"
+    },
+    {
+      "path": "assets/fonts/DaysOne-Regular.ttf",
+      "sha1": "51ad4f895d88177662da5a5c41d3a99bc897aa90"
+    },
+    {
+      "path": "assets/fonts/Heebo-VariableFont_wght.ttf",
+      "sha1": "c3a0ba343856e1a09be789d67797f69eb50aa7df"
+    },
+    {
+      "path": "assets/fonts/LibreFranklin-VariableFont_wght.ttf",
+      "sha1": "3c8539021a2166ffe6b5ff850cd14130917df59a"
+    },
+    {
+      "path": "assets/fonts/Poppins-Bold.ttf",
+      "sha1": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa"
+    },
+    {
+      "path": "assets/fonts/Rubik-VariableFont_wght.ttf",
+      "sha1": "14fe647dcd9c2629134bc93e956709cbc0919585"
+    },
+    {
+      "path": "assets/fonts/ShipporiAntiqueB1-Regular.ttf",
+      "sha1": "79e928f9047c387fbc17f6accbecdf141442fcf7"
+    },
+    {
+      "path": "assets/fonts/Slabo27px-Regular.ttf",
+      "sha1": "8835e3c0cc08e9d167f9b2bf8d3783788f12c3ae"
+    }
+  ]
+}

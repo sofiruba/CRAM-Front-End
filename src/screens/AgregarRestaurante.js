@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { View, Text, TextInput, StyleSheet, Button, KeyboardAvoidingView } from 'react-native'
 import { DaysOne_400Regular, Comfortaa_Regular, ShipporiAntiqueB1_400Regular, useFonts, Arvo_400Regular, Comfortaa_300Light } from '@expo-google-fonts/dev'
-import FormPuntaje from '../components/formPuntaje'
 import SubirFoto from '../components/SubirFoto'
 import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -14,14 +13,17 @@ export default function AgregarRestaurante() {
   const [nombre, setNombre] = useState('')
   const [destacar, setDestacar] = useState('')
   const [descripcion, setDescripcion] = useState('')
-  const [puntaje, setPuntaje] = useState(0)
   const [foto, setFoto] = useState(null)
+  const [Direccion, setDireccion] = useState('')
+  const [numtelefono, setnumtelefono] = useState('')
+  
   
   return (
-    <View style={ styles.pag}>
+      <View style={ styles.pag}>
        <Icon style={styles.arrow} name="arrow-left" size={20} onPress={() => navigation.goBack()} ></Icon>
       <View style={styles.container}>
         <View style={ styles.container}>
+          <Text style={styles.titulo}>Agregar restaurante</Text>
           <SubirFoto props={{ foto, setFoto, styles }}></SubirFoto>
 
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
@@ -30,23 +32,33 @@ export default function AgregarRestaurante() {
           />
          
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
-            placeholder="¿Esta abierto o cerrado?"
+            placeholder="¿Esta abierto? ¿A que hora cierra?"
             onChangeText={(text) => setDestacar(text)}
           />
+            <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
+            placeholder="Direccion"
+            onChangeText={(text) => setDireccion(text)}
+        
+           />
+             <TextInput style={[{ fontFamily: 'Comfortaa_300Light' }, styles.input]}
+            placeholder="Numero de telefono"
+            onChangeText={(text) => setnumtelefono(text)}
+        
+           />
           
           <TextInput style={[{ fontFamily: 'Comfortaa_300Light'}, styles.inputD]}
             placeholder=" Descripcion"
-            placeholderStyle={{marginTop: 60}}
+            placeholderStyle={{marginTop:60}}
             onChangeText={(text) => setDescripcion(text)}
 
           />
-
           <View style={ styles.boton} onTouchStart={(e)=>agregarRestaurante(e)}>
           <Text style={styles.btn}  >Enviar</Text>
           </View>
         </View>
       </View>
     </View>
+    
   );
 
 }
@@ -58,7 +70,7 @@ const styles = StyleSheet.create({
     padding: 35,
   },
   pag: {
-    backgroundColor: '#F4F1F1',
+    backgroundColor: '#F7D250',
     height: '100%',
     width: '100%',
     flex: 1,
@@ -66,7 +78,8 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: 'white',
     borderRadius: 20,
-    marginTop: 13,
+    marginTop: 20,
+    padding:30,
     width: 300,
     height: 45,
     marginLeft: 3,
@@ -78,8 +91,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 20,
     marginTop: 13,
+    padding:30,
     width: 300,
-    height: 150,
+    height: 50,
     marginLeft: 3,
     shadowColor: '#000',
     elevation: 5,
@@ -87,7 +101,7 @@ const styles = StyleSheet.create({
   },
 
   foto:{
-    width: 300,
+    width: 200,
     height: 200,
     borderRadius: 10,
     justifyContent: 'center',
@@ -131,5 +145,12 @@ const styles = StyleSheet.create({
   arrow: {
     marginLeft: 20,
     marginTop: 30,
+},
+titulo: {
+  fontSize: 25,
+  marginTop: 3,
+  marginLeft: 5,
+  fontFamily:'Arvo_400Regular',
+  padding:20,
 },
 })
